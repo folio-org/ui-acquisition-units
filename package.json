@@ -61,6 +61,7 @@
     "queryResource": "query",
     "route": "/acquisition-units",
     "okapiInterfaces": {
+      "acquisitions-units": "1.0"
     },
     "permissionSets": [
       {

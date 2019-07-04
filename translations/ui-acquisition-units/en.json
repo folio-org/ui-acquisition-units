@@ -1,3 +1,13 @@
 {
-  "meta.title": "Acquisition units"
+  "meta.title": "Acquisition units",
+  
+  "accordion.generalInfo": "General information",
+  "accordion.actionPermissions": "Members of this team can perform the following actions",
+  
+  "unit.name": "Name",
+  "unit.description": "Description",
+  "unit.viewPermission": "View",
+  "unit.editPermission": "Edit",
+  "unit.createPermission": "Create",
+  "unit.deletePermission": "Delete"
 }
