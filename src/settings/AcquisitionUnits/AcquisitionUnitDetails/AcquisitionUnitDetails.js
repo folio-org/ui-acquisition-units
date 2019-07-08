@@ -23,8 +23,9 @@ import {
   initialState,
   reducer,
 } from '../reducer';
+import AcquisitionUnitDetailsActions from './AcquisitionUnitDetailsActions';
 
-const AcquisitionUnitDetails = ({ acquisitionUnit, close }) => {
+const AcquisitionUnitDetails = ({ acquisitionUnit, close, getEditPath, deleteUnit }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const toggleSection = ({ id }) => {
@@ -41,15 +42,29 @@ const AcquisitionUnitDetails = ({ acquisitionUnit, close }) => {
     });
   };
 
+  const getActionMenu = () => {
+    return (
+      <AcquisitionUnitDetailsActions
+        editUnitPath={getEditPath(acquisitionUnit.id)}
+        deleteUnit={deleteUnit}
+      />
+    );
+  };
+
   return (
     <Pane
       id="pane-ac-units-details"
       defaultWidth="fill"
+      data-test-ac-unit-details
       paneTitle={acquisitionUnit.name}
+      actionMenu={getActionMenu}
       dismissible
       onClose={close}
     >
-      <Row center="xs">
+      <Row
+        center="xs"
+        data-test-ac-unit-details-accordions
+      >
         <Col xs={12}>
           <Row end="xs">
             <Col xs={12}>
@@ -153,6 +168,8 @@ const AcquisitionUnitDetails = ({ acquisitionUnit, close }) => {
 AcquisitionUnitDetails.propTypes = {
   acquisitionUnit: PropTypes.object.isRequired,
   close: PropTypes.func.isRequired,
+  getEditPath: PropTypes.func.isRequired,
+  deleteUnit: PropTypes.func.isRequired,
 };
 
 export default AcquisitionUnitDetails;
