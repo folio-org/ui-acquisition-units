@@ -61,14 +61,17 @@
     "queryResource": "query",
     "route": "/acquisition-units",
     "okapiInterfaces": {
-      "acquisitions-units": "1.0"
+      "acquisitions-units": "1.0",
+      "users": "15.0"
     },
     "permissionSets": [
       {
         "permissionName": "settings.acquisition-units.enabled",
         "displayName": "Settings (acquisition units): display list of settings pages",
         "subPermissions": [
-          "settings.enabled"
+          "settings.enabled",
+          "users.collection.get",
+          "acquisitions-units.units.all"
         ],
         "visible": true
       }

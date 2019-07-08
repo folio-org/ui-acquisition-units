@@ -7,16 +7,29 @@ import {
   NavList,
   NavListItem,
   Pane,
+  Button,
 } from '@folio/stripes/components';
 
-const AcquisitionUnitsList = ({ acquisitionUnits, getViewPath }) => {
+const AcquisitionUnitsList = ({ acquisitionUnits, getViewPath, getCreatePath }) => {
+  const lastMenu = (
+    <Button
+      data-test-new-ac-unit
+      to={getCreatePath()}
+      buttonStyle="primary"
+      marginBottom0
+    >
+      <FormattedMessage id="ui-acquisition-units.unit.actions.new" />
+    </Button>
+  );
+
   return (
     <Pane
       id="pane-ac-units-list"
+      lastMenu={lastMenu}
       defaultWidth="fill"
       paneTitle={<FormattedMessage id="ui-acquisition-units.meta.title" />}
     >
-      <NavList>
+      <NavList data-test-ac-units-nav-list>
         {acquisitionUnits.map(acquisitionUnit => (
           <NavListItem
             key={acquisitionUnit.id}
@@ -33,11 +46,13 @@ const AcquisitionUnitsList = ({ acquisitionUnits, getViewPath }) => {
 AcquisitionUnitsList.propTypes = {
   acquisitionUnits: PropTypes.arrayOf(PropTypes.object),
   getViewPath: PropTypes.func,
+  getCreatePath: PropTypes.func,
 };
 
 AcquisitionUnitsList.defaultProps = {
   acquisitionUnits: [],
   getViewPath: noop,
+  getCreatePath: noop,
 };
 
 export default AcquisitionUnitsList;
