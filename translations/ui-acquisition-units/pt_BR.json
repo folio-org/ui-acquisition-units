@@ -1,3 +1,20 @@
 {
-    "meta.title": "Acquisition units"
+    "meta.title": "Unidades de aquisição",
+    "accordion.generalInfo": "Informações gerais",
+    "accordion.actionPermissions": "Os membros dessa equipe podem executar as seguintes ações",
+    "unit.name": "Nome",
+    "unit.description": "Descrição",
+    "unit.viewPermission": "Visualizar",
+    "unit.editPermission": "Editar",
+    "unit.createPermission": "Criar",
+    "unit.deletePermission": "Excluir",
+    "unit.form.create.title": "Create acquisition unit",
+    "unit.form.edit.title": "Edit: {name}",
+    "unit.actions.new": "New",
+    "unit.actions.save": "Save",
+    "unit.actions.edit": "Edit",
+    "unit.actions.delete": "Delete",
+    "unit.actions.delete.conformation.title": "Delete acquisition unit",
+    "unit.actions.delete.conformation.message": "Are you sure you want to delete the acquisition unit?",
+    "unit.actions.delete.conformation.confirm": "Confirm"
 }
