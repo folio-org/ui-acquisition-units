@@ -7,7 +7,7 @@ Version 2.0. See the file "[LICENSE](LICENSE)" for more information.
 
 ## Introduction
 
-Congratulations on creating a new Stripes UI app module!  Follow the instructions below to run ui-acquisition-units and start your development.
+The ui-acquisition-units repo is used for the management of Acquisition unit records in FOLIO. It includes summary information and details regarding the Acquisition unit interaction and preferences.
 
 ## Prerequisites
 
@@ -44,3 +44,12 @@ Now that your new app is running, search the code for "`stripes-new-app`" to fin
 Read the [Stripes Module Developer's Guide](https://github.com/folio-org/stripes/blob/master/doc/dev-guide.md).
 
 Update this README with information about your app.
+
+## Additional information
+
+Other [modules](https://dev.folio.org/source-code/#client-side).
+
+See project [UIAC](https://issues.folio.org/browse/UIAC)
+at the [FOLIO issue tracker](https://dev.folio.org/guidelines/issue-tracker).
+
+Other FOLIO Developer documentation is at [dev.folio.org](https://dev.folio.org/)
