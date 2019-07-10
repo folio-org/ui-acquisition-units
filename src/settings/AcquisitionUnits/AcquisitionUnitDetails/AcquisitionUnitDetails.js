@@ -23,9 +23,10 @@ import {
   initialState,
   reducer,
 } from '../reducer';
+import AcquisitionUnitMemberships from '../AcquisitionUnitMemberships';
 import AcquisitionUnitDetailsActions from './AcquisitionUnitDetailsActions';
 
-const AcquisitionUnitDetails = ({ acquisitionUnit, close, getEditPath, deleteUnit }) => {
+const AcquisitionUnitDetails = ({ acquisitionUnit, close, getEditPath, deleteUnit, canDelete }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const toggleSection = ({ id }) => {
@@ -47,6 +48,7 @@ const AcquisitionUnitDetails = ({ acquisitionUnit, close, getEditPath, deleteUni
       <AcquisitionUnitDetailsActions
         editUnitPath={getEditPath(acquisitionUnit.id)}
         deleteUnit={deleteUnit}
+        canDelete={canDelete}
       />
     );
   };
@@ -160,6 +162,20 @@ const AcquisitionUnitDetails = ({ acquisitionUnit, close, getEditPath, deleteUni
             </Col>
           </Row>
         </Accordion>
+
+        <Accordion
+          label={ACCORDION_LABELS[ACCORDIONS.MEMBERSHIPS]}
+          id={ACCORDIONS.MEMBERSHIPS}
+        >
+          <Row
+            start="xs"
+            data-row-ac-unit-memberships
+          >
+            <Col xs={12}>
+              <AcquisitionUnitMemberships />
+            </Col>
+          </Row>
+        </Accordion>
       </AccordionSet>
     </Pane>
   );
@@ -170,6 +186,11 @@ AcquisitionUnitDetails.propTypes = {
   close: PropTypes.func.isRequired,
   getEditPath: PropTypes.func.isRequired,
   deleteUnit: PropTypes.func.isRequired,
+  canDelete: PropTypes.bool,
+};
+
+AcquisitionUnitDetails.defaultProps = {
+  canDelete: true,
 };
 
 export default AcquisitionUnitDetails;

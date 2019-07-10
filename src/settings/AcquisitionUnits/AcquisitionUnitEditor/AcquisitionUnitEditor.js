@@ -28,6 +28,7 @@ import {
   initialState,
   reducer,
 } from '../reducer';
+import AcquisitionUnitMemberships from '../AcquisitionUnitMemberships';
 
 const getPaneTitle = name => (
   name
@@ -198,6 +199,21 @@ const AcquisitionUnitEditor = ({ acquisitionUnit, close, handleSubmit, pristine,
                     </Col>
                   </Row>
                 </Accordion>
+
+                {
+                  Boolean(acquisitionUnit.id) && (
+                    <Accordion
+                      label={ACCORDION_LABELS[ACCORDIONS.MEMBERSHIPS]}
+                      id={ACCORDIONS.MEMBERSHIPS}
+                    >
+                      <Row start="xs">
+                        <Col xs={12}>
+                          <AcquisitionUnitMemberships />
+                        </Col>
+                      </Row>
+                    </Accordion>
+                  )
+                }
               </AccordionSet>
             </Col>
           </Row>

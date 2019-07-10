@@ -4,11 +4,17 @@ import { get } from 'lodash';
 
 import { stripesConnect } from '@folio/stripes/core';
 
-import { ACQUISITIONS_UNIT, ACQUISITIONS_UNITS } from '../resources';
+import {
+  ACQUISITIONS_UNIT,
+  ACQUISITIONS_UNITS,
+  ACQUISITIONS_UNIT_MEMBERSHIPS,
+} from '../resources';
 import AcquisitionUnitDetails from './AcquisitionUnitDetails';
 
 const AcquisitionUnitDetailsContainer = ({ getEditPath, close, resources, mutator }) => {
   const acquisitionUnitInstance = get(resources, 'acquisitionUnit.records.0', {});
+  const memberships = get(resources, 'acquisitionsUnitMemberships.records', []);
+
   const deleteUnit = () => {
     const { acquisitionUnits } = mutator;
 
@@ -21,6 +27,7 @@ const AcquisitionUnitDetailsContainer = ({ getEditPath, close, resources, mutato
       acquisitionUnit={acquisitionUnitInstance}
       getEditPath={getEditPath}
       deleteUnit={deleteUnit}
+      canDelete={memberships.length === 0}
     />
   );
 };
@@ -31,6 +38,7 @@ AcquisitionUnitDetailsContainer.manifest = Object.freeze({
     fetch: false,
   },
   acquisitionUnit: ACQUISITIONS_UNIT,
+  acquisitionsUnitMemberships: ACQUISITIONS_UNIT_MEMBERSHIPS,
 });
 
 AcquisitionUnitDetailsContainer.propTypes = {
