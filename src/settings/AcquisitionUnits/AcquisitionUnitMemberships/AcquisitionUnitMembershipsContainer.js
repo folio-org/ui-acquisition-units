@@ -2,17 +2,18 @@ import React, { useState, useRef, useEffect } from 'react';
 import withRouter from 'react-router-dom/withRouter';
 import PropTypes from 'prop-types';
 import ReactRouterPropTypes from 'react-router-prop-types';
-import { get, isEqual } from 'lodash';
+import { get, isEqual, flatten } from 'lodash';
 
 import { stripesConnect } from '@folio/stripes/core';
 
-import { LIMIT_MAX } from '../constants';
 import {
   ACQUISITIONS_UNIT_MEMBERSHIPS,
   USERS,
   PATRON_GROUPS,
 } from '../resources';
 import AcquisitionUnitMemberships from './AcquisitionUnitMemberships';
+
+const USERS_LIMIT = 15;
 
 const usePrevious = value => {
   const ref = useRef();
@@ -42,12 +43,23 @@ const AcquisitionUnitMembershipsContainer = ({ match, resources, mutator }) => {
 
     // set users based on new memberships
     if (!isEqual(prevMemberships, memberships) && memberships.length) {
-      mutator.users.GET({
-        params: {
-          limit: LIMIT_MAX,
-          query: memberships.map(({ userId }) => `id==${userId}`).join(' or '),
-        },
-      }).then(usersResponse => setUsers(usersResponse));
+      // BE doesn't support long query string so split by several small requests
+      const userIds = memberships.map(({ userId }) => userId);
+      const usersPromises = [];
+
+      while (userIds.length) {
+        usersPromises.push(mutator.users.GET({
+          params: {
+            limit: USERS_LIMIT,
+            query: userIds.splice(0, USERS_LIMIT)
+              .map(userId => `id==${userId}`)
+              .join(' or '),
+          },
+        }));
+      }
+
+      Promise.all(usersPromises)
+        .then(userArrays => setUsers(flatten(userArrays)));
     }
 
     // build patronGroups map
