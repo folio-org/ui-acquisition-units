@@ -48,6 +48,9 @@
     "redux": "^4.0.0",
     "redux-form": "^7.4.2"
   },
+  "optionalDependencies": {
+    "@folio/plugin-find-user": "^1.7.0"
+  },
   "peerDependencies": {
     "@folio/stripes": "^2.7.0",
     "react": "*",
@@ -71,7 +74,9 @@
         "subPermissions": [
           "settings.enabled",
           "users.collection.get",
-          "acquisitions-units.units.all"
+          "usergroups.collection.get",
+          "acquisitions-units.units.all",
+          "acquisitions-units.memberships.all"
         ],
         "visible": true
       }

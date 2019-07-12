@@ -12,7 +12,9 @@ const configUnits = server => {
     return unit.attrs;
   });
 
-  server.put(`${ACQUISITIONS_UNITS_API}/:id`, () => null);
+  server.put(`${ACQUISITIONS_UNITS_API}/:id`, (schema, request) => {
+    return schema.units.find(request.params.id).update(JSON.parse(request.requestBody));
+  });
 
   server.get(`${ACQUISITIONS_UNITS_API}/:id`, (schema, request) => {
     return schema.units.find(request.params.id).attrs;

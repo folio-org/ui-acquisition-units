@@ -1,5 +1,7 @@
+import { USERS_API } from '../../../../src/settings/AcquisitionUnits/constants';
+
 const configUsers = server => {
-  server.get('/users');
+  server.get(USERS_API);
 };
 
 export default configUsers;

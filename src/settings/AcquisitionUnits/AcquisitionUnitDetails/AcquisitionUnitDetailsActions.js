@@ -8,7 +8,7 @@ import {
   ConfirmationModal,
 } from '@folio/stripes/components';
 
-const AcquisitionUnitDetailsActions = ({ deleteUnit, editUnitPath }) => {
+const AcquisitionUnitDetailsActions = ({ deleteUnit, canDelete, editUnitPath }) => {
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
 
   const toggleConfirmationDelete = () => setShowConfirmDelete(!showConfirmDelete);
@@ -33,9 +33,14 @@ const AcquisitionUnitDetailsActions = ({ deleteUnit, editUnitPath }) => {
         <Button
           buttonStyle="dropdownItem"
           onClick={toggleConfirmationDelete}
+          disabled={!canDelete}
         >
           <Icon icon="trash">
-            <FormattedMessage id="ui-acquisition-units.unit.actions.delete" />
+            {
+              canDelete
+                ? <FormattedMessage id="ui-acquisition-units.unit.actions.delete" />
+                : <FormattedMessage id="ui-acquisition-units.unit.actions.delete.forbidden" />
+            }
           </Icon>
         </Button>
       </div>
@@ -59,6 +64,11 @@ const AcquisitionUnitDetailsActions = ({ deleteUnit, editUnitPath }) => {
 AcquisitionUnitDetailsActions.propTypes = {
   deleteUnit: PropTypes.func.isRequired,
   editUnitPath: PropTypes.string.isRequired,
+  canDelete: PropTypes.bool,
+};
+
+AcquisitionUnitDetailsActions.defaultProps = {
+  canDelete: true,
 };
 
 export default AcquisitionUnitDetailsActions;

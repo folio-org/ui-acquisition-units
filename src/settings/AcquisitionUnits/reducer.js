@@ -1,9 +1,13 @@
-import { ACTIONS } from './constants';
+import {
+  ACTIONS,
+  ACCORDIONS,
+} from './constants';
 
 export const initialState = {
   sections: {
-    'generalInfo': true,
-    'actionPermissions': false,
+    [ACCORDIONS.GENERAL_INFO]: true,
+    [ACCORDIONS.ACTION_PERMISSIONS]: false,
+    [ACCORDIONS.MEMBERSHIPS]: false,
   },
 };
 
