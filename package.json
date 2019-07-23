@@ -49,7 +49,7 @@
     "redux-form": "^7.4.2"
   },
   "optionalDependencies": {
-    "@folio/plugin-find-user": "^1.7.0"
+    "@folio/plugin-find-user": "^1.8.0"
   },
   "peerDependencies": {
     "@folio/stripes": "^2.7.0",
@@ -59,7 +59,7 @@
     "redux-form": "*"
   },
   "stripes": {
-    "type": "settings",
+    "actsAs": ["settings"],
     "displayName": "ui-acquisition-units.meta.title",
     "queryResource": "query",
     "route": "/acquisition-units",
