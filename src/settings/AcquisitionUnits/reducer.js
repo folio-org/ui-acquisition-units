@@ -6,7 +6,7 @@ import {
 export const initialState = {
   sections: {
     [ACCORDIONS.GENERAL_INFO]: true,
-    [ACCORDIONS.ACTION_PERMISSIONS]: false,
+    [ACCORDIONS.ACTION_PERMISSIONS]: true,
     [ACCORDIONS.MEMBERSHIPS]: false,
   },
 };

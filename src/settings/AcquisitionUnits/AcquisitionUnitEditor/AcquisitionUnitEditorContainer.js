@@ -11,11 +11,17 @@ import {
 } from '../resources';
 import AcquisitionUnitEditor from './AcquisitionUnitEditor';
 
+const NEW_UNIT_VALUES = {
+  protectUpdate: true,
+  protectCreate: true,
+  protectDelete: true,
+};
+
 const AcquisitionUnitEditorContainer = ({ match, mutator, resources, close }) => {
   const id = get(match, ['params', 'id']);
   const acquisitionUnitInstance = id
     ? get(resources, 'acquisitionUnit.records.0', {})
-    : {};
+    : NEW_UNIT_VALUES;
 
   const saveUnit = (values) => {
     const { acquisitionUnit, acquisitionUnits } = mutator;
