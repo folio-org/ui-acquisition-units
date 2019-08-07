@@ -2,7 +2,7 @@
   "meta.title": "Acquisition units",
 
   "accordion.generalInfo": "General information",
-  "accordion.actionPermissions": "Members of this team can perform the following actions",
+  "accordion.actionPermissions": "Only members of this unit can perform the following actions",
   "accordion.memberships": "Assigned users",
 
   "unit.form.create.title": "Create acquisition unit",
