@@ -1,5 +1,9 @@
 # Change history for ui-acquisition-units
 
+## 1.1.0 (IN PROGRESS)
+
+* Receive React as a peerDependency (provide by `stripes`). One dep to rule them all. Refs UIIN-678.
+
 ## [1.0.0](https://github.com/folio-org/ui-acquisition-units/tree/v1.0.0) (2019-07-23)
 
 * New app created with stripes-cli
