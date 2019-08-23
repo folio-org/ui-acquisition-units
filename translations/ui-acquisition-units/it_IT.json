@@ -1,7 +1,7 @@
 {
     "meta.title": "Acquisition units",
-    "accordion.generalInfo": "General information",
-    "accordion.actionPermissions": "Only members of this unit can perform the following actions",
+    "accordion.generalInfo": "Informazioni generali",
+    "accordion.actionPermissions": "Solo i membri di questa unità possono eseguire le seguenti azioni",
     "unit.name": "Name",
     "unit.description": "Description",
     "unit.viewPermission": "View",
