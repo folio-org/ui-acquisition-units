@@ -1,8 +1,10 @@
 # Change history for ui-acquisition-units
 
-## 1.1.0 (IN PROGRESS)
+## [1.1.0](https://github.com/folio-org/ui-acquisition-units/tree/v1.1.0) (2019-09-11)
+[Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v1.0.0...v1.1.0)
 
-* Receive React as a peerDependency (provide by `stripes`). One dep to rule them all. Refs UIIN-678.
+* [UIIN-678](https://issues.folio.org/browse/UIIN-678) Receive React as a peerDependency (provide by `stripes`). One dep to rule them all.
+* [UIAC-7](https://issues.folio.org/browse/UIAC-7) Update wording and check boxes for Acquisitions Unit settings
 
 ## [1.0.0](https://github.com/folio-org/ui-acquisition-units/tree/v1.0.0) (2019-07-23)
 
