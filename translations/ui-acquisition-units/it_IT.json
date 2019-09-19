@@ -9,7 +9,7 @@
     "unit.createPermission": "Crea",
     "unit.deletePermission": "Elimina",
     "unit.form.create.title": "Create acquisition unit",
-    "unit.form.edit.title": "Edit: {name}",
+    "unit.form.edit.title": "Modifica: {nome}",
     "unit.actions.new": "Nuovo",
     "unit.actions.save": "Salva",
     "unit.actions.edit": "Modifica",
