@@ -17,7 +17,7 @@
     "unit.actions.delete.conformation.title": "删除采访单位",
     "unit.actions.delete.conformation.message": "是否确实要删除采访单位？",
     "unit.actions.delete.conformation.confirm": "确认",
-    "accordion.memberships": "分配用户",
+    "accordion.memberships": "已分配用户",
     "unit.actions.delete.forbidden": "删除(无法删除有用户的采访单位)",
     "unit.membership.name": "名称",
     "unit.membership.patronGroup": "读者组",
