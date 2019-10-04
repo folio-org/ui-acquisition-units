@@ -1,7 +1,7 @@
 {
     "meta.title": "وحدات التزويد",
     "accordion.generalInfo": "معلومات عامة",
-    "accordion.actionPermissions": "يمكن لأعضاء هذا الفريق تنفيذ الإجراءات التالية",
+    "accordion.actionPermissions": "يمكن لأعضاء هذا الفريق فقط تنفيذ الإجراءات التالية",
     "unit.name": "الاسم",
     "unit.description": "الوصف",
     "unit.viewPermission": "عرض",
