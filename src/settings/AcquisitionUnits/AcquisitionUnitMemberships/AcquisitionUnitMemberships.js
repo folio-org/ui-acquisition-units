@@ -26,7 +26,7 @@ const columnWidths = {
 
 const AcquisitionUnitMemberships = ({ users, addMemberships, removeMembership, patronGroups }) => {
   const resultFormatter = {
-    name: item => `${item.personal.lastName}, ${item.personal.firstName}`,
+    name: item => item.personal && `${item.personal.lastName}, ${item.personal.firstName}`,
     patronGroup: item => patronGroups[item.patronGroup],
     actions: item => (
       <FormattedMessage id="ui-acquisition-units.unit.membership.actions.remove">
