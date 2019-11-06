@@ -17,7 +17,7 @@
     "unit.actions.delete.conformation.title": "Delete acquisition unit",
     "unit.actions.delete.conformation.message": "Are you sure you want to delete the acquisition unit?",
     "unit.actions.delete.conformation.confirm": "Conferma",
-    "accordion.memberships": "Assigned users",
+    "accordion.memberships": "Utenti assegnati",
     "unit.actions.delete.forbidden": "Delete (Acquisition units with users cannot be deleted)",
     "unit.membership.name": "Nome",
     "unit.membership.patronGroup": "Categoria utenti",
