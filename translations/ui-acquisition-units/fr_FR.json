@@ -4,7 +4,7 @@
     "accordion.actionPermissions": "Seuls les membres de cette unité peuvent effectuer les actions suivantes",
     "unit.name": "Name",
     "unit.description": "Description",
-    "unit.viewPermission": "View",
+    "unit.viewPermission": "Afficher",
     "unit.editPermission": "Edit",
     "unit.createPermission": "Create",
     "unit.deletePermission": "Delete",
