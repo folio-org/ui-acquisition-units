@@ -4,7 +4,7 @@
     "accordion.actionPermissions": "Только члены этой группы могут выполнять следующие действия",
     "unit.name": "Название",
     "unit.description": "Описание",
-    "unit.viewPermission": "View",
+    "unit.viewPermission": "Просмотр",
     "unit.editPermission": "Редактировать",
     "unit.createPermission": "Создать",
     "unit.deletePermission": "Удалить",
@@ -20,7 +20,7 @@
     "accordion.memberships": "Назначенные пользователи",
     "unit.actions.delete.forbidden": "Delete (Acquisition units with users cannot be deleted)",
     "unit.membership.name": "Name",
-    "unit.membership.patronGroup": "Patron group",
+    "unit.membership.patronGroup": "Группа читателей",
     "unit.membership.actions.remove": "Удалить",
     "unit.membership.actions.assign": "Assign users",
     "unit.membership.actions.assign.notAvailable": "Assign users is not available"
