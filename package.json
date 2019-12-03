@@ -56,9 +56,6 @@
     "redux": "*",
     "redux-form": "*"
   },
-  "resolutions": {
-    "fake-xml-http-request": "2.0.0"
-  },
   "stripes": {
     "actsAs": ["settings"],
     "displayName": "ui-acquisition-units.meta.title",
