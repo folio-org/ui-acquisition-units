@@ -15,7 +15,7 @@
     "unit.actions.edit": "编辑",
     "unit.actions.delete": "删除",
     "unit.actions.delete.conformation.title": "删除采购单元",
-    "unit.actions.delete.conformation.message": "是否确实要删除采购单元？",
+    "unit.actions.delete.conformation.message": "确定要删除采购单元？",
     "unit.actions.delete.conformation.confirm": "确认",
     "accordion.memberships": "已分配用户",
     "unit.actions.delete.forbidden": "删除(无法删除有用户的采购单元)",
