@@ -1,26 +1,20 @@
-import { ACQUISITIONS_UNITS_API } from '../../../../src/settings/AcquisitionUnits/constants';
+import {
+  createGetAll,
+  createGetById,
+  createPost,
+  createPut,
+} from '@folio/stripes-acq-components/test/bigtest/network/configs';
+
+import { ACQUISITIONS_UNITS_API as API } from '../../../../src/settings/AcquisitionUnits/constants';
+
+const SCHEMA_NAME = 'units';
 
 const configUnits = server => {
-  server.get(ACQUISITIONS_UNITS_API, (schema) => {
-    return schema.units.all();
-  });
-
-  server.post(ACQUISITIONS_UNITS_API, (schema, request) => {
-    const attrs = JSON.parse(request.requestBody) || {};
-    const unit = schema.units.create(attrs);
-
-    return unit.attrs;
-  });
-
-  server.put(`${ACQUISITIONS_UNITS_API}/:id`, (schema, request) => {
-    return schema.units.find(request.params.id).update(JSON.parse(request.requestBody));
-  });
-
-  server.get(`${ACQUISITIONS_UNITS_API}/:id`, (schema, request) => {
-    return schema.units.find(request.params.id).attrs;
-  });
-
-  server.delete(`${ACQUISITIONS_UNITS_API}/:id`, 'unit');
+  server.get(API, createGetAll(SCHEMA_NAME));
+  server.get(`${API}/:id`, createGetById(SCHEMA_NAME));
+  server.put(`${API}/:id`, createPut(SCHEMA_NAME));
+  server.delete(`${API}/:id`, 'unit');
+  server.post(`${API}`, createPost(SCHEMA_NAME));
 };
 
 export default configUnits;
