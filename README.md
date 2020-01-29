@@ -1,6 +1,6 @@
 # ui-acquisition-units
 
-Copyright (C) 2019 The Open Library Foundation
+Copyright (C) 2019-2020 The Open Library Foundation
 
 This software is distributed under the terms of the Apache License,
 Version 2.0. See the file "[LICENSE](LICENSE)" for more information.
@@ -36,14 +36,6 @@ Run the included UI test `demo` with the following command:
 ```
 stripes test --run demo --show
 ```
-
-## What to do next?
-
-Now that your new app is running, search the code for "`stripes-new-app`" to find comments and subbed placeholders that may need your attention.
-
-Read the [Stripes Module Developer's Guide](https://github.com/folio-org/stripes/blob/master/doc/dev-guide.md).
-
-Update this README with information about your app.
 
 ## Additional information
 

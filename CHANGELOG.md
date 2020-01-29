@@ -1,5 +1,10 @@
 # Change history for ui-acquisition-units
 
+## (IN PROGRESS)
+
+### Stories
+* [UIAC-5](https://issues.folio.org/browse/UIAC-5) Update README to describe the project
+
 ## [1.2.0](https://github.com/folio-org/ui-acquisition-units/tree/v1.2.0) (2019-12-04)
 [Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v1.1.0...v1.2.0)
 
