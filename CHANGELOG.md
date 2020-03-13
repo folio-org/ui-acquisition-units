@@ -1,9 +1,15 @@
 # Change history for ui-acquisition-units
 
-## (IN PROGRESS)
+## [2.0.0](https://github.com/folio-org/ui-acquisition-units/tree/v2.0.0) (2020-03-13)
+[Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v1.2.0...v2.0.0)
+
+* bump the @folio/stripes peer to v3.0.0
 
 ### Stories
 * [UIAC-5](https://issues.folio.org/browse/UIAC-5) Update README to describe the project
+
+### Bug Fixes
+* [UIAC-13](https://issues.folio.org/browse/UIAC-13) Security update eslint to >= 6.2.1 or eslint-util >= 1.4.1
 
 ## [1.2.0](https://github.com/folio-org/ui-acquisition-units/tree/v1.2.0) (2019-12-04)
 [Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v1.1.0...v1.2.0)
