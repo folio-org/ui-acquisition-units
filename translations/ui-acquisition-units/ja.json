@@ -1,6 +1,6 @@
 {
     "meta.title": "購入ユニット",
-    "accordion.generalInfo": "General information",
+    "accordion.generalInfo": "一般情報",
     "accordion.actionPermissions": "Only members of this unit can perform the following actions",
     "unit.name": "Name",
     "unit.description": "Description",
@@ -10,10 +10,10 @@
     "unit.deletePermission": "Delete",
     "unit.form.create.title": "Create acquisition unit",
     "unit.form.edit.title": "Edit: {name}",
-    "unit.actions.new": "New",
-    "unit.actions.save": "Save",
-    "unit.actions.edit": "Edit",
-    "unit.actions.delete": "Delete",
+    "unit.actions.new": "新規",
+    "unit.actions.save": "保存",
+    "unit.actions.edit": "編集",
+    "unit.actions.delete": "削除",
     "unit.actions.delete.conformation.title": "Delete acquisition unit",
     "unit.actions.delete.conformation.message": "Are you sure you want to delete the acquisition unit?",
     "unit.actions.delete.conformation.confirm": "Confirm",
@@ -21,7 +21,7 @@
     "unit.actions.delete.forbidden": "Delete (Acquisition units with users cannot be deleted)",
     "unit.membership.name": "Name",
     "unit.membership.patronGroup": "Patron group",
-    "unit.membership.actions.remove": "Remove",
+    "unit.membership.actions.remove": "削除",
     "unit.membership.actions.assign": "Assign users",
     "unit.membership.actions.assign.notAvailable": "Assign users is not available"
 }
