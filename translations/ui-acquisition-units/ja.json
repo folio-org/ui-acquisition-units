@@ -3,7 +3,7 @@
     "accordion.generalInfo": "一般情報",
     "accordion.actionPermissions": "Only members of this unit can perform the following actions",
     "unit.name": "Name",
-    "unit.description": "Description",
+    "unit.description": "説明",
     "unit.viewPermission": "View",
     "unit.editPermission": "Edit",
     "unit.createPermission": "Create",
