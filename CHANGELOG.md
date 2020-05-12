@@ -1,4 +1,7 @@
 # Change history for ui-acquisition-units
+## (IN PROGRESS)
+### Stories
+* [UIAC-17](https://issues.folio.org/browse/UIAC-17) ui-acquisition-units app: Update to Stripes v4
 
 ## [2.0.0](https://github.com/folio-org/ui-acquisition-units/tree/v2.0.0) (2020-03-13)
 [Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v1.2.0...v2.0.0)
