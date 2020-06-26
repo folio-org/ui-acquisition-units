@@ -9,7 +9,7 @@
     "unit.createPermission": "Создать",
     "unit.deletePermission": "Удалить",
     "unit.form.create.title": "Create acquisition unit",
-    "unit.form.edit.title": "Редактировать: {имя}",
+    "unit.form.edit.title": "Редактировать: {name}",
     "unit.actions.new": "Новый",
     "unit.actions.save": "Сохранить",
     "unit.actions.edit": "Редактировать",
