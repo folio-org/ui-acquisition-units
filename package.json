@@ -59,9 +59,6 @@
     "react-intl": "^4.5.1",
     "react-router-dom": "^4.3.1"
   },
-  "stripesDeps": [
-    "@folio/stripes-acq-components"
-  ],
   "stripes": {
     "actsAs": ["settings"],
     "displayName": "ui-acquisition-units.meta.title",
@@ -71,6 +68,9 @@
       "acquisitions-units": "1.1",
       "users": "15.1"
     },
+    "stripesDeps": [
+      "@folio/stripes-acq-components"
+    ],
     "permissionSets": [
       {
         "permissionName": "settings.acquisition-units.enabled",
