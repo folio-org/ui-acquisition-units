@@ -22,7 +22,7 @@
     "@bigtest/mocha": "^0.5.1",
     "@bigtest/react": "^0.1.2",
     "@folio/eslint-config-stripes": "^5.0.0",
-    "@folio/stripes": "^4.0.0",
+    "@folio/stripes": "^5.0.0",
     "@folio/stripes-cli": "^1.12.0",
     "babel-eslint": "^10.0.0",
     "chai": "^4.2.0",
@@ -36,7 +36,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-intl": "^4.5.1",
-    "react-router-dom": "^4.3.1",
+    "react-router-dom": "^5.2.0",
     "regenerator-runtime": "^0.13.3",
     "sinon": "^6.3.4"
   },
@@ -54,10 +54,10 @@
     "@folio/plugin-find-user": "*"
   },
   "peerDependencies": {
-    "@folio/stripes": "^4.0.0",
+    "@folio/stripes": "^5.0.0",
     "react": "*",
     "react-intl": "^4.5.1",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^5.2.0"
   },
   "stripes": {
     "actsAs": ["settings"],
