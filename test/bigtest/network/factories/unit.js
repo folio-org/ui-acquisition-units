@@ -3,7 +3,7 @@ import faker from 'faker';
 
 export default Factory.extend({
   id: faker.random.uuid,
-  name: faker.company.companyName,
+  name: () => faker.company.companyName(),
   protectRead: faker.random.boolean,
   protectUpdate: faker.random.boolean,
   protectCreate: faker.random.boolean,
