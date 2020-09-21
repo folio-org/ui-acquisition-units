@@ -17,11 +17,11 @@
     "unit.actions.delete.conformation.title": "Delete acquisition unit",
     "unit.actions.delete.conformation.message": "Are you sure you want to delete the acquisition unit?",
     "unit.actions.delete.conformation.confirm": "Confirm",
-    "accordion.memberships": "Assigned users",
+    "accordion.memberships": "割り当てられたユーザー",
     "unit.actions.delete.forbidden": "Delete (Acquisition units with users cannot be deleted)",
     "unit.membership.name": "名称",
-    "unit.membership.patronGroup": "Patron group",
+    "unit.membership.patronGroup": "利用者グループ",
     "unit.membership.actions.remove": "削除",
-    "unit.membership.actions.assign": "Assign users",
-    "unit.membership.actions.assign.notAvailable": "Assign users is not available"
+    "unit.membership.actions.assign": "ユーザーの割り当て",
+    "unit.membership.actions.assign.notAvailable": "ユーザーの割り当ては利用できません"
 }

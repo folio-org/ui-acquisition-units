@@ -17,11 +17,11 @@
     "unit.actions.delete.conformation.title": "Delete acquisition unit",
     "unit.actions.delete.conformation.message": "Are you sure you want to delete the acquisition unit?",
     "unit.actions.delete.conformation.confirm": "Confirm",
-    "accordion.memberships": "Assigned users",
-    "unit.actions.delete.forbidden": "Delete (Acquisition units with users cannot be deleted)",
+    "accordion.memberships": "Usuarios asignados",
+    "unit.actions.delete.forbidden": "Eliminar (las unidades de adquisición con usuarios no se pueden eliminar)",
     "unit.membership.name": "Name",
     "unit.membership.patronGroup": "Patron group",
     "unit.membership.actions.remove": "Remove",
-    "unit.membership.actions.assign": "Assign users",
-    "unit.membership.actions.assign.notAvailable": "Assign users is not available"
+    "unit.membership.actions.assign": "Asignar usuarios",
+    "unit.membership.actions.assign.notAvailable": "Asignar usuarios no está disponible"
 }
