@@ -1,7 +1,7 @@
 {
     "meta.title": "Acquisition units",
     "accordion.generalInfo": "General information",
-    "accordion.actionPermissions": "Sólo los miembros de esta unidad pueden realizar las siguientes acciones",
+    "accordion.actionPermissions": "Only members of this unit can perform the following actions",
     "unit.name": "Name",
     "unit.description": "Description",
     "unit.viewPermission": "View",
@@ -17,11 +17,11 @@
     "unit.actions.delete.conformation.title": "Delete acquisition unit",
     "unit.actions.delete.conformation.message": "Are you sure you want to delete the acquisition unit?",
     "unit.actions.delete.conformation.confirm": "Confirm",
-    "accordion.memberships": "Usuarios asignados",
-    "unit.actions.delete.forbidden": "Eliminar (las unidades de adquisición con usuarios no se pueden eliminar)",
+    "accordion.memberships": "Assigned users",
+    "unit.actions.delete.forbidden": "Delete (Acquisition units with users cannot be deleted)",
     "unit.membership.name": "Name",
     "unit.membership.patronGroup": "Patron group",
     "unit.membership.actions.remove": "Remove",
-    "unit.membership.actions.assign": "Asignar usuarios",
-    "unit.membership.actions.assign.notAvailable": "Asignar usuarios no está disponible"
+    "unit.membership.actions.assign": "Assign users",
+    "unit.membership.actions.assign.notAvailable": "Assign users is not available"
 }
