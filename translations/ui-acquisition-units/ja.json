@@ -16,7 +16,7 @@
     "unit.actions.delete": "削除",
     "unit.actions.delete.conformation.title": "Delete acquisition unit",
     "unit.actions.delete.conformation.message": "Are you sure you want to delete the acquisition unit?",
-    "unit.actions.delete.conformation.confirm": "Confirm",
+    "unit.actions.delete.conformation.confirm": "確認",
     "accordion.memberships": "割り当てられたユーザー",
     "unit.actions.delete.forbidden": "Delete (Acquisition units with users cannot be deleted)",
     "unit.membership.name": "名称",
