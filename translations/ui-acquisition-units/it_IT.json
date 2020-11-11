@@ -20,7 +20,7 @@
     "accordion.memberships": "Utenti assegnati",
     "unit.actions.delete.forbidden": "Delete (Acquisition units with users cannot be deleted)",
     "unit.membership.name": "Nome",
-    "unit.membership.patronGroup": "Categoria utenti",
+    "unit.membership.patronGroup": "Categoria utente",
     "unit.membership.actions.remove": "Rimuovi",
     "unit.membership.actions.assign": "Assegna utenti",
     "unit.membership.actions.assign.notAvailable": "Assegna utenti non è disponibile"
