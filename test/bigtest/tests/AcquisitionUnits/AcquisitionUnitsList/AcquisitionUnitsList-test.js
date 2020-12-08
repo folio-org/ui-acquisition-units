@@ -24,12 +24,16 @@ describe('Acquisition units list', () => {
     expect(acquisitionUnitsList.isPresent).to.be.true;
   });
 
-  it('should render row for each invoice from the response', () => {
-    expect(acquisitionUnitsList.units().length).to.be.equal(UNITS_COUNT);
+  it('should render row for each acquisition unit from the response', () => {
+    expect(acquisitionUnitsList.units.list().length).to.be.equal(UNITS_COUNT);
   });
 
-  it('should display create the new invoice button', () => {
+  it('should display create the new acquisition unit button', () => {
     expect(acquisitionUnitsList.newUnitButton.isPresent).to.be.true;
+  });
+
+  it('should focused on the first acquisition unit', () => {
+    expect(acquisitionUnitsList.units.list(0).isFocused).to.be.true;
   });
 
   describe('new acquisition unit action', () => {
@@ -49,7 +53,7 @@ describe('Acquisition units list', () => {
     const acquisitionUnitDetails = new AcquisitionUnitDetailsInteractor();
 
     beforeEach(async function () {
-      await acquisitionUnitsList.units(0).click();
+      await acquisitionUnitsList.units.list(0).click();
       await acquisitionUnitDetails.whenLoaded();
     });
 
