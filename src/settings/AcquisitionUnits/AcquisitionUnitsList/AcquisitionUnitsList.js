@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { noop } from 'lodash';
+import { useHistory } from 'react-router-dom';
 
 import {
   NavList,
@@ -11,6 +12,8 @@ import {
 } from '@folio/stripes/components';
 
 const AcquisitionUnitsList = ({ acquisitionUnits, getViewPath, getCreatePath }) => {
+  const history = useHistory();
+
   const lastMenu = (
     <Button
       data-test-new-ac-unit
@@ -22,6 +25,10 @@ const AcquisitionUnitsList = ({ acquisitionUnits, getViewPath, getCreatePath }) 
     </Button>
   );
 
+  const goToAcquisitionUnit = useCallback((id) => (
+    history.push(getViewPath(id))
+  ), [getViewPath, history]);
+
   return (
     <Pane
       id="pane-ac-units-list"
@@ -30,10 +37,11 @@ const AcquisitionUnitsList = ({ acquisitionUnits, getViewPath, getCreatePath }) 
       paneTitle={<FormattedMessage id="ui-acquisition-units.meta.title" />}
     >
       <NavList data-test-ac-units-nav-list>
-        {acquisitionUnits.map(acquisitionUnit => (
+        {acquisitionUnits.map((acquisitionUnit, i) => (
           <NavListItem
             key={acquisitionUnit.id}
-            to={getViewPath(acquisitionUnit.id)}
+            onClick={() => goToAcquisitionUnit(acquisitionUnit.id)}
+            autoFocus={i === 0}
           >
             {acquisitionUnit.name}
           </NavListItem>
