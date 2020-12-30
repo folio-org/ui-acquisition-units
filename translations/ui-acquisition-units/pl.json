@@ -20,7 +20,7 @@
     "accordion.memberships": "Przypisani użytkownicy",
     "unit.actions.delete.forbidden": "Usuń (Dział gromadzenia z przypisanymi użytkownikami nie może być usunięty)",
     "unit.membership.name": "Nazwa",
-    "unit.membership.patronGroup": "Grupa użytkowników",
+    "unit.membership.patronGroup": "Grupa czytelników",
     "unit.membership.actions.remove": "Usuń",
     "unit.membership.actions.assign": "Przypisz użytkowników",
     "unit.membership.actions.assign.notAvailable": "Funkcja przypisywania użytkowników nie jest dostępna"
