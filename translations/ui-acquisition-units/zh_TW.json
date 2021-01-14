@@ -23,5 +23,6 @@
     "unit.membership.patronGroup": "讀者群組",
     "unit.membership.actions.remove": "移除",
     "unit.membership.actions.assign": "設定使用者",
-    "unit.membership.actions.assign.notAvailable": "設定的使用者無效"
+    "unit.membership.actions.assign.notAvailable": "設定的使用者無效",
+    "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units"
 }
