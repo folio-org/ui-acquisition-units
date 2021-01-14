@@ -81,6 +81,14 @@
           "acquisitions-units.units.all",
           "acquisitions-units.memberships.all"
         ],
+        "visible": false
+      },
+      {
+        "permissionName": "ui-acquisition-units.settings.all",
+        "displayName": "Settings (acquisition units): Can view, edit, create and delete acquisition units",
+        "subPermissions": [
+          "settings.acquisition-units.enabled",
+        ],
         "visible": true
       }
     ]

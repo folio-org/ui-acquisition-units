@@ -2,6 +2,7 @@
 
 ## (IN PROGRESS)
 
+* Update permission label. Refs UIAC-26.
 * Add personal data disclosure form. Refs UIAC-24.
 * Settings > Acquisitions Units focus. Refs UIAC-22.
 
