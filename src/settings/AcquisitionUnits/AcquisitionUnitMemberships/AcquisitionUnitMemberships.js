@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { noop } from 'lodash';
+import { getFullName } from '@folio/stripes/util';
 
 import {
   Row,
@@ -26,11 +27,11 @@ const columnWidths = {
 
 const AcquisitionUnitMemberships = ({ users, addMemberships, removeMembership, patronGroups }) => {
   const resultFormatter = {
-    name: item => item.personal && `${item.personal.lastName}, ${item.personal.firstName}`,
+    name: getFullName,
     patronGroup: item => patronGroups[item.patronGroup],
     actions: item => (
       <FormattedMessage id="ui-acquisition-units.unit.membership.actions.remove">
-        {label => (
+        {([label]) => (
           <IconButton
             data-test-memberships-actions-remove
             icon="trash"
