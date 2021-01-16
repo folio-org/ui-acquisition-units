@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import withRouter from 'react-router-dom/withRouter';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ReactRouterPropTypes from 'react-router-prop-types';
 import { get, isEqual, flatten } from 'lodash';
