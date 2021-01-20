@@ -23,5 +23,6 @@
     "unit.membership.patronGroup": "Grupo de usuários",
     "unit.membership.actions.remove": "Remover",
     "unit.membership.actions.assign": "Atribuir usuários",
-    "unit.membership.actions.assign.notAvailable": "Atribuir usuários não está disponível"
+    "unit.membership.actions.assign.notAvailable": "Atribuir usuários não está disponível",
+    "permission.settings.all": "Configurações (Unidades de aquisição): Pode visualizar, editar, criar e excluir unidades de aquisição"
 }

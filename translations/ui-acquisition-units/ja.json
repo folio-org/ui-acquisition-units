@@ -23,5 +23,6 @@
     "unit.membership.patronGroup": "利用者グループ",
     "unit.membership.actions.remove": "削除",
     "unit.membership.actions.assign": "ユーザーの割り当て",
-    "unit.membership.actions.assign.notAvailable": "ユーザーの割り当ては利用できません"
+    "unit.membership.actions.assign.notAvailable": "ユーザーの割り当ては利用できません",
+    "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units"
 }
