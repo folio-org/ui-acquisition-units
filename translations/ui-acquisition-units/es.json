@@ -23,5 +23,6 @@
     "unit.membership.patronGroup": "Patron group",
     "unit.membership.actions.remove": "Remove",
     "unit.membership.actions.assign": "Asignar usuarios",
-    "unit.membership.actions.assign.notAvailable": "Asignar usuarios no está disponible"
+    "unit.membership.actions.assign.notAvailable": "Asignar usuarios no está disponible",
+    "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units"
 }

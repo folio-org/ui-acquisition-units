@@ -1,7 +1,7 @@
 {
     "meta.title": "Acquisition units",
     "accordion.generalInfo": "General information",
-    "accordion.actionPermissions": "Only members of this unit can perform the following actions",
+    "accordion.actionPermissions": "Kun medlemmer af denne enhed kan udføre følgende handlinger",
     "unit.name": "Name",
     "unit.description": "Description",
     "unit.viewPermission": "View",
@@ -23,5 +23,6 @@
     "unit.membership.patronGroup": "Patron group",
     "unit.membership.actions.remove": "Remove",
     "unit.membership.actions.assign": "Assign users",
-    "unit.membership.actions.assign.notAvailable": "Assign users is not available"
+    "unit.membership.actions.assign.notAvailable": "Assign users is not available",
+    "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units"
 }

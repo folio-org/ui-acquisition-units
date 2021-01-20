@@ -23,5 +23,6 @@
     "unit.membership.patronGroup": "Grupa czytelników",
     "unit.membership.actions.remove": "Usuń",
     "unit.membership.actions.assign": "Przypisz użytkowników",
-    "unit.membership.actions.assign.notAvailable": "Funkcja przypisywania użytkowników nie jest dostępna"
+    "unit.membership.actions.assign.notAvailable": "Funkcja przypisywania użytkowników nie jest dostępna",
+    "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units"
 }

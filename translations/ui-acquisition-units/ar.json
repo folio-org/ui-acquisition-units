@@ -23,5 +23,6 @@
     "unit.membership.patronGroup": "مجموعة المستفيدين",
     "unit.membership.actions.remove": "إزالة",
     "unit.membership.actions.assign": "تعيين مستخدمين",
-    "unit.membership.actions.assign.notAvailable": "تعيين المستخدمين غير متاح"
+    "unit.membership.actions.assign.notAvailable": "تعيين المستخدمين غير متاح",
+    "permission.settings.all": "الإعدادات (وحدات التزويد): إمكانية عرض، وتحرير، وإنشاء، وحذف وحدات التزويد"
 }
