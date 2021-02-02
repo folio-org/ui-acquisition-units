@@ -24,5 +24,5 @@
     "unit.membership.actions.remove": "移除",
     "unit.membership.actions.assign": "分配用户",
     "unit.membership.actions.assign.notAvailable": "分配用户不可用",
-    "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units"
+    "permission.settings.all": "设置（采购单元）：可以查看、编辑、创建和删除采访单元"
 }
