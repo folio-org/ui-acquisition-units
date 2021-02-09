@@ -12,9 +12,9 @@
     "node": ">=10"
   },
   "scripts": {
-    "start": "stripes serve",
-    "build": "stripes build --output ./output",
-    "test": "stripes test karma",
+    "start": "yarn stripes serve",
+    "build": "yarn stripes build --output ./output",
+    "test": "yarn stripes test karma",
     "lint": "eslint ."
   },
   "devDependencies": {
@@ -23,7 +23,7 @@
     "@bigtest/react": "^0.1.2",
     "@folio/eslint-config-stripes": "^5.0.0",
     "@folio/stripes": "^6.0.0",
-    "@folio/stripes-cli": "^1.12.0",
+    "@folio/stripes-cli": "^2.0.0",
     "babel-eslint": "^10.0.0",
     "chai": "^4.2.0",
     "core-js": "^3.6.1",
