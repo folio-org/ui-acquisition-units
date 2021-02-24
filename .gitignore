@@ -35,3 +35,7 @@ stripes.config.js.local
 
 # Lockfiles
 yarn.lock
+
+# tests
+/artifacts
+junit.xml
