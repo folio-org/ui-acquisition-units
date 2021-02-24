@@ -25,6 +25,7 @@ const AcquisitionUnitDetailsActions = ({ deleteUnit, canDelete, editUnitPath }) 
           buttonStyle="dropdownItem"
           to={editUnitPath}
           data-test-ac-unit-details-edit-action
+          data-testid="ac-unit-details-edit-action"
         >
           <Icon icon="edit">
             <FormattedMessage id="ui-acquisition-units.unit.actions.edit" />
@@ -34,6 +35,7 @@ const AcquisitionUnitDetailsActions = ({ deleteUnit, canDelete, editUnitPath }) 
           buttonStyle="dropdownItem"
           onClick={toggleConfirmationDelete}
           disabled={!canDelete}
+          data-testid="ac-unit-details-delete-action"
         >
           <Icon icon="trash">
             {
