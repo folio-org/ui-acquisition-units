@@ -18,7 +18,7 @@ const AcquisitionUnitDetailsContainer = ({ getEditPath, close, resources, mutato
   const deleteUnit = () => {
     const { acquisitionUnits } = mutator;
 
-    acquisitionUnits.DELETE({ id: acquisitionUnitInstance.id }).then(close);
+    return acquisitionUnits.DELETE({ id: acquisitionUnitInstance.id }).then(close);
   };
 
   return (
