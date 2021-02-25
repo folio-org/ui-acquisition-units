@@ -33,6 +33,7 @@ const AcquisitionUnitMemberships = ({ users, addMemberships, removeMembership, p
       <FormattedMessage id="ui-acquisition-units.unit.membership.actions.remove">
         {([label]) => (
           <IconButton
+            data-testid="membership-action-remove"
             data-test-memberships-actions-remove
             icon="trash"
             onClick={() => removeMembership(item)}
