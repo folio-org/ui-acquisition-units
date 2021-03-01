@@ -11,7 +11,7 @@ import {
 } from '../resources';
 import AcquisitionUnitEditor from './AcquisitionUnitEditor';
 
-const NEW_UNIT_VALUES = {
+export const NEW_UNIT_VALUES = {
   protectUpdate: true,
   protectCreate: true,
   protectDelete: true,
@@ -27,7 +27,7 @@ const AcquisitionUnitEditorContainer = ({ match, mutator, resources, close }) =>
     const { acquisitionUnit, acquisitionUnits } = mutator;
     const saveMethod = id ? acquisitionUnit.PUT : acquisitionUnits.POST;
 
-    saveMethod({ ...acquisitionUnitInstance, ...values }).then(({ id: savedId }) => {
+    return saveMethod({ ...acquisitionUnitInstance, ...values }).then(({ id: savedId }) => {
       close(savedId);
     });
   };
