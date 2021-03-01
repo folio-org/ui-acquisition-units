@@ -14,8 +14,9 @@
   "scripts": {
     "start": "yarn stripes serve",
     "build": "yarn stripes build --output ./output",
-    "test:unit": "jest --ci --coverage",
-    "test:e2e": "yarn stripes test karma",
+    "test:unit": "jest --ci --coverage && yarn run test:unit:report",
+    "test:unit:report": "cp -r ./artifacts/coverage-jest ./artifacts/coverage",
+    "test:e2e": "yarn stripes test karma --karma.singleRun --karma.browsers ChromeDocker",
     "test": "yarn run test:unit && yarn run test:e2e",
     "lint": "eslint ."
   },
