@@ -1,6 +1,7 @@
 # Change history for ui-acquisition-units
 
 ## (IN PROGRESS)
+* Compile Translation Files into AST Format. Refs UIAC-29.
 
 ## [2.3.0](https://github.com/folio-org/ui-acquisition-units/tree/v2.3.0) (2021-03-16)
 [Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v2.2.0...v2.3.0)
