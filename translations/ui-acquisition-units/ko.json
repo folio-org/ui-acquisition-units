@@ -9,7 +9,7 @@
     "unit.createPermission": "생성",
     "unit.deletePermission": "삭제",
     "unit.form.create.title": "수서 단위 생성",
-    "unit.form.edit.title": "편집: {이름}",
+    "unit.form.edit.title": "Edit: {name}",
     "unit.actions.new": "신규",
     "unit.actions.save": "저장",
     "unit.actions.edit": "편집",
