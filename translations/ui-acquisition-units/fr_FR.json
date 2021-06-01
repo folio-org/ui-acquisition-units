@@ -24,5 +24,5 @@
     "unit.membership.actions.remove": "Retirer",
     "unit.membership.actions.assign": "Attribuer des utilisateurs",
     "unit.membership.actions.assign.notAvailable": "L'attribution des utilisateurs n'est pas disponible",
-    "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units"
+    "permission.settings.all": "Paramètres (unités d'acquisition): peut afficher, modifier, créer et supprimer des unités d'acquisition"
 }
