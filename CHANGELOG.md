@@ -2,6 +2,8 @@
 
 ## (IN PROGRESS)
 
+* settings.acquisition-units.enabled should not include ".all" permissions. Refs UIAC-30.
+
 ## [2.4.0](https://github.com/folio-org/ui-acquisition-units/tree/v2.4.0) (2021-06-16)
 [Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v2.3.0...v2.4.0)
 
