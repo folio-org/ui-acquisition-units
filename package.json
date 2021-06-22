@@ -93,11 +93,7 @@
         "permissionName": "settings.acquisition-units.enabled",
         "displayName": "Settings (acquisition units): display list of settings pages",
         "subPermissions": [
-          "settings.enabled",
-          "users.collection.get",
-          "usergroups.collection.get",
-          "acquisitions-units.units.all",
-          "acquisitions-units.memberships.all"
+          "settings.enabled"
         ],
         "visible": false
       },
@@ -105,7 +101,11 @@
         "permissionName": "ui-acquisition-units.settings.all",
         "displayName": "Settings (acquisition units): Can view, edit, create and delete acquisition units",
         "subPermissions": [
-          "settings.acquisition-units.enabled"
+          "settings.acquisition-units.enabled",
+          "users.collection.get",
+          "usergroups.collection.get",
+          "acquisitions-units.units.all",
+          "acquisitions-units.memberships.all"
         ],
         "visible": true
       }
