@@ -1,5 +1,5 @@
 {
-    "meta.title": "采购单元",
+    "meta.title": "采购单位",
     "accordion.generalInfo": "概况",
     "accordion.actionPermissions": "仅此单位成员可以执行以下操作",
     "unit.name": "名称",
@@ -8,21 +8,21 @@
     "unit.editPermission": "编辑",
     "unit.createPermission": "创建",
     "unit.deletePermission": "删除",
-    "unit.form.create.title": "创建采购单元",
+    "unit.form.create.title": "创建采购单位",
     "unit.form.edit.title": "编辑： {name}",
     "unit.actions.new": "新建",
     "unit.actions.save": "保存",
     "unit.actions.edit": "编辑",
     "unit.actions.delete": "删除",
-    "unit.actions.delete.conformation.title": "删除采购单元",
-    "unit.actions.delete.conformation.message": "确定要删除采购单元？",
+    "unit.actions.delete.conformation.title": "删除采购单位",
+    "unit.actions.delete.conformation.message": "确定要删除采购单位？",
     "unit.actions.delete.conformation.confirm": "确认",
     "accordion.memberships": "已分配用户",
-    "unit.actions.delete.forbidden": "删除(无法删除有用户的采购单元)",
+    "unit.actions.delete.forbidden": "删除（无法删除有用户的采购单位）",
     "unit.membership.name": "名称",
     "unit.membership.patronGroup": "读者组",
     "unit.membership.actions.remove": "移除",
     "unit.membership.actions.assign": "分配用户",
     "unit.membership.actions.assign.notAvailable": "分配用户不可用",
-    "permission.settings.all": "设置（采购单元）：可以查看、编辑、创建和删除采访单元"
+    "permission.settings.all": "设置（采购单位）：可以查看、编辑、创建和删除采购单位"
 }
