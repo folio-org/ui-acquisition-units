@@ -2,9 +2,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ReactRouterPropTypes from 'react-router-prop-types';
-import { get, isEqual, flatten } from 'lodash';
+import { get, isEqual, flatten, sortBy, map } from 'lodash';
 
 import { stripesConnect } from '@folio/stripes/core';
+import { getFullName } from '@folio/stripes/util';
 
 import {
   ACQUISITIONS_UNIT_MEMBERSHIPS,
@@ -59,7 +60,17 @@ const AcquisitionUnitMembershipsContainer = ({ match, resources, mutator }) => {
       }
 
       Promise.all(usersPromises)
-        .then(userArrays => setUsers(flatten(userArrays)));
+        .then(userArrays => {
+          const hydratedUsers = sortBy(
+            map(
+              flatten(userArrays),
+              u => ({ fullName: getFullName(u) ?? '', ...u }),
+            ),
+            [u => u.fullName.toLowerCase()],
+          );
+
+          setUsers(hydratedUsers);
+        });
     }
 
     // build patronGroups map
