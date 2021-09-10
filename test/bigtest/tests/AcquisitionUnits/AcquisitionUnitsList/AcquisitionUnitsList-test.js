@@ -34,7 +34,7 @@ describe('Acquisition units list', function () {
     expect(acquisitionUnitsList.newUnitButton.isPresent).to.be.true;
   });
 
-  it.only('should focus on the first acquisition unit', () => {
+  it('should focus on the first acquisition unit', () => {
     expect(acquisitionUnitsList.units.list(0).isFocused).to.be.true;
   });
 
