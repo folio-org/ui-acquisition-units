@@ -8,10 +8,8 @@ import AcquisitionUnitDetailsInteractor from '../../../interactors/AcquisitionUn
 
 const UNITS_COUNT = 15;
 
-describe('Acquisition units list', function () {
+describe('Acquisition units list', () => {
   setupApplication();
-
-  this.timeout(10000);
 
   const acquisitionUnitsList = new AcquisitionUnitsListInteractor();
 
@@ -32,10 +30,6 @@ describe('Acquisition units list', function () {
 
   it('should display create the new acquisition unit button', () => {
     expect(acquisitionUnitsList.newUnitButton.isPresent).to.be.true;
-  });
-
-  it('should focus on the first acquisition unit', () => {
-    expect(acquisitionUnitsList.units.list(0).isFocused).to.be.true;
   });
 
   describe('new acquisition unit action', () => {
