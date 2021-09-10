@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { noop } from 'lodash';
-import { getFullName } from '@folio/stripes/util';
 
 import {
   Row,
@@ -13,21 +12,20 @@ import {
 
 import AssignAcquisitionUnitMemberships from './AssignAcquisitionUnitMemberships';
 
-const visibleColumns = ['name', 'patronGroup', 'actions'];
+const visibleColumns = ['fullName', 'patronGroup', 'actions'];
 const columnMapping = {
-  name: <FormattedMessage id="ui-acquisition-units.unit.membership.name" />,
+  fullName: <FormattedMessage id="ui-acquisition-units.unit.membership.name" />,
   patronGroup: <FormattedMessage id="ui-acquisition-units.unit.membership.patronGroup" />,
   actions: '',
 };
 const columnWidths = {
-  name: '50%',
+  fullName: '50%',
   patronGroup: '40%',
   actions: '10%',
 };
 
 const AcquisitionUnitMemberships = ({ users, addMemberships, removeMembership, patronGroups }) => {
   const resultFormatter = {
-    name: getFullName,
     patronGroup: item => patronGroups[item.patronGroup],
     actions: item => (
       <FormattedMessage id="ui-acquisition-units.unit.membership.actions.remove">

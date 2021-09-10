@@ -32,10 +32,6 @@ describe('Acquisition units list', () => {
     expect(acquisitionUnitsList.newUnitButton.isPresent).to.be.true;
   });
 
-  it('should focus on the first acquisition unit', () => {
-    expect(acquisitionUnitsList.units.list(0).isFocused).to.be.true;
-  });
-
   describe('new acquisition unit action', () => {
     const acquisitionUnitEditor = new AcquisitionUnitEditorInteractor();
 

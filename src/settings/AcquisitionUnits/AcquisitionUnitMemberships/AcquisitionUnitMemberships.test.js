@@ -2,7 +2,6 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import user from '@testing-library/user-event';
 
-import { getFullName } from '@folio/stripes/util';
 import '@folio/stripes-acq-components/test/jest/__mock__';
 
 import AcquisitionUnitMemberships from './AcquisitionUnitMemberships';
@@ -10,9 +9,6 @@ import AcquisitionUnitMemberships from './AcquisitionUnitMemberships';
 jest.mock('./AssignAcquisitionUnitMemberships', () => {
   return jest.fn(() => 'AssignAcquisitionUnitMemberships');
 });
-jest.mock('@folio/stripes/util', () => ({
-  getFullName: jest.fn(),
-}));
 
 const renderAcquisitionUnitMemberships = ({
   users = [],
@@ -50,21 +46,16 @@ describe('AcquisitionUnitMemberships', () => {
   });
 
   it('should format name value in table', () => {
-    const name = 'Admin, Diku';
-
-    getFullName.mockClear().mockReturnValue(name);
+    const fullName = 'Admin, Diku';
 
     const member = {
-      personal: {
-        lastName: 'Diku',
-        firstName: 'Admin',
-      },
+      fullName,
     };
     const { getByText } = renderAcquisitionUnitMemberships({
       users: [member],
     });
 
-    expect(getByText(name)).toBeDefined();
+    expect(getByText(fullName)).toBeDefined();
   });
 
   it('should call removeMembership when member remove action is pressed', () => {
