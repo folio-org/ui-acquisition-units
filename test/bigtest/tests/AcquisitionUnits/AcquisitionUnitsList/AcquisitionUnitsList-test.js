@@ -8,8 +8,10 @@ import AcquisitionUnitDetailsInteractor from '../../../interactors/AcquisitionUn
 
 const UNITS_COUNT = 15;
 
-describe('Acquisition units list', () => {
+describe('Acquisition units list', function () {
   setupApplication();
+
+  this.timeout(10000);
 
   const acquisitionUnitsList = new AcquisitionUnitsListInteractor();
 
