@@ -15,6 +15,9 @@ const BASE_RESOURCE = {
 export const ACQUISITIONS_UNITS = {
   ...BASE_RESOURCE,
   path: ACQUISITIONS_UNITS_API,
+  params: {
+    query: 'cql.allRecords=1 sortby name',
+  },
   records: 'acquisitionsUnits',
 };
 
