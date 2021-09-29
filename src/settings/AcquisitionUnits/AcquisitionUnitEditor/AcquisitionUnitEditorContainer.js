@@ -32,9 +32,11 @@ const AcquisitionUnitEditorContainer = ({ match, mutator, resources, close }) =>
     });
   };
 
+  const onClose = () => close(id);
+
   return (
     <AcquisitionUnitEditor
-      close={close}
+      close={onClose}
       acquisitionUnit={acquisitionUnitInstance}
       initialValues={acquisitionUnitInstance}
       onSubmit={saveUnit}

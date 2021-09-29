@@ -9,6 +9,8 @@ import {
   NavListItem,
   Pane,
   Button,
+  checkScope,
+  HasCommand,
 } from '@folio/stripes/components';
 
 const AcquisitionUnitsList = ({ acquisitionUnits, getViewPath, getCreatePath }) => {
@@ -29,25 +31,38 @@ const AcquisitionUnitsList = ({ acquisitionUnits, getViewPath, getCreatePath }) 
     history.push(getViewPath(id))
   ), [getViewPath, history]);
 
+  const shortcuts = [
+    {
+      name: 'new',
+      handler: () => history.push(getCreatePath()),
+    },
+  ];
+
   return (
-    <Pane
-      id="pane-ac-units-list"
-      lastMenu={lastMenu}
-      defaultWidth="fill"
-      paneTitle={<FormattedMessage id="ui-acquisition-units.meta.title" />}
+    <HasCommand
+      commands={shortcuts}
+      isWithinScope={checkScope}
+      scope={document.body}
     >
-      <NavList data-test-ac-units-nav-list>
-        {acquisitionUnits.map((acquisitionUnit, i) => (
-          <NavListItem
-            key={acquisitionUnit.id}
-            onClick={() => goToAcquisitionUnit(acquisitionUnit.id)}
-            autoFocus={i === 0}
-          >
-            {acquisitionUnit.name}
-          </NavListItem>
-        ))}
-      </NavList>
-    </Pane>
+      <Pane
+        id="pane-ac-units-list"
+        lastMenu={lastMenu}
+        defaultWidth="fill"
+        paneTitle={<FormattedMessage id="ui-acquisition-units.meta.title" />}
+      >
+        <NavList data-test-ac-units-nav-list>
+          {acquisitionUnits.map((acquisitionUnit, i) => (
+            <NavListItem
+              key={acquisitionUnit.id}
+              onClick={() => goToAcquisitionUnit(acquisitionUnit.id)}
+              autoFocus={i === 0}
+            >
+              {acquisitionUnit.name}
+            </NavListItem>
+          ))}
+        </NavList>
+      </Pane>
+    </HasCommand>
   );
 };
 
