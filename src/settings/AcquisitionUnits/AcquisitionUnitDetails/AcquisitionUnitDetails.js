@@ -18,6 +18,7 @@ import {
   collapseAllSections,
   expandAllSections,
 } from '@folio/stripes/components';
+import { useStripes } from '@folio/stripes/core';
 import { ViewMetaData } from '@folio/stripes/smart-components';
 
 import {
@@ -33,6 +34,7 @@ import AcquisitionUnitDetailsActions from './AcquisitionUnitDetailsActions';
 const AcquisitionUnitDetails = ({ acquisitionUnit, close, getEditPath, deleteUnit, canDelete }) => {
   const accordionStatusRef = useRef();
   const history = useHistory();
+  const stripes = useStripes();
 
   const getActionMenu = () => {
     return (
@@ -47,7 +49,11 @@ const AcquisitionUnitDetails = ({ acquisitionUnit, close, getEditPath, deleteUni
   const shortcuts = [
     {
       name: 'edit',
-      handler: () => history.push(getEditPath(acquisitionUnit.id)),
+      handler: () => {
+        if (stripes.hasPerm('acquisitions-units.units.item.put')) {
+          history.push(getEditPath(acquisitionUnit.id));
+        }
+      },
     },
     {
       name: 'expandAllSections',

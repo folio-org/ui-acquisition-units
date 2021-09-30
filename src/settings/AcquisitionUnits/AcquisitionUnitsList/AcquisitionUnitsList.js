@@ -12,9 +12,11 @@ import {
   checkScope,
   HasCommand,
 } from '@folio/stripes/components';
+import { useStripes } from '@folio/stripes/core';
 
 const AcquisitionUnitsList = ({ acquisitionUnits, getViewPath, getCreatePath }) => {
   const history = useHistory();
+  const stripes = useStripes();
 
   const lastMenu = (
     <Button
@@ -34,7 +36,9 @@ const AcquisitionUnitsList = ({ acquisitionUnits, getViewPath, getCreatePath }) 
   const shortcuts = [
     {
       name: 'new',
-      handler: () => history.push(getCreatePath()),
+      handler: () => {
+        if (stripes.hasPerm('acquisitions-units.units.item.post')) history.push(getCreatePath());
+      },
     },
   ];
 
