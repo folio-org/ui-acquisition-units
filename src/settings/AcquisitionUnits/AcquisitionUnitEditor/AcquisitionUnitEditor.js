@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Field } from 'redux-form';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
-import { mapValues } from 'lodash';
 
 import {
   Pane,
@@ -10,6 +9,7 @@ import {
   ExpandAllButton,
   Row,
   Col,
+  AccordionStatus,
   AccordionSet,
   Accordion,
   PaneMenu,
@@ -18,12 +18,13 @@ import {
   Checkbox,
   HasCommand,
   checkScope,
+  collapseAllSections,
+  expandAllSections,
 } from '@folio/stripes/components';
 import { ViewMetaData } from '@folio/stripes/smart-components';
 import stripesForm from '@folio/stripes/form';
 import {
   handleKeyCommand,
-  useAccordionToggle,
 } from '@folio/stripes-acq-components';
 
 import {
@@ -47,7 +48,7 @@ const getPaneTitle = name => (
 );
 
 const AcquisitionUnitEditor = ({ acquisitionUnit, close, handleSubmit, pristine, submitting }) => {
-  const [expandAll, stateSections, toggleSection] = useAccordionToggle(initialState.sections);
+  const accordionStatusRef = useRef();
 
   const getLastMenu = () => {
     return (
@@ -81,11 +82,11 @@ const AcquisitionUnitEditor = ({ acquisitionUnit, close, handleSubmit, pristine,
     },
     {
       name: 'expandAllSections',
-      handler: () => expandAll(mapValues(stateSections, () => true)),
+      handler: (e) => expandAllSections(e, accordionStatusRef),
     },
     {
       name: 'collapseAllSections',
-      handler: () => expandAll(mapValues(stateSections, () => false)),
+      handler: (e) => collapseAllSections(e, accordionStatusRef),
     },
   ];
 
@@ -113,126 +114,125 @@ const AcquisitionUnitEditor = ({ acquisitionUnit, close, handleSubmit, pristine,
             onClose={close}
             lastMenu={getLastMenu()}
           >
-            <Row center="xs">
-              <Col xs={12} md={8}>
-                <Row end="xs">
-                  <Col xs={12}>
-                    <ExpandAllButton
-                      accordionStatus={stateSections}
-                      onToggle={expandAll}
-                    />
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
+            <AccordionStatus
+              ref={accordionStatusRef}
+              initialStatus={initialState}
+            >
+              <Row center="xs">
+                <Col xs={12} md={8}>
+                  <Row end="xs">
+                    <Col xs={12}>
+                      <ExpandAllButton />
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
 
-            <Row center="xs">
-              <Col xs={12} md={8}>
-                <AccordionSet
-                  accordionStatus={stateSections}
-                  onToggle={toggleSection}
-                >
-                  <Accordion
-                    label={ACCORDION_LABELS[ACCORDIONS.GENERAL_INFO]}
-                    id={ACCORDIONS.GENERAL_INFO}
-                  >
-                    <Row start="xs">
-                      <Col xs={12}>
-                        {acquisitionUnit.metadata && <ViewMetaData metadata={acquisitionUnit.metadata} />}
-                      </Col>
-                    </Row>
-
-                    <Row start="xs">
-                      <Col xs={4}>
-                        <Field
-                          component={TextField}
-                          label={<FormattedMessage id="ui-acquisition-units.unit.name" />}
-                          name="name"
-                          type="text"
-                          required
-                        />
-                      </Col>
-                    </Row>
-                  </Accordion>
-
-                  <Accordion
-                    label={ACCORDION_LABELS[ACCORDIONS.ACTION_PERMISSIONS]}
-                    id={ACCORDIONS.ACTION_PERMISSIONS}
-                  >
-                    <Row
-                      start="xs"
-                      data-row-ac-unit-protected-read
+              <Row center="xs">
+                <Col xs={12} md={8}>
+                  <AccordionSet>
+                    <Accordion
+                      label={ACCORDION_LABELS[ACCORDIONS.GENERAL_INFO]}
+                      id={ACCORDIONS.GENERAL_INFO}
                     >
-                      <Col xs={4}>
-                        <Field
-                          component={Checkbox}
-                          label={<FormattedMessage id="ui-acquisition-units.unit.viewPermission" />}
-                          name="protectRead"
-                          type="checkbox"
-                        />
-                      </Col>
-                    </Row>
+                      <Row start="xs">
+                        <Col xs={12}>
+                          {acquisitionUnit.metadata && <ViewMetaData metadata={acquisitionUnit.metadata} />}
+                        </Col>
+                      </Row>
 
-                    <Row
-                      start="xs"
-                      data-row-ac-unit-protected-updated
+                      <Row start="xs">
+                        <Col xs={4}>
+                          <Field
+                            component={TextField}
+                            label={<FormattedMessage id="ui-acquisition-units.unit.name" />}
+                            name="name"
+                            type="text"
+                            required
+                          />
+                        </Col>
+                      </Row>
+                    </Accordion>
+
+                    <Accordion
+                      label={ACCORDION_LABELS[ACCORDIONS.ACTION_PERMISSIONS]}
+                      id={ACCORDIONS.ACTION_PERMISSIONS}
                     >
-                      <Col xs={4}>
-                        <Field
-                          component={Checkbox}
-                          label={<FormattedMessage id="ui-acquisition-units.unit.editPermission" />}
-                          name="protectUpdate"
-                          type="checkbox"
-                        />
-                      </Col>
-                    </Row>
-
-                    <Row
-                      start="xs"
-                      data-row-ac-unit-protected-create
-                    >
-                      <Col xs={4}>
-                        <Field
-                          component={Checkbox}
-                          label={<FormattedMessage id="ui-acquisition-units.unit.createPermission" />}
-                          name="protectCreate"
-                          type="checkbox"
-                        />
-                      </Col>
-                    </Row>
-
-                    <Row
-                      start="xs"
-                      data-row-ac-unit-protected-delete
-                    >
-                      <Col xs={4}>
-                        <Field
-                          component={Checkbox}
-                          label={<FormattedMessage id="ui-acquisition-units.unit.deletePermission" />}
-                          name="protectDelete"
-                          type="checkbox"
-                        />
-                      </Col>
-                    </Row>
-                  </Accordion>
-
-                  {
-                    Boolean(acquisitionUnit.id) && (
-                      <Accordion
-                        label={ACCORDION_LABELS[ACCORDIONS.MEMBERSHIPS]}
-                        id={ACCORDIONS.MEMBERSHIPS}
+                      <Row
+                        start="xs"
+                        data-row-ac-unit-protected-read
                       >
-                        <Row start="xs">
-                          <Col xs={12}>
-                            <AcquisitionUnitMemberships />
-                          </Col>
-                        </Row>
-                      </Accordion>
-                    )
-                  }
-                </AccordionSet>
-              </Col>
-            </Row>
+                        <Col xs={4}>
+                          <Field
+                            component={Checkbox}
+                            label={<FormattedMessage id="ui-acquisition-units.unit.viewPermission" />}
+                            name="protectRead"
+                            type="checkbox"
+                          />
+                        </Col>
+                      </Row>
+
+                      <Row
+                        start="xs"
+                        data-row-ac-unit-protected-updated
+                      >
+                        <Col xs={4}>
+                          <Field
+                            component={Checkbox}
+                            label={<FormattedMessage id="ui-acquisition-units.unit.editPermission" />}
+                            name="protectUpdate"
+                            type="checkbox"
+                          />
+                        </Col>
+                      </Row>
+
+                      <Row
+                        start="xs"
+                        data-row-ac-unit-protected-create
+                      >
+                        <Col xs={4}>
+                          <Field
+                            component={Checkbox}
+                            label={<FormattedMessage id="ui-acquisition-units.unit.createPermission" />}
+                            name="protectCreate"
+                            type="checkbox"
+                          />
+                        </Col>
+                      </Row>
+
+                      <Row
+                        start="xs"
+                        data-row-ac-unit-protected-delete
+                      >
+                        <Col xs={4}>
+                          <Field
+                            component={Checkbox}
+                            label={<FormattedMessage id="ui-acquisition-units.unit.deletePermission" />}
+                            name="protectDelete"
+                            type="checkbox"
+                          />
+                        </Col>
+                      </Row>
+                    </Accordion>
+
+                    {
+                      Boolean(acquisitionUnit.id) && (
+                        <Accordion
+                          label={ACCORDION_LABELS[ACCORDIONS.MEMBERSHIPS]}
+                          id={ACCORDIONS.MEMBERSHIPS}
+                        >
+                          <Row start="xs">
+                            <Col xs={12}>
+                              <AcquisitionUnitMemberships />
+                            </Col>
+                          </Row>
+                        </Accordion>
+                      )
+                    }
+                  </AccordionSet>
+                </Col>
+              </Row>
+            </AccordionStatus>
           </Pane>
         </form>
       </Layer>
