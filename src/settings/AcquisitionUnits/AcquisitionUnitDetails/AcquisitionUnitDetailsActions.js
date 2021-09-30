@@ -7,6 +7,7 @@ import {
   Icon,
   ConfirmationModal,
 } from '@folio/stripes/components';
+import { IfPermission } from '@folio/stripes/core';
 
 const AcquisitionUnitDetailsActions = ({ deleteUnit, canDelete, editUnitPath }) => {
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
@@ -21,30 +22,34 @@ const AcquisitionUnitDetailsActions = ({ deleteUnit, canDelete, editUnitPath }) 
   return (
     <Fragment>
       <div>
-        <Button
-          buttonStyle="dropdownItem"
-          to={editUnitPath}
-          data-test-ac-unit-details-edit-action
-          data-testid="ac-unit-details-edit-action"
-        >
-          <Icon icon="edit">
-            <FormattedMessage id="ui-acquisition-units.unit.actions.edit" />
-          </Icon>
-        </Button>
-        <Button
-          buttonStyle="dropdownItem"
-          onClick={toggleConfirmationDelete}
-          disabled={!canDelete}
-          data-testid="ac-unit-details-delete-action"
-        >
-          <Icon icon="trash">
-            {
-              canDelete
-                ? <FormattedMessage id="ui-acquisition-units.unit.actions.delete" />
-                : <FormattedMessage id="ui-acquisition-units.unit.actions.delete.forbidden" />
-            }
-          </Icon>
-        </Button>
+        <IfPermission perm="acquisitions-units.units.item.put">
+          <Button
+            buttonStyle="dropdownItem"
+            to={editUnitPath}
+            data-test-ac-unit-details-edit-action
+            data-testid="ac-unit-details-edit-action"
+          >
+            <Icon icon="edit">
+              <FormattedMessage id="ui-acquisition-units.unit.actions.edit" />
+            </Icon>
+          </Button>
+        </IfPermission>
+        <IfPermission perm="acquisitions-units.units.item.delete">
+          <Button
+            buttonStyle="dropdownItem"
+            onClick={toggleConfirmationDelete}
+            disabled={!canDelete}
+            data-testid="ac-unit-details-delete-action"
+          >
+            <Icon icon="trash">
+              {
+                canDelete
+                  ? <FormattedMessage id="ui-acquisition-units.unit.actions.delete" />
+                  : <FormattedMessage id="ui-acquisition-units.unit.actions.delete.forbidden" />
+              }
+            </Icon>
+          </Button>
+        </IfPermission>
       </div>
       {
         showConfirmDelete && (

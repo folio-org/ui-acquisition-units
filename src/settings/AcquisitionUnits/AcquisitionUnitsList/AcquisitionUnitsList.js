@@ -12,21 +12,26 @@ import {
   checkScope,
   HasCommand,
 } from '@folio/stripes/components';
-import { useStripes } from '@folio/stripes/core';
+import {
+  useStripes,
+  IfPermission,
+} from '@folio/stripes/core';
 
 const AcquisitionUnitsList = ({ acquisitionUnits, getViewPath, getCreatePath }) => {
   const history = useHistory();
   const stripes = useStripes();
 
   const lastMenu = (
-    <Button
-      data-test-new-ac-unit
-      to={getCreatePath()}
-      buttonStyle="primary"
-      marginBottom0
-    >
-      <FormattedMessage id="ui-acquisition-units.unit.actions.new" />
-    </Button>
+    <IfPermission perm="acquisitions-units.units.item.post">
+      <Button
+        data-test-new-ac-unit
+        to={getCreatePath()}
+        buttonStyle="primary"
+        marginBottom0
+      >
+        <FormattedMessage id="ui-acquisition-units.unit.actions.new" />
+      </Button>
+    </IfPermission>
   );
 
   const goToAcquisitionUnit = useCallback((id) => (
