@@ -1,8 +1,9 @@
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
-import { render } from '@testing-library/react';
+import { useHistory, MemoryRouter } from 'react-router-dom';
+import { waitFor, render } from '@testing-library/react';
 import user from '@testing-library/user-event';
 
+import { HasCommand } from '@folio/stripes/components';
 import '@folio/stripes-acq-components/test/jest/__mock__';
 
 import AcquisitionUnitsList from './AcquisitionUnitsList';
@@ -14,6 +15,9 @@ jest.mock('react-router-dom', () => ({
   useHistory: () => ({
     push: mockHistoryPush,
   }),
+}));
+jest.mock('@folio/stripes-components/lib/Commander', () => ({
+  HasCommand: jest.fn(({ children }) => <div>{children}</div>),
 }));
 
 const renderAcquisitionUnitsList = ({
@@ -73,6 +77,16 @@ describe('AcquisitionUnitsList', () => {
       user.click(getByText(acquisitionUnits[0].name));
 
       expect(mockHistoryPush).toHaveBeenCalledWith(`${viewPath}/${acquisitionUnits[0].id}`);
+    });
+  });
+
+  describe('Shortcuts', () => {
+    it('should translate to creation form', async () => {
+      renderAcquisitionUnitsList();
+
+      await waitFor(() => HasCommand.mock.calls[0][0].commands.find(c => c.name === 'new').handler());
+
+      expect(mockHistoryPush).toHaveBeenCalled();
     });
   });
 });

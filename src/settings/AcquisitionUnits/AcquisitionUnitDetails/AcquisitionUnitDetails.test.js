@@ -1,13 +1,28 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { useHistory } from 'react-router-dom';
+import { render, waitFor } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import { queryHelpers } from '@testing-library/dom';
 
+import {
+  HasCommand,
+  expandAllSections,
+  collapseAllSections,
+} from '@folio/stripes/components';
 import '@folio/stripes-acq-components/test/jest/__mock__';
 
 import AcquisitionUnitDetails from './AcquisitionUnitDetails';
 import AcquisitionUnitDetailsActions from './AcquisitionUnitDetailsActions';
 
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useHistory: jest.fn(),
+}));
+jest.mock('@folio/stripes-components/lib/Commander', () => ({
+  HasCommand: jest.fn(({ children }) => <div>{children}</div>),
+  expandAllSections: jest.fn(),
+  collapseAllSections: jest.fn(),
+}));
 jest.mock('../AcquisitionUnitMemberships', () => {
   return () => 'AcquisitionUnitMemberships';
 });
@@ -17,19 +32,18 @@ jest.mock('./AcquisitionUnitDetailsActions', () => {
 
 const queryAllByClass = queryHelpers.queryAllByAttribute.bind(null, 'class');
 
-const renderAcquisitionUnitDetails = ({
-  acquisitionUnit = {},
-  close = jest.fn(),
-  getEditPath = jest.fn(() => '/'),
-  deleteUnit = jest.fn(),
-  canDelete,
-} = {}) => (render(
+const defaultProps = {
+  acquisitionUnit: {},
+  close: jest.fn(),
+  getEditPath: jest.fn(() => '/'),
+  deleteUnit: jest.fn(),
+  canDelete: true,
+};
+
+const renderAcquisitionUnitDetails = (props = {}) => (render(
   <AcquisitionUnitDetails
-    acquisitionUnit={acquisitionUnit}
-    close={close}
-    getEditPath={getEditPath}
-    deleteUnit={deleteUnit}
-    canDelete={canDelete}
+    {...defaultProps}
+    {...props}
   />,
 ));
 
@@ -108,6 +122,49 @@ describe('AcquisitionUnitDetails', () => {
       });
 
       expect(queryByText('ViewMetaData')).toBeNull();
+    });
+  });
+
+  describe('Shortcuts', () => {
+    beforeEach(() => {
+      HasCommand.mockClear();
+    });
+
+    it('should expand all sections', async () => {
+      renderAcquisitionUnitDetails({
+        acquisitionUnit: {
+          metadata: {},
+        },
+      });
+
+      await waitFor(() => HasCommand.mock.calls[0][0].commands.find(c => c.name === 'expandAllSections').handler());
+
+      expect(expandAllSections).toHaveBeenCalled();
+    });
+
+    it('should collapse all sections', async () => {
+      renderAcquisitionUnitDetails({
+        acquisitionUnit: {
+          metadata: {},
+        },
+      });
+
+      await waitFor(() => HasCommand.mock.calls[0][0].commands.find(c => c.name === 'collapseAllSections').handler());
+
+      expect(collapseAllSections).toHaveBeenCalled();
+    });
+
+    it('should translate to edit form', async () => {
+      const pushMock = jest.fn();
+
+      useHistory.mockClear().mockReturnValue({
+        push: pushMock,
+      });
+      renderAcquisitionUnitDetails();
+
+      await waitFor(() => HasCommand.mock.calls[0][0].commands.find(c => c.name === 'edit').handler());
+
+      expect(pushMock).toHaveBeenCalled();
     });
   });
 });

@@ -2,14 +2,31 @@ import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
-import { render } from '@testing-library/react';
+import { waitFor, render } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import { queryHelpers } from '@testing-library/dom';
+
+import {
+  HasCommand,
+  expandAllSections,
+  collapseAllSections,
+} from '@folio/stripes/components';
+import { handleKeyCommand } from '@folio/stripes-acq-components';
 
 import '@folio/stripes-acq-components/test/jest/__mock__';
 
 import AcquisitionUnitEditor from './AcquisitionUnitEditor';
 
+jest.mock('@folio/stripes-acq-components', () => ({
+  ...jest.requireActual('@folio/stripes-acq-components'),
+  handleKeyCommand: jest.fn(fn => fn),
+}));
+jest.mock('@folio/stripes-components/lib/Commander', () => ({
+  ...jest.requireActual('@folio/stripes-components/lib/Commander'),
+  HasCommand: jest.fn(({ children }) => <div>{children}</div>),
+  expandAllSections: jest.fn(),
+  collapseAllSections: jest.fn(),
+}));
 jest.mock('@folio/stripes-components/lib/Layer', () => {
   // eslint-disable-next-line react/prop-types
   return ({ children }) => (
@@ -22,25 +39,24 @@ jest.mock('../AcquisitionUnitMemberships', () => {
 
 const queryAllByClass = queryHelpers.queryAllByAttribute.bind(null, 'class');
 
-const renderAcquisitionUnitEditor = ({
-  acquisitionUnit = {},
-  handleSubmit = jest.fn(),
-  close = jest.fn(),
-  pristine = true,
-  submitting = false,
-} = {}) => (render(
+const defaultProps = {
+  acquisitionUnit: {},
+  handleSubmit: jest.fn(),
+  close: jest.fn(),
+  pristine: true,
+  submitting: false,
+};
+
+const renderAcquisitionUnitEditor = (props = {}) => render(
   <Provider store={createStore(() => {})}>
     <MemoryRouter>
       <AcquisitionUnitEditor
-        acquisitionUnit={acquisitionUnit}
-        handleSubmit={handleSubmit}
-        close={close}
-        pristine={pristine}
-        submitting={submitting}
+        {...defaultProps}
+        {...props}
       />
     </MemoryRouter>
   </Provider>,
-));
+);
 
 describe('AcquisitionUnitEditor', () => {
   describe('Sections toggle', () => {
@@ -97,6 +113,45 @@ describe('AcquisitionUnitEditor', () => {
       });
 
       expect(getByText('ViewMetaData')).toBeDefined();
+    });
+  });
+
+  describe('Shortcuts', () => {
+    beforeEach(() => {
+      HasCommand.mockClear();
+      handleKeyCommand.mockClear();
+    });
+
+    it('should expand all sections', async () => {
+      renderAcquisitionUnitEditor();
+
+      await waitFor(() => HasCommand.mock.calls[0][0].commands.find(c => c.name === 'expandAllSections').handler());
+
+      expect(expandAllSections).toHaveBeenCalled();
+    });
+
+    it('should collapse all sections', async () => {
+      renderAcquisitionUnitEditor();
+
+      await waitFor(() => HasCommand.mock.calls[0][0].commands.find(c => c.name === 'collapseAllSections').handler());
+
+      expect(collapseAllSections).toHaveBeenCalled();
+    });
+
+    it('should close form', async () => {
+      renderAcquisitionUnitEditor();
+
+      await waitFor(() => HasCommand.mock.calls[0][0].commands.find(c => c.name === 'cancel').handler());
+
+      expect(defaultProps.close).toHaveBeenCalled();
+    });
+
+    it('should handle form submitting', async () => {
+      renderAcquisitionUnitEditor();
+
+      await waitFor(() => HasCommand.mock.calls[0][0].commands.find(c => c.name === 'save').handler());
+
+      expect(defaultProps.handleSubmit).toHaveBeenCalled();
     });
   });
 });
