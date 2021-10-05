@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import ReactRouterPropTypes from 'react-router-prop-types';
 
@@ -49,7 +49,7 @@ const AcquisitionUnits = ({ match, history }) => {
         <Route
           path={path}
           render={() => (
-            <Fragment>
+            <>
               <AcquisitionUnitsList
                 getViewPath={getViewPath}
                 getCreatePath={getCreatePath}
@@ -66,7 +66,7 @@ const AcquisitionUnits = ({ match, history }) => {
                   />
                 )}
               />
-            </Fragment>
+            </>
           )}
         />
       </Switch>
