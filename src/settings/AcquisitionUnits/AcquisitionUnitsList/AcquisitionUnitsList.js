@@ -9,45 +9,69 @@ import {
   NavListItem,
   Pane,
   Button,
+  checkScope,
+  HasCommand,
 } from '@folio/stripes/components';
+import {
+  useStripes,
+  IfPermission,
+} from '@folio/stripes/core';
 
 const AcquisitionUnitsList = ({ acquisitionUnits, getViewPath, getCreatePath }) => {
   const history = useHistory();
+  const stripes = useStripes();
 
   const lastMenu = (
-    <Button
-      data-test-new-ac-unit
-      to={getCreatePath()}
-      buttonStyle="primary"
-      marginBottom0
-    >
-      <FormattedMessage id="ui-acquisition-units.unit.actions.new" />
-    </Button>
+    <IfPermission perm="acquisitions-units.units.item.post">
+      <Button
+        data-test-new-ac-unit
+        to={getCreatePath()}
+        buttonStyle="primary"
+        marginBottom0
+      >
+        <FormattedMessage id="ui-acquisition-units.unit.actions.new" />
+      </Button>
+    </IfPermission>
   );
 
   const goToAcquisitionUnit = useCallback((id) => (
     history.push(getViewPath(id))
   ), [getViewPath, history]);
 
+  const shortcuts = [
+    {
+      name: 'new',
+      handler: () => {
+        if (stripes.hasPerm('acquisitions-units.units.item.post')) history.push(getCreatePath());
+      },
+    },
+  ];
+
   return (
-    <Pane
-      id="pane-ac-units-list"
-      lastMenu={lastMenu}
-      defaultWidth="fill"
-      paneTitle={<FormattedMessage id="ui-acquisition-units.meta.title" />}
+    <HasCommand
+      commands={shortcuts}
+      isWithinScope={checkScope}
+      scope={document.body}
     >
-      <NavList data-test-ac-units-nav-list>
-        {acquisitionUnits.map((acquisitionUnit, i) => (
-          <NavListItem
-            key={acquisitionUnit.id}
-            onClick={() => goToAcquisitionUnit(acquisitionUnit.id)}
-            autoFocus={i === 0}
-          >
-            {acquisitionUnit.name}
-          </NavListItem>
-        ))}
-      </NavList>
-    </Pane>
+      <Pane
+        id="pane-ac-units-list"
+        lastMenu={lastMenu}
+        defaultWidth="fill"
+        paneTitle={<FormattedMessage id="ui-acquisition-units.meta.title" />}
+      >
+        <NavList data-test-ac-units-nav-list>
+          {acquisitionUnits.map((acquisitionUnit, i) => (
+            <NavListItem
+              key={acquisitionUnit.id}
+              onClick={() => goToAcquisitionUnit(acquisitionUnit.id)}
+              autoFocus={i === 0}
+            >
+              {acquisitionUnit.name}
+            </NavListItem>
+          ))}
+        </NavList>
+      </Pane>
+    </HasCommand>
   );
 };
 
