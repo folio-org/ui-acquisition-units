@@ -2,6 +2,9 @@
 
 ## (IN PROGRESS)
 
+## [3.0.0](https://github.com/folio-org/ui-acquisition-units/tree/v3.0.0) (2021-10-08)
+[Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v2.4.1...v3.0.0)
+
 * Users assigned to an acquisitions unit should display in alphabetical order. Refs UIAC-34.
 * Increment stripes to v7. Refs UIAC-33.
 * Acq Unit settings not in alpha order. Refs UIAC-38.
