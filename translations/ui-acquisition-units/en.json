@@ -24,6 +24,9 @@
   "unit.actions.delete.conformation.message": "Are you sure you want to delete the acquisition unit?",
   "unit.actions.delete.conformation.confirm": "Confirm",
 
+  "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Acquisition unit with the same name already exists",
+  "unit.actions.errors.save.genericError": "Couldn't save acquisition unit",
+
   "unit.membership.name": "Name",
   "unit.membership.patronGroup": "Patron group",
   "unit.membership.actions.remove": "Remove",

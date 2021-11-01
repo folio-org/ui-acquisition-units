@@ -4,6 +4,10 @@ import ReactRouterPropTypes from 'react-router-prop-types';
 import { get } from 'lodash';
 
 import { stripesConnect } from '@folio/stripes/core';
+import {
+  getErrorCodeFromResponse,
+  useShowCallout,
+} from '@folio/stripes-acq-components';
 
 import {
   ACQUISITIONS_UNITS,
@@ -18,6 +22,8 @@ export const NEW_UNIT_VALUES = {
 };
 
 const AcquisitionUnitEditorContainer = ({ match, mutator, resources, close }) => {
+  const showCallout = useShowCallout();
+
   const id = get(match, ['params', 'id']);
   const acquisitionUnitInstance = id
     ? get(resources, 'acquisitionUnit.records.0', {})
@@ -27,9 +33,18 @@ const AcquisitionUnitEditorContainer = ({ match, mutator, resources, close }) =>
     const { acquisitionUnit, acquisitionUnits } = mutator;
     const saveMethod = id ? acquisitionUnit.PUT : acquisitionUnits.POST;
 
-    return saveMethod({ ...acquisitionUnitInstance, ...values }).then(({ id: savedId }) => {
-      close(savedId);
-    });
+    return saveMethod({ ...acquisitionUnitInstance, ...values })
+      .then(({ id: savedId }) => {
+        close(savedId);
+      })
+      .catch(async (err) => {
+        const errorCode = await getErrorCodeFromResponse(err);
+
+        showCallout({
+          messageId: `ui-acquisition-units.unit.actions.errors.save.${errorCode}`,
+          type: 'error',
+        });
+      });
   };
 
   const onClose = () => close(id);
