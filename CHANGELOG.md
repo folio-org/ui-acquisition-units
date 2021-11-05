@@ -2,6 +2,8 @@
 
 ## (IN PROGRESS)
 
+* Acq Unit settings - disallow acq units with same text, different case. Refs UIAC-37.
+
 ## [3.0.0](https://github.com/folio-org/ui-acquisition-units/tree/v3.0.0) (2021-10-08)
 [Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v2.4.1...v3.0.0)
 
