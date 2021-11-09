@@ -43,6 +43,7 @@ const AcquisitionUnitEditorContainer = ({ match, mutator, resources, close }) =>
         showCallout({
           messageId: `ui-acquisition-units.unit.actions.errors.save.${errorCode}`,
           type: 'error',
+          values,
         });
       });
   };
