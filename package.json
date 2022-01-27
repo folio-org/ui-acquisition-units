@@ -17,7 +17,7 @@
     "test:unit": "jest --ci --coverage && yarn run test:unit:report",
     "test:unit:report": "cp -r ./artifacts/coverage-jest ./artifacts/coverage",
     "test:e2e": "yarn stripes test karma --karma.singleRun --karma.browsers ChromeDocker",
-    "test": "yarn run test:unit && yarn run test:e2e",
+    "test": "yarn run test:unit",
     "lint": "eslint .",
     "formatjs-compile": "formatjs compile-folder --ast --format simple ./translations/ui-acquisition-units ./translations/ui-acquisition-units/compiled"
   },
@@ -82,6 +82,13 @@
     "displayName": "ui-acquisition-units.meta.title",
     "queryResource": "query",
     "route": "/acquisition-units",
+    "icons": [
+      {
+        "name": "app",
+        "alt": "Create, view and manage Acquisition units",
+        "title": "Acquisition units"
+      }
+    ],
     "okapiInterfaces": {
       "acquisitions-units": "1.1",
       "users": "15.1"
