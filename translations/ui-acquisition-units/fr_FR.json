@@ -24,5 +24,7 @@
     "unit.membership.actions.remove": "Retirer",
     "unit.membership.actions.assign": "Attribuer des utilisateurs",
     "unit.membership.actions.assign.notAvailable": "L'attribution des utilisateurs n'est pas disponible",
-    "permission.settings.all": "Paramètres (unités d'acquisition): peut afficher, modifier, créer et supprimer des unités d'acquisition"
+    "permission.settings.all": "Paramètres (unités d'acquisition): peut afficher, modifier, créer et supprimer des unités d'acquisition",
+    "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Acquisition unit \"{name}\" already exists",
+    "unit.actions.errors.save.genericError": "Couldn't save acquisition unit"
 }

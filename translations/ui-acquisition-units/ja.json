@@ -24,5 +24,7 @@
     "unit.membership.actions.remove": "削除",
     "unit.membership.actions.assign": "ユーザーの割り当て",
     "unit.membership.actions.assign.notAvailable": "ユーザーの割り当ては利用できません",
-    "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units"
+    "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units",
+    "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Acquisition unit \"{name}\" already exists",
+    "unit.actions.errors.save.genericError": "Couldn't save acquisition unit"
 }

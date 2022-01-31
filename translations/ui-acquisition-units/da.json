@@ -24,5 +24,7 @@
     "unit.membership.actions.remove": "Remove",
     "unit.membership.actions.assign": "Assign users",
     "unit.membership.actions.assign.notAvailable": "Assign users is not available",
-    "permission.settings.all": "Indstillinger (Indkøbsteam): Se, rediger, opret, og slet indkøbsteam"
+    "permission.settings.all": "Indstillinger (Indkøbsteam): Se, rediger, opret, og slet indkøbsteam",
+    "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Acquisition unit \"{name}\" already exists",
+    "unit.actions.errors.save.genericError": "Couldn't save acquisition unit"
 }
