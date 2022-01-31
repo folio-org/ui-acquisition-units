@@ -24,5 +24,7 @@
     "unit.membership.actions.remove": "移除",
     "unit.membership.actions.assign": "設定使用者",
     "unit.membership.actions.assign.notAvailable": "設定的使用者無效",
-    "permission.settings.all": "设置（采购单元）：可以查看、编辑、创建和删除采访单元"
+    "permission.settings.all": "设置（采购单元）：可以查看、编辑、创建和删除采访单元",
+    "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Acquisition unit \"{name}\" already exists",
+    "unit.actions.errors.save.genericError": "Couldn't save acquisition unit"
 }

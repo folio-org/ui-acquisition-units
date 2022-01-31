@@ -24,5 +24,7 @@
     "unit.membership.actions.remove": "Usuń",
     "unit.membership.actions.assign": "Przypisz użytkowników",
     "unit.membership.actions.assign.notAvailable": "Funkcja przypisywania użytkowników nie jest dostępna",
-    "permission.settings.all": "Ustawienia (działy gromadzenia): Może tworzyć, edytować, usuwać i przeglądać działy gromadzenia"
+    "permission.settings.all": "Ustawienia (działy gromadzenia): Może tworzyć, edytować, usuwać i przeglądać działy gromadzenia",
+    "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Acquisition unit \"{name}\" already exists",
+    "unit.actions.errors.save.genericError": "Couldn't save acquisition unit"
 }
