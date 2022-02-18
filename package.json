@@ -112,8 +112,16 @@
           "settings.acquisition-units.enabled",
           "users.collection.get",
           "usergroups.collection.get",
-          "acquisitions-units.units.all",
-          "acquisitions-units.memberships.all"
+          "acquisitions-units.units.collection.get",
+          "acquisitions-units.units.item.post",
+          "acquisitions-units.units.item.get",
+          "acquisitions-units.units.item.put",
+          "acquisitions-units.units.item.delete",
+          "acquisitions-units.memberships.collection.get",
+          "acquisitions-units.memberships.item.post",
+          "acquisitions-units.memberships.item.get",
+          "acquisitions-units.memberships.item.put",
+          "acquisitions-units.memberships.item.delete"
         ],
         "visible": true
       }
