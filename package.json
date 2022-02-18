@@ -120,7 +120,6 @@
           "acquisitions-units.memberships.collection.get",
           "acquisitions-units.memberships.item.post",
           "acquisitions-units.memberships.item.get",
-          "acquisitions-units.memberships.item.put",
           "acquisitions-units.memberships.item.delete"
         ],
         "visible": true
