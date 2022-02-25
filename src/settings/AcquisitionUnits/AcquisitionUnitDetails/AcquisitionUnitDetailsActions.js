@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 import {
   Button,
@@ -11,6 +11,9 @@ import { IfPermission } from '@folio/stripes/core';
 
 const AcquisitionUnitDetailsActions = ({ deleteUnit, canDelete, editUnitPath }) => {
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
+  const intl = useIntl();
+
+  const modalLabel = intl.formatMessage({ id: 'ui-acquisition-units.unit.actions.delete.conformation.title' });
 
   const toggleConfirmationDelete = () => setShowConfirmDelete(!showConfirmDelete);
 
@@ -54,9 +57,10 @@ const AcquisitionUnitDetailsActions = ({ deleteUnit, canDelete, editUnitPath }) 
       {
         showConfirmDelete && (
           <ConfirmationModal
+            aria-label={modalLabel}
             id="delete-ac-unit-modal"
             confirmLabel={<FormattedMessage id="ui-acquisition-units.unit.actions.delete.conformation.confirm" />}
-            heading={<FormattedMessage id="ui-acquisition-units.unit.actions.delete.conformation.title" />}
+            heading={modalLabel}
             message={<FormattedMessage id="ui-acquisition-units.unit.actions.delete.conformation.message" />}
             onCancel={toggleConfirmationDelete}
             onConfirm={confirmDeleteUnit}
