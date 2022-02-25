@@ -132,48 +132,48 @@ const AcquisitionUnitDetails = ({ acquisitionUnit, close, getEditPath, deleteUni
                   xs={3}
                   data-col-unit-protect-read
                 >
-                  <KeyValue label={<FormattedMessage id="ui-acquisition-units.unit.viewPermission" />}>
-                    <Checkbox
-                      checked={acquisitionUnit.protectRead}
-                      disabled
-                    />
-                  </KeyValue>
+                  <Checkbox
+                    label={<FormattedMessage id="ui-acquisition-units.unit.viewPermission" />}
+                    checked={acquisitionUnit.protectRead}
+                    disabled
+                    vertical
+                  />
                 </Col>
 
                 <Col
                   xs={3}
                   data-col-unit-protect-update
                 >
-                  <KeyValue label={<FormattedMessage id="ui-acquisition-units.unit.editPermission" />}>
-                    <Checkbox
-                      checked={acquisitionUnit.protectUpdate}
-                      disabled
-                    />
-                  </KeyValue>
+                  <Checkbox
+                    label={<FormattedMessage id="ui-acquisition-units.unit.editPermission" />}
+                    checked={acquisitionUnit.protectUpdate}
+                    disabled
+                    vertical
+                  />
                 </Col>
 
                 <Col
                   xs={3}
                   data-col-unit-protect-create
                 >
-                  <KeyValue label={<FormattedMessage id="ui-acquisition-units.unit.createPermission" />}>
-                    <Checkbox
-                      checked={acquisitionUnit.protectCreate}
-                      disabled
-                    />
-                  </KeyValue>
+                  <Checkbox
+                    label={<FormattedMessage id="ui-acquisition-units.unit.createPermission" />}
+                    checked={acquisitionUnit.protectCreate}
+                    disabled
+                    vertical
+                  />
                 </Col>
 
                 <Col
                   xs={3}
                   data-col-unit-protect-delete
                 >
-                  <KeyValue label={<FormattedMessage id="ui-acquisition-units.unit.deletePermission" />}>
-                    <Checkbox
-                      checked={acquisitionUnit.protectDelete}
-                      disabled
-                    />
-                  </KeyValue>
+                  <Checkbox
+                    label={<FormattedMessage id="ui-acquisition-units.unit.deletePermission" />}
+                    checked={acquisitionUnit.protectDelete}
+                    disabled
+                    vertical
+                  />
                 </Col>
               </Row>
             </Accordion>
