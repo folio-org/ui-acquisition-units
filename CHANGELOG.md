@@ -2,6 +2,9 @@
 
 ## (IN PROGRESS)
 
+## [3.1.0](https://github.com/folio-org/ui-acquisition-units/tree/v3.1.0) (2022-03-03)
+[Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v3.0.0...v3.1.0)
+
 * Acq Unit settings - disallow acq units with same text, different case. Refs UIAC-37.
 * Add Acquisitions Unit icon to the Settings list. Refs UIAC-42.
 * Refactor psets away from backend ".all" permissions. Refs UIAC-41.
