@@ -25,6 +25,6 @@
     "unit.membership.actions.assign": "Assegna utenti",
     "unit.membership.actions.assign.notAvailable": "Assegna utenti non è disponibile",
     "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units",
-    "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Acquisition unit \"{name}\" already exists",
+    "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "L'unità di acquisizione \" {name} \" esiste già",
     "unit.actions.errors.save.genericError": "Couldn't save acquisition unit"
 }
