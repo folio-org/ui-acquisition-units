@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory, MemoryRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import { waitFor, render } from '@testing-library/react';
 import user from '@testing-library/user-event';
 
