@@ -18,13 +18,13 @@
     "unit.actions.delete.conformation.message": "Sei sicuro di voler eliminare l'unità di acquisizione?",
     "unit.actions.delete.conformation.confirm": "Conferma",
     "accordion.memberships": "Utenti assegnati",
-    "unit.actions.delete.forbidden": "Delete (Acquisition units with users cannot be deleted)",
+    "unit.actions.delete.forbidden": "Cancella (Unità di acquisizione con utenti non possono essere cancellate)",
     "unit.membership.name": "Nome",
     "unit.membership.patronGroup": "Categoria utente",
     "unit.membership.actions.remove": "Rimuovi",
     "unit.membership.actions.assign": "Assegna utenti",
     "unit.membership.actions.assign.notAvailable": "Assegna utenti non è disponibile",
-    "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units",
+    "permission.settings.all": "Impostazioni (Unità di acquisizione): Può visualizzare, modificare e cancellare unità di acquisizione",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "L'unità di acquisizione \" {name} \" esiste già",
-    "unit.actions.errors.save.genericError": "Couldn't save acquisition unit"
+    "unit.actions.errors.save.genericError": "Impossibile salvare l'unità di acquisizione"
 }
