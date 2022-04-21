@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { noop } from 'lodash';
 
+import { IfPermission } from '@folio/stripes/core';
 import {
   Row,
   Col,
@@ -28,26 +29,30 @@ const AcquisitionUnitMemberships = ({ users, addMemberships, removeMembership, p
   const resultFormatter = {
     patronGroup: item => patronGroups[item.patronGroup],
     actions: item => (
-      <FormattedMessage id="ui-acquisition-units.unit.membership.actions.remove">
-        {([label]) => (
-          <IconButton
-            data-testid="membership-action-remove"
-            data-test-memberships-actions-remove
-            icon="trash"
-            onClick={() => removeMembership(item)}
-            size="medium"
-            ariaLabel={label}
-          />
-        )}
-      </FormattedMessage>
+      <IfPermission perm="acquisitions-units.memberships.item.delete">
+        <FormattedMessage id="ui-acquisition-units.unit.membership.actions.remove">
+          {([label]) => (
+            <IconButton
+              data-testid="membership-action-remove"
+              data-test-memberships-actions-remove
+              icon="trash"
+              onClick={() => removeMembership(item)}
+              size="medium"
+              ariaLabel={label}
+            />
+          )}
+        </FormattedMessage>
+      </IfPermission>
     ),
   };
 
   return (
-    <Fragment>
+    <>
       <Row end="xs">
         <Col xs={12}>
-          <AssignAcquisitionUnitMemberships addMemberships={addMemberships} />
+          <IfPermission perm="acquisitions-units.memberships.item.post">
+            <AssignAcquisitionUnitMemberships addMemberships={addMemberships} />
+          </IfPermission>
         </Col>
       </Row>
 
@@ -65,7 +70,7 @@ const AcquisitionUnitMemberships = ({ users, addMemberships, removeMembership, p
           />
         </Col>
       </Row>
-    </Fragment>
+    </>
   );
 };
 
