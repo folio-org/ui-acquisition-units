@@ -32,5 +32,6 @@
   "unit.membership.actions.remove": "Remove",
   "unit.membership.actions.assign": "Assign users",
   "unit.membership.actions.assign.notAvailable": "Assign users is not available",
-  "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units"
+  "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units",
+  "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
 }

@@ -106,21 +106,29 @@
         "visible": false
       },
       {
-        "permissionName": "ui-acquisition-units.settings.all",
-        "displayName": "Settings (acquisition units): Can view, edit, create and delete acquisition units",
+        "permissionName": "ui-acquisition-units.settings.userAssignments",
+        "displayName": "Settings (acquisition units): Manage acquisition unit user assignments",
         "subPermissions": [
           "settings.acquisition-units.enabled",
           "users.collection.get",
           "usergroups.collection.get",
           "acquisitions-units.units.collection.get",
-          "acquisitions-units.units.item.post",
           "acquisitions-units.units.item.get",
-          "acquisitions-units.units.item.put",
-          "acquisitions-units.units.item.delete",
           "acquisitions-units.memberships.collection.get",
           "acquisitions-units.memberships.item.post",
           "acquisitions-units.memberships.item.get",
           "acquisitions-units.memberships.item.delete"
+        ],
+        "visible": true
+      },
+      {
+        "permissionName": "ui-acquisition-units.settings.all",
+        "displayName": "Settings (acquisition units): Can view, edit, create and delete acquisition units",
+        "subPermissions": [
+          "ui-acquisition-units.settings.userAssignments",
+          "acquisitions-units.units.item.post",
+          "acquisitions-units.units.item.put",
+          "acquisitions-units.units.item.delete"
         ],
         "visible": true
       }
