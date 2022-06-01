@@ -7,7 +7,7 @@
     "unit.viewPermission": "View",
     "unit.editPermission": "Edit",
     "unit.createPermission": "Create",
-    "unit.deletePermission": "Delete",
+    "unit.deletePermission": "Odstranit",
     "unit.form.create.title": "Create acquisition unit",
     "unit.form.edit.title": "Edit: {name}",
     "unit.actions.new": "New",
