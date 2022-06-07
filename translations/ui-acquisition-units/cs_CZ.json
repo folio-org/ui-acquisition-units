@@ -20,7 +20,7 @@
     "accordion.memberships": "Přiřazení uživatelé",
     "unit.actions.delete.forbidden": "Delete (Acquisition units with users cannot be deleted)",
     "unit.membership.name": "Name",
-    "unit.membership.patronGroup": "Patron group",
+    "unit.membership.patronGroup": "Skupina čtenáře",
     "unit.membership.actions.remove": "Remove",
     "unit.membership.actions.assign": "Assign users",
     "unit.membership.actions.assign.notAvailable": "Assign users is not available",
