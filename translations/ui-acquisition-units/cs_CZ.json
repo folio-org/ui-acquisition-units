@@ -24,7 +24,7 @@
     "unit.membership.actions.remove": "Remove",
     "unit.membership.actions.assign": "Assign users",
     "unit.membership.actions.assign.notAvailable": "Assign users is not available",
-    "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units",
+    "permission.settings.all": "Nastavení (akviziční jednotky): Lze zobrazit, upravit, vytvořit a odstranit akviziční jednotky",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Akviziční jednotka \" {name} \" již existuje",
     "unit.actions.errors.save.genericError": "Jednotku akvizice se nepodařilo uložit"
 }
