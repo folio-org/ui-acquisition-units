@@ -18,13 +18,14 @@
     "unit.actions.delete.conformation.message": "Are you sure you want to delete the acquisition unit?",
     "unit.actions.delete.conformation.confirm": "Confirm",
     "accordion.memberships": "Přiřazení uživatelé",
-    "unit.actions.delete.forbidden": "Delete (Acquisition units with users cannot be deleted)",
+    "unit.actions.delete.forbidden": "Odstranit (akviziční jednotky s uživateli nelze odstranit)",
     "unit.membership.name": "Name",
     "unit.membership.patronGroup": "Skupina čtenáře",
     "unit.membership.actions.remove": "Remove",
-    "unit.membership.actions.assign": "Assign users",
-    "unit.membership.actions.assign.notAvailable": "Assign users is not available",
+    "unit.membership.actions.assign": "Přiřazení uživatelů",
+    "unit.membership.actions.assign.notAvailable": "Přiřazení uživatelů není k dispozici",
     "permission.settings.all": "Nastavení (akviziční jednotky): Lze zobrazit, upravit, vytvořit a odstranit akviziční jednotky",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Akviziční jednotka \" {name} \" již existuje",
-    "unit.actions.errors.save.genericError": "Jednotku akvizice se nepodařilo uložit"
+    "unit.actions.errors.save.genericError": "Jednotku akvizice se nepodařilo uložit",
+    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
 }

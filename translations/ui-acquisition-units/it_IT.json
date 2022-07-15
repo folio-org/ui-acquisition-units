@@ -26,5 +26,6 @@
     "unit.membership.actions.assign.notAvailable": "Assegna utenti non è disponibile",
     "permission.settings.all": "Impostazioni (Unità di acquisizione): Può visualizzare, modificare e cancellare unità di acquisizione",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "L'unità di acquisizione \" {name} \" esiste già",
-    "unit.actions.errors.save.genericError": "Impossibile salvare l'unità di acquisizione"
+    "unit.actions.errors.save.genericError": "Impossibile salvare l'unità di acquisizione",
+    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
 }

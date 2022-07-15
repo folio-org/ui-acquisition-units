@@ -26,5 +26,6 @@
     "unit.membership.actions.assign.notAvailable": "分配用户不可用",
     "permission.settings.all": "设置（采购单位）：可以查看、编辑、创建和删除采购单位",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "采购单位“ {name} ”已存在",
-    "unit.actions.errors.save.genericError": "无法保存采购单位"
+    "unit.actions.errors.save.genericError": "无法保存采购单位",
+    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
 }
