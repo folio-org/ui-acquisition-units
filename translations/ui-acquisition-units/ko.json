@@ -26,5 +26,6 @@
     "unit.membership.actions.assign.notAvailable": "사용자 할당을 사용할 수 없습니다.",
     "permission.settings.all": "설정(수서 단위): 수서 단위를 보고, 편집하고, 만들고, 삭제할 수 있습니다.",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "수서 단위 \" {name} \"이(가) 이미 존재합니다.",
-    "unit.actions.errors.save.genericError": "수서 단위를 저장할 수 없습니다."
+    "unit.actions.errors.save.genericError": "수서 단위를 저장할 수 없습니다.",
+    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
 }

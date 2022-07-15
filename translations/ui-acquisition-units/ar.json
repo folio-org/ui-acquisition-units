@@ -26,5 +26,6 @@
     "unit.membership.actions.assign.notAvailable": "تعيين المستخدمين غير متاح",
     "permission.settings.all": "الإعدادات (وحدات التزويد): إمكانية عرض، وتحرير، وإنشاء، وحذف وحدات التزويد",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "وحدة التزويد  \"{name}\" موجودة بالفعل",
-    "unit.actions.errors.save.genericError": "تعذر حفظ وحدة التزويد"
+    "unit.actions.errors.save.genericError": "تعذر حفظ وحدة التزويد",
+    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
 }

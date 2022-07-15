@@ -26,5 +26,6 @@
     "unit.membership.actions.assign.notAvailable": "Personen zuweisen ist nicht verfügbar",
     "permission.settings.all": "Einstellungen (Erwerbungsteams): Kann Erwerbungsteams anzeigen, bearbeiten, erstellen und löschen",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Acquisition unit \"{name}\" already exists",
-    "unit.actions.errors.save.genericError": "Couldn't save acquisition unit"
+    "unit.actions.errors.save.genericError": "Couldn't save acquisition unit",
+    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
 }
