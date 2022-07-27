@@ -27,5 +27,5 @@
     "permission.settings.all": "Nastavení (akviziční jednotky): Lze zobrazit, upravit, vytvořit a odstranit akviziční jednotky",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Akviziční jednotka \" {name} \" již existuje",
     "unit.actions.errors.save.genericError": "Jednotku akvizice se nepodařilo uložit",
-    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
+    "permission.settings.userAssignments": "Nastavení (akviziční jednotky): Správa uživatelských přiřazení akvizičních jednotek"
 }
