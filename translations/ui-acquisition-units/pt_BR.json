@@ -27,5 +27,5 @@
     "permission.settings.all": "Configurações (Unidades de aquisição): Pode visualizar, editar, criar e excluir unidades de aquisição",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "A unidade de aquisição \" {name} \" já existe",
     "unit.actions.errors.save.genericError": "Não foi possível salvar a unidade de aquisição",
-    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
+    "permission.settings.userAssignments": "Configurações (unidades de aquisição): Gerenciar as atribuições dos usuários das unidades de aquisição"
 }
