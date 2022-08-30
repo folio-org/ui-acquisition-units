@@ -1,6 +1,5 @@
-import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { render } from '@testing-library/react';
+import { act, render } from '@testing-library/react';
 import user from '@testing-library/user-event';
 
 import '@folio/stripes-acq-components/test/jest/__mock__';
@@ -49,40 +48,40 @@ describe('AcquisitionUnitDetails', () => {
       expect(getByTestId('ac-unit-details-delete-action')).toBeDefined();
     });
 
-    it('should not open confirmation modal when action is pressed', () => {
+    it('should not open confirmation modal when action is pressed', async () => {
       const { queryByText, getByTestId } = renderAcquisitionUnitDetailsActions({ canDelete: false });
 
-      user.click(getByTestId('ac-unit-details-delete-action'));
+      await act(async () => user.click(getByTestId('ac-unit-details-delete-action')));
 
       expect(queryByText('ConfirmationModal')).toBeNull();
     });
 
-    it('should open confirmation modal when action is pressed', () => {
+    it('should open confirmation modal when action is pressed', async () => {
       const { getByText, getByTestId } = renderAcquisitionUnitDetailsActions({ canDelete: true });
 
-      user.click(getByTestId('ac-unit-details-delete-action'));
+      await act(async () => user.click(getByTestId('ac-unit-details-delete-action')));
 
       expect(getByText('ConfirmationModal')).toBeDefined();
     });
 
-    it('should close confirmation modal when delete is confirmed', () => {
+    it('should close confirmation modal when delete is confirmed', async () => {
       const { queryByText, getByTestId } = renderAcquisitionUnitDetailsActions({ canDelete: true });
 
-      user.click(getByTestId('ac-unit-details-delete-action'));
-      user.click(queryByText('ConfirmationModal'));
+      await act(async () => user.click(getByTestId('ac-unit-details-delete-action')));
+      await act(async () => user.click(queryByText('ConfirmationModal')));
 
       expect(queryByText('ConfirmationModal')).toBeNull();
     });
 
-    it('should delete unit when delete is confirmed', () => {
+    it('should delete unit when delete is confirmed', async () => {
       const deleteUnit = jest.fn();
       const { queryByText, getByTestId } = renderAcquisitionUnitDetailsActions({
         canDelete: true,
         deleteUnit,
       });
 
-      user.click(getByTestId('ac-unit-details-delete-action'));
-      user.click(queryByText('ConfirmationModal'));
+      await act(async () => user.click(getByTestId('ac-unit-details-delete-action')));
+      await act(async () => user.click(queryByText('ConfirmationModal')));
 
       expect(deleteUnit).toHaveBeenCalled();
     });

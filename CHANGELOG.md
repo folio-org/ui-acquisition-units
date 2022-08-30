@@ -2,6 +2,8 @@
 
 ## (IN PROGRESS)
 
+* Update outdated dependencies. Refs UIAC-50.
+
 ## [3.2.0](https://github.com/folio-org/ui-acquisition-units/tree/v3.2.0) (2022-07-07)
 [Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v3.1.0...v3.2.0)
 

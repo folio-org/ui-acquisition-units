@@ -1,5 +1,4 @@
-import React from 'react';
-import { render } from '@testing-library/react';
+import { act, render } from '@testing-library/react';
 import user from '@testing-library/user-event';
 
 import '@folio/stripes-acq-components/test/jest/__mock__';
@@ -58,7 +57,7 @@ describe('AcquisitionUnitMemberships', () => {
     expect(getByText(fullName)).toBeDefined();
   });
 
-  it('should call removeMembership when member remove action is pressed', () => {
+  it('should call removeMembership when member remove action is pressed', async () => {
     const member = {
       personal: {
         lastName: 'Diku',
@@ -70,7 +69,7 @@ describe('AcquisitionUnitMemberships', () => {
       removeMembership,
     });
 
-    user.click(getAllByTestId('membership-action-remove')[0]);
+    await act(async () => user.click(getAllByTestId('membership-action-remove')[0]));
 
     expect(removeMembership).toHaveBeenCalledWith({
       ...member,
