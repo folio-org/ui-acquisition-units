@@ -1,10 +1,8 @@
-import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { waitFor, render } from '@testing-library/react';
+import { waitFor, render, act } from '@testing-library/react';
 import user from '@testing-library/user-event';
 
 import { HasCommand } from '@folio/stripes/components';
-import '@folio/stripes-acq-components/test/jest/__mock__';
 
 import AcquisitionUnitsList from './AcquisitionUnitsList';
 
@@ -64,7 +62,7 @@ describe('AcquisitionUnitsList', () => {
       });
     });
 
-    it('should navigate to unit details when unit is pressed', () => {
+    it('should navigate to unit details when unit is pressed', async () => {
       mockHistoryPush.mockClear();
 
       const acquisitionUnits = [
@@ -74,7 +72,7 @@ describe('AcquisitionUnitsList', () => {
       const getViewPath = jest.fn(id => `${viewPath}/${id}`);
       const { getByText } = renderAcquisitionUnitsList({ acquisitionUnits, getViewPath });
 
-      user.click(getByText(acquisitionUnits[0].name));
+      await act(async () => user.click(getByText(acquisitionUnits[0].name)));
 
       expect(mockHistoryPush).toHaveBeenCalledWith(`${viewPath}/${acquisitionUnits[0].id}`);
     });

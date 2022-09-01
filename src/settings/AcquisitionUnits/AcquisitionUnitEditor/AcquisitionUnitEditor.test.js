@@ -1,8 +1,7 @@
-import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
-import { waitFor, render } from '@testing-library/react';
+import { waitFor, render, act } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import { queryHelpers } from '@testing-library/dom';
 
@@ -12,8 +11,6 @@ import {
   collapseAllSections,
 } from '@folio/stripes/components';
 import { handleKeyCommand } from '@folio/stripes-acq-components';
-
-import '@folio/stripes-acq-components/test/jest/__mock__';
 
 import AcquisitionUnitEditor from './AcquisitionUnitEditor';
 
@@ -36,6 +33,10 @@ jest.mock('@folio/stripes-components/lib/Layer', () => {
 jest.mock('../AcquisitionUnitMemberships', () => {
   return () => 'AcquisitionUnitMemberships';
 });
+
+if (global.document?.originalCreateRange) {
+  global.document.createRange = global.document.originalCreateRange;
+}
 
 const queryAllByClass = queryHelpers.queryAllByAttribute.bind(null, 'class');
 
@@ -60,10 +61,10 @@ const renderAcquisitionUnitEditor = (props = {}) => render(
 
 describe('AcquisitionUnitEditor', () => {
   describe('Sections toggle', () => {
-    it('should collapse sections when Collapse all button is pressed', () => {
+    it('should collapse sections when Collapse all button is pressed', async () => {
       const { getByText, container } = renderAcquisitionUnitEditor();
 
-      user.click(getByText('stripes-components.collapseAll'));
+      await act(async () => user.click(getByText('stripes-components.collapseAll')));
 
       const sections = queryAllByClass(container, 'defaultCollapseButton');
 
@@ -74,11 +75,11 @@ describe('AcquisitionUnitEditor', () => {
       ).toBe(sections.length);
     });
 
-    it('should collapse signle section when section title is pressed', () => {
+    it('should collapse signle section when section title is pressed', async () => {
       const { getByText, container } = renderAcquisitionUnitEditor();
 
-      user.click(getByText('stripes-components.collapseAll'));
-      user.click(getByText('ui-acquisition-units.accordion.generalInfo'));
+      await act(async () => user.click(getByText('stripes-components.collapseAll')));
+      await act(async () => user.click(getByText('ui-acquisition-units.accordion.generalInfo')));
 
       const sections = queryAllByClass(container, 'defaultCollapseButton');
 
