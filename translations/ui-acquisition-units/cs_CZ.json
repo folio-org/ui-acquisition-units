@@ -1,5 +1,5 @@
 {
-    "meta.title": "Acquisition units",
+    "meta.title": "Akviziční jednotky",
     "accordion.generalInfo": "Obecná informace",
     "accordion.actionPermissions": "Pouze členové této skupiny mohou provádět následující akce",
     "unit.name": "Name",
@@ -10,7 +10,7 @@
     "unit.deletePermission": "Odstranit",
     "unit.form.create.title": "Create acquisition unit",
     "unit.form.edit.title": "Edit: {name}",
-    "unit.actions.new": "New",
+    "unit.actions.new": "Nový",
     "unit.actions.save": "Save",
     "unit.actions.edit": "Edit",
     "unit.actions.delete": "Delete",
