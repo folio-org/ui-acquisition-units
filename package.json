@@ -99,7 +99,7 @@
     ],
     "okapiInterfaces": {
       "acquisitions-units": "1.1",
-      "users": "15.1"
+      "users": "16.0"
     },
     "stripesDeps": [
       "@folio/stripes-acq-components"
