@@ -2,8 +2,11 @@
 
 ## (IN PROGRESS)
 
+## [3.3.0](https://github.com/folio-org/ui-acquisition-units/tree/v3.3.0) (2022-10-25)
+[Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v3.2.0...v3.3.0)
+
 * Update outdated dependencies. Refs UIAC-50.
-* Update to users interface version 16.0.  Refs UIAC-53.
+* Update to users interface version 16.0. Refs UIAC-53.
 
 ## [3.2.0](https://github.com/folio-org/ui-acquisition-units/tree/v3.2.0) (2022-07-07)
 [Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v3.1.0...v3.2.0)
