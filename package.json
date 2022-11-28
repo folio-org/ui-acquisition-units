@@ -72,7 +72,7 @@
     "redux-form": "^8.3.0"
   },
   "optionalDependencies": {
-    "@folio/plugin-find-user": "*"
+    "@folio/plugin-find-user": "^6.3.0"
   },
   "peerDependencies": {
     "@folio/stripes": "^7.0.0",
