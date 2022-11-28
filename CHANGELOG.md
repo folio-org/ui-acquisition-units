@@ -2,6 +2,8 @@
 
 ## (IN PROGRESS)
 
+* Loose plugin dependencies permit incompatible versions. Refs UIAC-55.
+
 ## [3.3.0](https://github.com/folio-org/ui-acquisition-units/tree/v3.3.0) (2022-10-25)
 [Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v3.2.0...v3.3.0)
 
