@@ -1,6 +1,6 @@
 {
   "name": "@folio/acquisition-units",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "Acquisition units",
   "main": "src/index.js",
   "repository": {
