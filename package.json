@@ -1,6 +1,6 @@
 {
   "name": "@folio/acquisition-units",
-  "version": "3.3.1",
+  "version": "4.0.0",
   "description": "Acquisition units",
   "main": "src/index.js",
   "repository": {
@@ -9,7 +9,7 @@
   },
   "license": "Apache-2.0",
   "engines": {
-    "node": ">=10"
+    "node": ">=14.0.0"
   },
   "scripts": {
     "start": "yarn stripes serve",
@@ -30,7 +30,7 @@
     "@bigtest/mocha": "^0.5.1",
     "@bigtest/react": "^0.1.2",
     "@folio/eslint-config-stripes": "^6.1.0",
-    "@folio/stripes": "^7.0.0",
+    "@folio/stripes": "^8.0.0",
     "@folio/stripes-cli": "^2.4.0",
     "@formatjs/cli": "^4.2.16",
     "@testing-library/dom": "^8.17.1",
@@ -54,7 +54,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-intl": "^5.7.1",
-    "react-redux": "^7.2.0",
+    "react-redux": "^8.0.5",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
@@ -64,7 +64,7 @@
     "sinon": "^14.0.0"
   },
   "dependencies": {
-    "@folio/stripes-acq-components": "~3.4.0",
+    "@folio/stripes-acq-components": "~4.0.0",
     "lodash": "^4.17.11",
     "prop-types": "^15.6.0",
     "query-string": "^7.1.1",
@@ -75,13 +75,13 @@
     "@folio/plugin-find-user": "^6.3.0"
   },
   "peerDependencies": {
-    "@folio/stripes": "^7.0.0",
+    "@folio/stripes": "^8.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-intl": "^5.7.1",
-    "react-redux": "*",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^5.2.0",
-    "redux": "*"
+    "redux": "^4.0.5"
   },
   "stripes": {
     "actsAs": [

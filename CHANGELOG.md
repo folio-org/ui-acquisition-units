@@ -1,6 +1,8 @@
 # Change history for ui-acquisition-units
 
-## (IN PROGRESS)
+## (4.0.0 IN PROGRESS)
+
+* Upgrade `react-redux` to `v8`, `stripes` to `v8`, and `stripes-acq-components` to `v4`. Refs UIAC-62.
 
 ## [3.3.1](https://github.com/folio-org/ui-acquisition-units/tree/v3.3.1) (2022-11-30)
 [Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v3.3.0...v3.3.1)
