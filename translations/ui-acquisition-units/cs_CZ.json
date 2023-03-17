@@ -1,6 +1,6 @@
 {
     "meta.title": "Akviziční jednotky",
-    "accordion.generalInfo": "Obecná informace",
+    "accordion.generalInfo": "Obecné informace",
     "accordion.actionPermissions": "Pouze členové této skupiny mohou provádět následující akce",
     "unit.name": "Jméno",
     "unit.description": "Popis",
@@ -20,7 +20,7 @@
     "accordion.memberships": "Přiřazení uživatelé",
     "unit.actions.delete.forbidden": "Smazat (akviziční jednotky s uživateli nelze smazat)",
     "unit.membership.name": "Jméno",
-    "unit.membership.patronGroup": "Skupina čtenáře",
+    "unit.membership.patronGroup": "Kategorie čtenáře",
     "unit.membership.actions.remove": "Odstranit",
     "unit.membership.actions.assign": "Přiřazení uživatelů",
     "unit.membership.actions.assign.notAvailable": "Přiřazení uživatelů není k dispozici",
