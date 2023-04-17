@@ -24,8 +24,8 @@
     "unit.membership.actions.remove": "Eliminar",
     "unit.membership.actions.assign": "Asignar usuarios",
     "unit.membership.actions.assign.notAvailable": "Asignar usuarios no está disponible",
-    "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units",
-    "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Acquisition unit \"{name}\" already exists",
-    "unit.actions.errors.save.genericError": "Couldn't save acquisition unit",
-    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
+    "permission.settings.all": "Ajustes (unidades de adquisición): Puede ver, editar, crear y eliminar unidades de adquisición.",
+    "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "La unidad de adquisición \"{nombre}\" ya existe.",
+    "unit.actions.errors.save.genericError": "No se ha podido guardar la unidad de adquisición",
+    "permission.settings.userAssignments": "Ajustes (unidades de adquisición): Gestionar las asignaciones de usuarios de las unidades de adquisición"
 }
