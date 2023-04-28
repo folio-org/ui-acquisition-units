@@ -25,7 +25,7 @@
     "unit.membership.actions.assign": "Asignar usuarios",
     "unit.membership.actions.assign.notAvailable": "Asignar usuarios no está disponible",
     "permission.settings.all": "Ajustes (unidades de adquisición): Puede ver, editar, crear y eliminar unidades de adquisición.",
-    "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "La unidad de adquisición \"{nombre}\" ya existe.",
+    "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "La unidad de adquisición \"{name}\" ya existe.",
     "unit.actions.errors.save.genericError": "No se ha podido guardar la unidad de adquisición",
     "permission.settings.userAssignments": "Ajustes (unidades de adquisición): Gestionar las asignaciones de usuarios de las unidades de adquisición"
 }
