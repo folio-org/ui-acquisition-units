@@ -75,9 +75,9 @@
     "@folio/plugin-find-user": "^6.3.0"
   },
   "peerDependencies": {
-    "@folio/stripes": "^8.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "@folio/stripes": "^9.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-intl": "^5.7.1",
     "react-redux": "^8.0.5",
     "react-router-dom": "^5.2.0",
