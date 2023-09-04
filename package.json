@@ -107,17 +107,25 @@
         "visible": false
       },
       {
-        "permissionName": "ui-acquisition-units.settings.userAssignments",
-        "displayName": "Settings (acquisition units): Manage acquisition unit user assignments",
+        "permissionName": "ui-acquisition-units.settings.view",
+        "displayName": "Settings (acquisition units): View acquisition units",
         "subPermissions": [
           "settings.acquisition-units.enabled",
-          "users.collection.get",
-          "usergroups.collection.get",
           "acquisitions-units.units.collection.get",
           "acquisitions-units.units.item.get",
           "acquisitions-units.memberships.collection.get",
-          "acquisitions-units.memberships.item.post",
           "acquisitions-units.memberships.item.get",
+          "users.collection.get",
+          "usergroups.collection.get"
+        ],
+        "visible": true
+      },
+      {
+        "permissionName": "ui-acquisition-units.settings.userAssignments",
+        "displayName": "Settings (acquisition units): Manage acquisition unit user assignments",
+        "subPermissions": [
+          "ui-acquisition-units.settings.view",
+          "acquisitions-units.memberships.item.post",
           "acquisitions-units.memberships.item.delete"
         ],
         "visible": true

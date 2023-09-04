@@ -37,13 +37,15 @@ const AcquisitionUnitDetails = ({ acquisitionUnit, close, getEditPath, deleteUni
   const stripes = useStripes();
 
   const getActionMenu = () => {
-    return (
+    const isPermittedToViewActions = stripes.hasPerm('acquisitions-units.units.item.put') || stripes.hasPerm('acquisitions-units.units.item.delete');
+
+    return isPermittedToViewActions ? (
       <AcquisitionUnitDetailsActions
         editUnitPath={getEditPath(acquisitionUnit.id)}
         deleteUnit={deleteUnit}
         canDelete={canDelete}
       />
-    );
+    ) : null;
   };
 
   const shortcuts = [
