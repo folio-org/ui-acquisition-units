@@ -1,8 +1,8 @@
 import { useHistory } from 'react-router-dom';
-import { act, render, waitFor } from '@testing-library/react';
-import user from '@testing-library/user-event';
-import { queryHelpers } from '@testing-library/dom';
 
+import user from '@folio/jest-config-stripes/testing-library/user-event';
+import { act, render, waitFor } from '@folio/jest-config-stripes/testing-library/react';
+import { queryHelpers } from '@folio/jest-config-stripes/testing-library/dom';
 import {
   HasCommand,
   expandAllSections,

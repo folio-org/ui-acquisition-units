@@ -1,7 +1,4 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-
-import '@folio/stripes-acq-components/test/jest/__mock__';
+import { render } from '@folio/jest-config-stripes/testing-library/react';
 
 import AcquisitionUnitEditorContainer, { NEW_UNIT_VALUES } from './AcquisitionUnitEditorContainer';
 import AcquisitionUnitEditor from './AcquisitionUnitEditor';

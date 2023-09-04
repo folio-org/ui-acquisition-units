@@ -1,7 +1,5 @@
-import { act, render } from '@testing-library/react';
-import user from '@testing-library/user-event';
-
-import '@folio/stripes-acq-components/test/jest/__mock__';
+import user from '@folio/jest-config-stripes/testing-library/user-event';
+import { act, render } from '@folio/jest-config-stripes/testing-library/react';
 
 import AcquisitionUnitMemberships from './AcquisitionUnitMemberships';
 
