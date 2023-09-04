@@ -1,10 +1,10 @@
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
-import { waitFor, render, act } from '@testing-library/react';
-import user from '@testing-library/user-event';
-import { queryHelpers } from '@testing-library/dom';
 
+import user from '@folio/jest-config-stripes/testing-library/user-event';
+import { waitFor, render, act } from '@folio/jest-config-stripes/testing-library/react';
+import { queryHelpers } from '@folio/jest-config-stripes/testing-library/dom';
 import {
   HasCommand,
   expandAllSections,
