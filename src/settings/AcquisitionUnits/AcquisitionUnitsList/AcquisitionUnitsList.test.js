@@ -1,7 +1,7 @@
 import { MemoryRouter } from 'react-router-dom';
-import { waitFor, render, act } from '@testing-library/react';
-import user from '@testing-library/user-event';
 
+import user from '@folio/jest-config-stripes/testing-library/user-event';
+import { waitFor, render, act } from '@folio/jest-config-stripes/testing-library/react';
 import { HasCommand } from '@folio/stripes/components';
 
 import AcquisitionUnitsList from './AcquisitionUnitsList';
