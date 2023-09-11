@@ -4,6 +4,7 @@
 * *BREAKING* Update `react` to `v18`. Refs UIAC-69.
 * Update `Node.js` to `v18` in GitHub Actions. Refs UIAC-70.
 * Introduce new permission to view all acquisition unit settings. Refs UIAC-63.
+* *BREAKING* bump `react-intl` to `v6.4.4`. Refs UIAC-71.
 
 ## [4.0.0](https://github.com/folio-org/ui-acquisition-units/tree/v4.0.0) (2023-02-22)
 [Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v3.3.1...v4.0.0)
