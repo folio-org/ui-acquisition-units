@@ -1,6 +1,10 @@
 # Change history for ui-acquisition-units
 
-## (5.0.0 IN PROGRESS)
+## (5.1.0 IN PROGRESS)
+
+## [5.0.0](https://github.com/folio-org/ui-acquisition-units/tree/v5.0.0) (2023-10-12)
+[Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v4.0.0...v5.0.0)
+
 * *BREAKING* Update `react` to `v18`. Refs UIAC-69.
 * Update `Node.js` to `v18` in GitHub Actions. Refs UIAC-70.
 * Introduce new permission to view all acquisition unit settings. Refs UIAC-63.
