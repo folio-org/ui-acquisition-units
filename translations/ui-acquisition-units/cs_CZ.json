@@ -1,7 +1,7 @@
 {
     "meta.title": "Akviziční jednotky",
     "accordion.generalInfo": "Obecné informace",
-    "accordion.actionPermissions": "Pouze členové této skupiny mohou provádět následující akce",
+    "accordion.actionPermissions": "Jen členové této skupiny mohou provádět následující akce",
     "unit.name": "Jméno",
     "unit.description": "Popis",
     "unit.viewPermission": "Zobrazit",
