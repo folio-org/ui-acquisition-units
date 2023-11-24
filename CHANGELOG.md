@@ -2,6 +2,8 @@
 
 ## (5.1.0 IN PROGRESS)
 
+* User cannot edit "Description" in Settings - Acquisition units. Refs UIAC-75.
+
 ## [5.0.0](https://github.com/folio-org/ui-acquisition-units/tree/v5.0.0) (2023-10-12)
 [Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v4.0.0...v5.0.0)
 

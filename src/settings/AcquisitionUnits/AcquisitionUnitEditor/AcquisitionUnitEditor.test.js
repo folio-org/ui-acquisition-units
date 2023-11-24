@@ -61,6 +61,16 @@ const renderAcquisitionUnitEditor = (props = {}) => render(
 
 describe('AcquisitionUnitEditor', () => {
   describe('Sections toggle', () => {
+    it('should render component', async () => {
+      const { getByText } = renderAcquisitionUnitEditor();
+
+      const nameInput = getByText('ui-acquisition-units.unit.name');
+      const descriptionInput = getByText('ui-acquisition-units.unit.description');
+
+      expect(nameInput).toBeDefined();
+      expect(descriptionInput).toBeDefined();
+    });
+
     it('should collapse sections when Collapse all button is pressed', async () => {
       const { getByText, container } = renderAcquisitionUnitEditor();
 
@@ -106,7 +116,7 @@ describe('AcquisitionUnitEditor', () => {
   });
 
   describe('Metadata view', () => {
-    it('should be displayed when metadata is availalbe', () => {
+    it('should be displayed when metadata is available', () => {
       const { getByText } = renderAcquisitionUnitEditor({
         acquisitionUnit: {
           metadata: {},
