@@ -20,6 +20,7 @@ import {
   checkScope,
   collapseAllSections,
   expandAllSections,
+  TextArea,
 } from '@folio/stripes/components';
 import { ViewMetaData } from '@folio/stripes/smart-components';
 import stripesForm from '@folio/stripes/form';
@@ -149,6 +150,16 @@ const AcquisitionUnitEditor = ({ acquisitionUnit, close, handleSubmit, pristine,
                             name="name"
                             type="text"
                             required
+                          />
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col xs={8}>
+                          <Field
+                            label={<FormattedMessage id="ui-acquisition-units.unit.description" />}
+                            name="description"
+                            component={TextArea}
+                            fullWidth
                           />
                         </Col>
                       </Row>
