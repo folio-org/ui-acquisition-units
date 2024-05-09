@@ -18,14 +18,14 @@
     "unit.actions.delete.conformation.message": "確定要刪除採購單位嗎？",
     "unit.actions.delete.conformation.confirm": "確認",
     "accordion.memberships": "已設定的使用者",
-    "unit.actions.delete.forbidden": "删除(无法删除有用户的采访单位)",
+    "unit.actions.delete.forbidden": "刪除（有使用者的採購單位不能刪除）",
     "unit.membership.name": "名稱",
     "unit.membership.patronGroup": "讀者群組",
     "unit.membership.actions.remove": "移除",
     "unit.membership.actions.assign": "設定使用者",
     "unit.membership.actions.assign.notAvailable": "設定的使用者無效",
-    "permission.settings.all": "设置（采购单元）：可以查看、编辑、创建和删除采访单元",
-    "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Acquisition unit \"{name}\" already exists",
-    "unit.actions.errors.save.genericError": "Couldn't save acquisition unit",
+    "permission.settings.all": "設定（採購單位）：可檢視、編輯、建立和刪除採購單位",
+    "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "採購單位「 {name} 」已存在",
+    "unit.actions.errors.save.genericError": "無法儲存採購單位",
     "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
 }
