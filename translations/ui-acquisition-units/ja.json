@@ -24,7 +24,7 @@
     "unit.membership.actions.remove": "削除",
     "unit.membership.actions.assign": "ユーザーの割り当て",
     "unit.membership.actions.assign.notAvailable": "ユーザーの割り当ては利用できません",
-    "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units",
+    "permission.settings.all": "設定（収集ユニット）: 収集ユニットの閲覧、編集、削除ができます",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "収集ユニット「 {name} 」はすでに存在します",
     "unit.actions.errors.save.genericError": "収集ユニットを保存できませんでした",
     "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
