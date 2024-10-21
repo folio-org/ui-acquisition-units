@@ -17,15 +17,15 @@
     "unit.actions.delete.conformation.title": "Eliminar unidad de adquisición",
     "unit.actions.delete.conformation.message": "Estás seguro de que quieres eliminar la unidad de adquisición?",
     "unit.actions.delete.conformation.confirm": "Confirmar",
-    "accordion.memberships": "Usuario asignado",
-    "unit.actions.delete.forbidden": "Eliminar (Las unidades de adquisición con usuarios no pueden eliminarse)",
+    "accordion.memberships": "Usuarios asignados",
+    "unit.actions.delete.forbidden": "Eliminar (las unidades de adquisición con usuarios no se pueden eliminar)",
     "unit.membership.name": "Nombre",
     "unit.membership.patronGroup": "Grupo de usuarios",
     "unit.membership.actions.remove": "Eliminar",
     "unit.membership.actions.assign": "Asignar usuarios",
     "unit.membership.actions.assign.notAvailable": "Asignar usuarios no está disponible",
-    "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units",
-    "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Acquisition unit \"{name}\" already exists",
-    "unit.actions.errors.save.genericError": "Couldn't save acquisition unit",
-    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
+    "permission.settings.all": "Ajustes (unidades de adquisición): Puede ver, editar, crear y eliminar unidades de adquisición.",
+    "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "La unidad de adquisición \"{name}\" ya existe.",
+    "unit.actions.errors.save.genericError": "No se ha podido guardar la unidad de adquisición",
+    "permission.settings.userAssignments": "Ajustes (unidades de adquisición): Gestionar las asignaciones de usuarios de las unidades de adquisición"
 }
