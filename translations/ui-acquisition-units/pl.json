@@ -27,5 +27,5 @@
     "permission.settings.all": "Ustawienia (działy gromadzenia): Może tworzyć, edytować, usuwać i przeglądać działy gromadzenia",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Dział gromadzenia \"{name}\" już istnieje",
     "unit.actions.errors.save.genericError": "Nie można zapisać działu gromadzenia",
-    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
+    "permission.settings.userAssignments": "Ustawienia (jednostki gromadzenia): zarządzanie jednostkami gromadzenia przypisanymi do użytkownika"
 }
