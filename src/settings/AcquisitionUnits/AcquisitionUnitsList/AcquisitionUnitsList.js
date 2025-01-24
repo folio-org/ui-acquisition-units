@@ -18,7 +18,7 @@ import {
 } from '@folio/stripes/core';
 
 const AcquisitionUnitsList = ({
-  acquisitionUnits,
+  acquisitionUnits = [],
   getViewPath = noop,
   getCreatePath = noop,
 }) => {
