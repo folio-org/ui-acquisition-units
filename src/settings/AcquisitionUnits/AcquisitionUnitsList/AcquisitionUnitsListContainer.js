@@ -7,7 +7,11 @@ import { stripesConnect } from '@folio/stripes/core';
 import { ACQUISITIONS_UNITS } from '../resources';
 import AcquisitionUnitsList from './AcquisitionUnitsList';
 
-const AcquisitionUnitsListContainer = ({ resources, getViewPath, getCreatePath }) => {
+const AcquisitionUnitsListContainer = ({
+  resources,
+  getViewPath = noop,
+  getCreatePath = noop,
+}) => {
   const acquisitionUnits = get(resources, 'acquisitionUnits.records', []);
 
   return (
@@ -27,11 +31,6 @@ AcquisitionUnitsListContainer.propTypes = {
   resources: PropTypes.object.isRequired,
   getViewPath: PropTypes.func,
   getCreatePath: PropTypes.func,
-};
-
-AcquisitionUnitsListContainer.defaultProps = {
-  getViewPath: noop,
-  getCreatePath: noop,
 };
 
 export default stripesConnect(AcquisitionUnitsListContainer);

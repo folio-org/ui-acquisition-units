@@ -9,7 +9,11 @@ import {
 } from '@folio/stripes/components';
 import { IfPermission } from '@folio/stripes/core';
 
-const AcquisitionUnitDetailsActions = ({ deleteUnit, canDelete, editUnitPath }) => {
+const AcquisitionUnitDetailsActions = ({
+  deleteUnit,
+  canDelete = true,
+  editUnitPath,
+}) => {
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
   const intl = useIntl();
 
@@ -76,10 +80,6 @@ AcquisitionUnitDetailsActions.propTypes = {
   deleteUnit: PropTypes.func.isRequired,
   editUnitPath: PropTypes.string.isRequired,
   canDelete: PropTypes.bool,
-};
-
-AcquisitionUnitDetailsActions.defaultProps = {
-  canDelete: true,
 };
 
 export default AcquisitionUnitDetailsActions;

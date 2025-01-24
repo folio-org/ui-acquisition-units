@@ -31,7 +31,13 @@ import {
 import AcquisitionUnitMemberships from '../AcquisitionUnitMemberships';
 import AcquisitionUnitDetailsActions from './AcquisitionUnitDetailsActions';
 
-const AcquisitionUnitDetails = ({ acquisitionUnit, close, getEditPath, deleteUnit, canDelete }) => {
+const AcquisitionUnitDetails = ({
+  acquisitionUnit,
+  close,
+  getEditPath,
+  deleteUnit,
+  canDelete = true,
+}) => {
   const accordionStatusRef = useRef();
   const history = useHistory();
   const stripes = useStripes();
@@ -206,10 +212,6 @@ AcquisitionUnitDetails.propTypes = {
   getEditPath: PropTypes.func.isRequired,
   deleteUnit: PropTypes.func.isRequired,
   canDelete: PropTypes.bool,
-};
-
-AcquisitionUnitDetails.defaultProps = {
-  canDelete: true,
 };
 
 export default AcquisitionUnitDetails;
