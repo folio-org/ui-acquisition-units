@@ -17,7 +17,11 @@ import {
   IfPermission,
 } from '@folio/stripes/core';
 
-const AcquisitionUnitsList = ({ acquisitionUnits, getViewPath, getCreatePath }) => {
+const AcquisitionUnitsList = ({
+  acquisitionUnits = [],
+  getViewPath = noop,
+  getCreatePath = noop,
+}) => {
   const history = useHistory();
   const stripes = useStripes();
 
@@ -79,12 +83,6 @@ AcquisitionUnitsList.propTypes = {
   acquisitionUnits: PropTypes.arrayOf(PropTypes.object),
   getViewPath: PropTypes.func,
   getCreatePath: PropTypes.func,
-};
-
-AcquisitionUnitsList.defaultProps = {
-  acquisitionUnits: [],
-  getViewPath: noop,
-  getCreatePath: noop,
 };
 
 export default AcquisitionUnitsList;

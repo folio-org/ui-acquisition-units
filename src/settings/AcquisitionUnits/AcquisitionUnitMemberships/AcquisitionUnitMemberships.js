@@ -25,7 +25,12 @@ const columnWidths = {
   actions: '10%',
 };
 
-const AcquisitionUnitMemberships = ({ users, addMemberships, removeMembership, patronGroups }) => {
+const AcquisitionUnitMemberships = ({
+  users = [],
+  addMemberships = noop,
+  removeMembership = noop,
+  patronGroups = {},
+}) => {
   const resultFormatter = {
     patronGroup: item => patronGroups[item.patronGroup],
     actions: item => (
@@ -79,13 +84,6 @@ AcquisitionUnitMemberships.propTypes = {
   addMemberships: PropTypes.func,
   removeMembership: PropTypes.func,
   patronGroups: PropTypes.object,
-};
-
-AcquisitionUnitMemberships.defaultProps = {
-  users: [],
-  addMemberships: noop,
-  removeMembership: noop,
-  patronGroups: {},
 };
 
 export default AcquisitionUnitMemberships;
