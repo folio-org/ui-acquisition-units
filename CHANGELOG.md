@@ -1,9 +1,11 @@
 # Change history for ui-acquisition-units
 
-## 5.3.0 (IN PROGRESS)
+## 6.0.0 (IN PROGRESS)
 
 * React v19: refactor away from default props for functional components. Refs UIAC-80.
 * Migrate to shared GA workflows. Refs UIAC-83.
+* *BREAKING* Migrate stripes dependencies to their Sunflower versions. Refs UIAC-84.
+* *BREAKING* Migrate `react-intl` to v7. Refs UIAC-85.
 
 ## [5.2.0](https://github.com/folio-org/ui-acquisition-units/tree/v5.2.0) (2024-10-31)
 [Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v5.1.0...v5.2.0)
