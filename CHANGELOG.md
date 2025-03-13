@@ -1,6 +1,9 @@
 # Change history for ui-acquisition-units
 
-## 6.0.0 (IN PROGRESS)
+## 6.1.0 (IN PROGRESS)
+
+## [6.0.0](https://github.com/folio-org/ui-acquisition-units/tree/v6.0.0) (2025-03-13)
+[Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v5.2.0...v6.0.0)
 
 * React v19: refactor away from default props for functional components. Refs UIAC-80.
 * Migrate to shared GA workflows. Refs UIAC-83.
