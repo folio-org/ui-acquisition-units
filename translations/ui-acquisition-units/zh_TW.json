@@ -9,7 +9,7 @@
     "unit.createPermission": "新增",
     "unit.deletePermission": "删除",
     "unit.form.create.title": "新增採購單位",
-    "unit.form.edit.title": "編輯： {name}",
+    "unit.form.edit.title": "編輯 :  {name}",
     "unit.actions.new": "新增",
     "unit.actions.save": "儲存",
     "unit.actions.edit": "編輯",
