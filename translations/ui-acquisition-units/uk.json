@@ -1,6 +1,6 @@
 {
     "meta.title": "Acquisition units",
-    "accordion.generalInfo": "General information",
+    "accordion.generalInfo": "Загальна інформація",
     "accordion.actionPermissions": "Only members of this unit can perform the following actions",
     "unit.name": "Name",
     "unit.description": "Опис",
@@ -17,7 +17,7 @@
     "unit.actions.delete.conformation.title": "Delete acquisition unit",
     "unit.actions.delete.conformation.message": "Are you sure you want to delete the acquisition unit?",
     "unit.actions.delete.conformation.confirm": "Confirm",
-    "accordion.memberships": "Assigned users",
+    "accordion.memberships": "Призначені користувачі",
     "unit.actions.delete.forbidden": "Delete (Acquisition units with users cannot be deleted)",
     "unit.membership.name": "Name",
     "unit.membership.patronGroup": "Patron group",
