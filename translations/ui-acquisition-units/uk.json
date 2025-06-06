@@ -1,5 +1,5 @@
 {
-    "meta.title": "Acquisition units",
+    "meta.title": "Підрозділи для комплектування",
     "accordion.generalInfo": "Загальна інформація",
     "accordion.actionPermissions": "Тільки члени цього підрозділу можуть виконувати такі дії",
     "unit.name": "Ім'я/Назва *",
@@ -24,8 +24,8 @@
     "unit.membership.actions.remove": "Видалити",
     "unit.membership.actions.assign": "Призначити користувачів",
     "unit.membership.actions.assign.notAvailable": "Призначення користувачів недоступне",
-    "permission.settings.all": "Settings (acquisition units): Can view, edit, create and delete acquisition units",
+    "permission.settings.all": "Налаштування (підрозділи для придбання): Перегляд, редагування, створення та видалення підрозділів для придбання",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Підрозділ для придбання/комплектування \"{name}\" вже існує",
     "unit.actions.errors.save.genericError": "Не вдалося зберегти підрозділ для придбання/комплектування",
-    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
+    "permission.settings.userAssignments": "Налаштування (підрозділи для придбання): Управління призначеннями користувачів для підрозділів придбання"
 }
