@@ -21,7 +21,7 @@
     "unit.actions.delete.forbidden": "Видалити (підрозділ для придбання/комплектування з користувачами неможливо видалити)",
     "unit.membership.name": "Ім'я/Назва *",
     "unit.membership.patronGroup": "Група користувача",
-    "unit.membership.actions.remove": "Видалити",
+    "unit.membership.actions.remove": "Вилучити",
     "unit.membership.actions.assign": "Призначити користувачів",
     "unit.membership.actions.assign.notAvailable": "Призначення користувачів недоступне",
     "permission.settings.all": "Налаштування (підрозділи для придбання): Перегляд, редагування, створення та видалення підрозділів для придбання",
