@@ -1,6 +1,9 @@
-import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { useState } from 'react';
+import {
+  FormattedMessage,
+  useIntl,
+} from 'react-intl';
 
 import {
   Button,
@@ -27,7 +30,7 @@ const AcquisitionUnitDetailsActions = ({
   };
 
   return (
-    <Fragment>
+    <>
       <div>
         <IfPermission perm="acquisitions-units.units.item.put">
           <Button
@@ -72,7 +75,7 @@ const AcquisitionUnitDetailsActions = ({
           />
         )
       }
-    </Fragment>
+    </>
   );
 };
 
