@@ -98,7 +98,9 @@
         "permissionName": "settings.acquisition-units.enabled",
         "displayName": "Settings (acquisition units): display list of settings pages",
         "subPermissions": [
-          "settings.enabled"
+          "settings.enabled",
+          "mod-settings.entries.collection.get",
+          "mod-settings.global.read.stripes-core.prefs.manage"
         ],
         "visible": false
       },
