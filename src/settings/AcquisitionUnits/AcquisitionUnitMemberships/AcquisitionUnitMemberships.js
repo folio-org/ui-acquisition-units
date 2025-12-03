@@ -1,7 +1,6 @@
-import React from 'react';
+import noop from 'lodash/noop';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { noop } from 'lodash';
 
 import { IfPermission } from '@folio/stripes/core';
 import {
@@ -26,10 +25,11 @@ const columnWidths = {
 };
 
 const AcquisitionUnitMemberships = ({
-  users = [],
   addMemberships = noop,
-  removeMembership = noop,
+  isLoading = false,
   patronGroups = {},
+  removeMembership = noop,
+  users = [],
 }) => {
   const resultFormatter = {
     patronGroup: item => patronGroups[item.patronGroup],
@@ -40,6 +40,7 @@ const AcquisitionUnitMemberships = ({
             <IconButton
               data-testid="membership-action-remove"
               data-test-memberships-actions-remove
+              disabled={isLoading}
               icon="trash"
               onClick={() => removeMembership(item)}
               size="medium"
@@ -72,6 +73,7 @@ const AcquisitionUnitMemberships = ({
             visibleColumns={visibleColumns}
             columnMapping={columnMapping}
             columnWidths={columnWidths}
+            loading={isLoading}
           />
         </Col>
       </Row>
@@ -80,10 +82,11 @@ const AcquisitionUnitMemberships = ({
 };
 
 AcquisitionUnitMemberships.propTypes = {
-  users: PropTypes.arrayOf(PropTypes.object),
   addMemberships: PropTypes.func,
-  removeMembership: PropTypes.func,
+  isLoading: PropTypes.bool,
   patronGroups: PropTypes.object,
+  removeMembership: PropTypes.func,
+  users: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default AcquisitionUnitMemberships;

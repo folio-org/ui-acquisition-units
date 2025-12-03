@@ -1,36 +1,37 @@
-import React from 'react';
+import noop from 'lodash/noop';
 import PropTypes from 'prop-types';
-import { get, noop } from 'lodash';
 
-import { stripesConnect } from '@folio/stripes/core';
+import { LoadingPane } from '@folio/stripes/components';
+import { useAcquisitionUnits } from '@folio/stripes-acq-components';
 
-import { ACQUISITIONS_UNITS } from '../resources';
 import AcquisitionUnitsList from './AcquisitionUnitsList';
 
 const AcquisitionUnitsListContainer = ({
-  resources,
-  getViewPath = noop,
   getCreatePath = noop,
+  getViewPath = noop,
 }) => {
-  const acquisitionUnits = get(resources, 'acquisitionUnits.records', []);
+  const {
+    acquisitionsUnits,
+    isLoading,
+  } = useAcquisitionUnits();
+
+  if (isLoading) {
+    // TODO: apply title manager for a11y https://folio-org.atlassian.net/browse/UIAC-90
+    return <LoadingPane />;
+  }
 
   return (
     <AcquisitionUnitsList
-      acquisitionUnits={acquisitionUnits}
-      getViewPath={getViewPath}
+      acquisitionUnits={acquisitionsUnits}
       getCreatePath={getCreatePath}
+      getViewPath={getViewPath}
     />
   );
 };
 
-AcquisitionUnitsListContainer.manifest = Object.freeze({
-  acquisitionUnits: ACQUISITIONS_UNITS,
-});
-
 AcquisitionUnitsListContainer.propTypes = {
-  resources: PropTypes.object.isRequired,
   getViewPath: PropTypes.func,
   getCreatePath: PropTypes.func,
 };
 
-export default stripesConnect(AcquisitionUnitsListContainer);
+export default AcquisitionUnitsListContainer;

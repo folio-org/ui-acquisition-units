@@ -1,5 +1,7 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import {
+  Route,
+  Switch,
+} from 'react-router-dom';
 import ReactRouterPropTypes from 'react-router-prop-types';
 
 import {
@@ -7,11 +9,14 @@ import {
   defaultKeyboardShortcuts,
 } from '@folio/stripes/components';
 
-import AcquisitionUnitsList from './AcquisitionUnitsList';
-import AcquisitionUnitDetails from './AcquisitionUnitDetails';
 import AcquisitionUnitEditor from './AcquisitionUnitEditor';
+import AcquisitionUnitDetails from './AcquisitionUnitDetails';
+import AcquisitionUnitsList from './AcquisitionUnitsList';
 
-const AcquisitionUnits = ({ match, history }) => {
+const AcquisitionUnits = ({
+  history,
+  match,
+}) => {
   const { path } = match;
   const createPath = `${path}/create`;
 
@@ -75,9 +80,9 @@ const AcquisitionUnits = ({ match, history }) => {
 };
 
 AcquisitionUnits.propTypes = {
-  match: ReactRouterPropTypes.match.isRequired,
   history: ReactRouterPropTypes.history.isRequired,
   location: ReactRouterPropTypes.location.isRequired,
+  match: ReactRouterPropTypes.match.isRequired,
 };
 
 export default AcquisitionUnits;

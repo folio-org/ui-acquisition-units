@@ -1,29 +1,57 @@
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query';
+import { useParams } from 'react-router-dom';
+
 import { render } from '@folio/jest-config-stripes/testing-library/react';
 
+import * as api from '../utils/api';
 import AcquisitionUnitDetails from './AcquisitionUnitDetails';
 import AcquisitionUnitDetailsContainer from './AcquisitionUnitDetailsContainer';
+
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useParams: jest.fn(),
+}));
+
+jest.mock('../utils/api');
 
 jest.mock('./AcquisitionUnitDetails', () => {
   return jest.fn(() => 'AcquisitionUnitDetails');
 });
 
-const renderAcquisitionUnitDetailsContainer = ({
-  resources = {},
-  mutator = {},
-  getEditPath = jest.fn(),
-  close = jest.fn(),
-} = {}) => (render(
+const defaultProps = {
+  close: jest.fn(),
+  getEditPath: jest.fn(),
+};
+
+const queryClient = new QueryClient();
+const wrapper = ({ children }) => (
+  <QueryClientProvider client={queryClient}>
+    {children}
+  </QueryClientProvider>
+);
+
+const renderAcquisitionUnitDetailsContainer = (props = {}) => (render(
   <AcquisitionUnitDetailsContainer
-    resources={resources}
-    mutator={mutator}
-    close={close}
-    getEditPath={getEditPath}
+    {...defaultProps}
+    {...props}
   />,
+  { wrapper },
 ));
 
 describe('AcquisitionUnitDetailsContainer', () => {
   beforeEach(() => {
-    AcquisitionUnitDetails.mockClear();
+    useParams.mockReturnValue({ id: 3 });
+
+    api.fetchAcquisitionsUnitById.mockReturnValue(jest.fn().mockResolvedValue({ id: 3, name: 'Test Unit' }));
+    api.fetchMemberships.mockReturnValue(jest.fn().mockResolvedValue([]));
+    api.deleteAcquisitionsUnit.mockReturnValue(jest.fn().mockResolvedValue({ id: 3 }));
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
   });
 
   it('should render Acquisition Unit Details', () => {
@@ -33,33 +61,20 @@ describe('AcquisitionUnitDetailsContainer', () => {
   });
 
   describe('Delete unit', () => {
-    it('should send DELETE request via acquisitionUnits mutator', () => {
-      const mutator = {
-        acquisitionUnits: {
-          DELETE: jest.fn(() => Promise.resolve()),
-        },
-      };
-
-      renderAcquisitionUnitDetailsContainer({ mutator });
-
-      AcquisitionUnitDetails.mock.calls[0][0].deleteUnit();
-
-      expect(mutator.acquisitionUnits.DELETE).toHaveBeenCalled();
-    });
-
-    it('should call close when request is passed', async () => {
-      const mutator = {
-        acquisitionUnits: {
-          DELETE: jest.fn(() => Promise.resolve()),
-        },
-      };
-      const close = jest.fn();
-
-      renderAcquisitionUnitDetailsContainer({ mutator, close });
+    it('should call deleteAcquisitionsUnit API function', async () => {
+      renderAcquisitionUnitDetailsContainer();
 
       await AcquisitionUnitDetails.mock.calls[0][0].deleteUnit();
 
-      expect(close).toHaveBeenCalled();
+      expect(api.deleteAcquisitionsUnit).toHaveBeenCalled();
+    });
+
+    it('should call close when request is passed', async () => {
+      renderAcquisitionUnitDetailsContainer();
+
+      await AcquisitionUnitDetails.mock.calls[0][0].deleteUnit();
+
+      expect(defaultProps.close).toHaveBeenCalled();
     });
   });
 });

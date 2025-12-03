@@ -1,4 +1,4 @@
-import { USERS_API } from '../../../../src/settings/AcquisitionUnits/constants';
+import { USERS_API } from '@folio/stripes-acq-components';
 
 const configUsers = server => {
   server.get(USERS_API);

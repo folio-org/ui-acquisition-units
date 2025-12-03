@@ -1,41 +1,37 @@
-import React, { useRef } from 'react';
-import { Field } from 'redux-form';
-import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
+import { useRef } from 'react';
+import { FormattedMessage } from 'react-intl';
+import { Field } from 'redux-form';
 
 import {
-  Pane,
-  Layer,
-  ExpandAllButton,
-  Row,
-  Col,
-  AccordionStatus,
-  AccordionSet,
   Accordion,
-  PaneMenu,
+  AccordionSet,
+  AccordionStatus,
   Button,
-  TextField,
-  Checkbox,
-  HasCommand,
   checkScope,
+  Checkbox,
+  Col,
   collapseAllSections,
+  ExpandAllButton,
   expandAllSections,
+  HasCommand,
+  Layer,
+  Pane,
+  PaneMenu,
+  Row,
   TextArea,
+  TextField,
 } from '@folio/stripes/components';
 import { ViewMetaData } from '@folio/stripes/smart-components';
 import stripesForm from '@folio/stripes/form';
-import {
-  handleKeyCommand,
-} from '@folio/stripes-acq-components';
+import { handleKeyCommand } from '@folio/stripes-acq-components';
 
+import AcquisitionUnitMemberships from '../AcquisitionUnitMemberships';
 import {
   ACCORDIONS,
   ACCORDION_LABELS,
 } from '../constants';
-import {
-  initialState,
-} from '../reducer';
-import AcquisitionUnitMemberships from '../AcquisitionUnitMemberships';
+import { initialState } from '../reducer';
 
 const getPaneTitle = name => (
   name
@@ -48,7 +44,14 @@ const getPaneTitle = name => (
     : <FormattedMessage id="ui-acquisition-units.unit.form.create.title" />
 );
 
-const AcquisitionUnitEditor = ({ acquisitionUnit, close, handleSubmit, pristine, submitting }) => {
+const AcquisitionUnitEditor = ({
+  acquisitionUnit,
+  close,
+  handleSubmit,
+  isLoading,
+  pristine,
+  submitting,
+}) => {
   const accordionStatusRef = useRef();
 
   const getLastMenu = () => {
@@ -60,7 +63,7 @@ const AcquisitionUnitEditor = ({ acquisitionUnit, close, handleSubmit, pristine,
               id="save-ac-unit-button"
               data-test-save-ac-unit
               type="submit"
-              disabled={pristine || submitting}
+              disabled={pristine || submitting || isLoading}
               marginBottom0
             >
               {ariaLabel}
@@ -255,6 +258,7 @@ AcquisitionUnitEditor.propTypes = {
   acquisitionUnit: PropTypes.object.isRequired,
   close: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool,
   pristine: PropTypes.bool.isRequired,
   submitting: PropTypes.bool.isRequired,
 };

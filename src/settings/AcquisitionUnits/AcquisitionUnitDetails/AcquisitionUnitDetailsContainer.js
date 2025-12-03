@@ -1,51 +1,68 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { get } from 'lodash';
+import { useQueryClient } from 'react-query';
+import { useParams } from 'react-router-dom';
 
-import { stripesConnect } from '@folio/stripes/core';
+import { useNamespace } from '@folio/stripes/core';
 
 import {
-  ACQUISITIONS_UNIT,
-  ACQUISITIONS_UNITS,
-  ACQUISITIONS_UNIT_MEMBERSHIPS,
-} from '../resources';
+  useAcquisitionsUnit,
+  useAcquisitionsUnitMemberships,
+  useAcquisitionsUnitMutation,
+} from '../hooks';
 import AcquisitionUnitDetails from './AcquisitionUnitDetails';
 
-const AcquisitionUnitDetailsContainer = ({ getEditPath, close, resources, mutator }) => {
-  const acquisitionUnitInstance = get(resources, 'acquisitionUnit.records.0', {});
-  const memberships = get(resources, 'acquisitionsUnitMemberships.records', []);
+const AcquisitionUnitDetailsContainer = ({
+  close,
+  getEditPath,
+}) => {
+  const { id } = useParams();
+  const [acqUnitsNamespace] = useNamespace({ key: 'acquisitions-units' });
+  const queryClient = useQueryClient();
 
-  const deleteUnit = () => {
-    const { acquisitionUnits } = mutator;
+  const {
+    acquisitionsUnit,
+    isFetched: isAcqUnitFetched,
+    isFetching: isAcqUnitFetching,
+  } = useAcquisitionsUnit(id);
 
-    return acquisitionUnits.DELETE({ id: acquisitionUnitInstance.id }).then(close);
+  const {
+    isFetching: isAcqUnitMembershipsFetching,
+    isLoading: isAcqUnitMembershipsLoading,
+    memberships,
+  } = useAcquisitionsUnitMemberships(id, { enabled: isAcqUnitFetched });
+
+  const {
+    deleteAcquisitionsUnit,
+    isLoading: isDeletingAcquisitionsUnit,
+  } = useAcquisitionsUnitMutation();
+
+  const deleteUnit = async () => {
+    await deleteAcquisitionsUnit({ id: acquisitionsUnit?.id });
+    queryClient.invalidateQueries(acqUnitsNamespace);
+    close();
   };
+
+  const isLoading = (
+    isAcqUnitFetching
+    || isAcqUnitMembershipsLoading
+    || isDeletingAcquisitionsUnit
+  );
 
   return (
     <AcquisitionUnitDetails
+      acquisitionUnit={acquisitionsUnit}
+      canDelete={!isAcqUnitMembershipsFetching && memberships.length === 0}
       close={close}
-      acquisitionUnit={acquisitionUnitInstance}
-      getEditPath={getEditPath}
       deleteUnit={deleteUnit}
-      canDelete={memberships.length === 0}
+      isLoading={isLoading}
+      getEditPath={getEditPath}
     />
   );
 };
 
-AcquisitionUnitDetailsContainer.manifest = Object.freeze({
-  acquisitionUnits: {
-    ...ACQUISITIONS_UNITS,
-    fetch: false,
-  },
-  acquisitionUnit: ACQUISITIONS_UNIT,
-  acquisitionsUnitMemberships: ACQUISITIONS_UNIT_MEMBERSHIPS,
-});
-
 AcquisitionUnitDetailsContainer.propTypes = {
-  mutator: PropTypes.object.isRequired,
-  resources: PropTypes.object.isRequired,
   close: PropTypes.func.isRequired,
   getEditPath: PropTypes.func.isRequired,
 };
 
-export default stripesConnect(AcquisitionUnitDetailsContainer);
+export default AcquisitionUnitDetailsContainer;

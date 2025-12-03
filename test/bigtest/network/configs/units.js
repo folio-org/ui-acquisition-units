@@ -1,11 +1,10 @@
+import { ACQUISITIONS_UNITS_API as API } from '@folio/stripes-acq-components';
 import {
   createGetAll,
   createGetById,
   createPost,
   createPut,
 } from '@folio/stripes-acq-components/test/bigtest/network/configs';
-
-import { ACQUISITIONS_UNITS_API as API } from '../../../../src/settings/AcquisitionUnits/constants';
 
 const SCHEMA_NAME = 'units';
 
