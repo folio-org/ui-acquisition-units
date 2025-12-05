@@ -8,10 +8,10 @@ import {
   waitFor,
 } from '@folio/jest-config-stripes/testing-library/react';
 
-import { fetchUserGroups } from '../utils/api';
+import { fetchUserGroups } from '../../utils/api';
 import { useUserGroups } from './useUserGroups';
 
-jest.mock('../utils/api', () => ({
+jest.mock('../../utils/api', () => ({
   fetchUserGroups: jest.fn(),
 }));
 
@@ -28,6 +28,7 @@ describe('useUserGroups', () => {
   });
 
   afterEach(() => {
+    queryClient.clear();
     jest.clearAllMocks();
   });
 

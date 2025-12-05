@@ -12,10 +12,10 @@ import {
   createAcquisitionsUnit,
   deleteAcquisitionsUnit,
   updateAcquisitionsUnit,
-} from '../utils/api';
+} from '../../utils/api';
 import { useAcquisitionsUnitMutation } from './useAcquisitionsUnitMutation';
 
-jest.mock('../utils/api', () => ({
+jest.mock('../../utils/api', () => ({
   createAcquisitionsUnit: jest.fn(),
   deleteAcquisitionsUnit: jest.fn(),
   updateAcquisitionsUnit: jest.fn(),
@@ -36,6 +36,7 @@ describe('useAcquisitionsUnitMutation', () => {
   });
 
   afterEach(() => {
+    queryClient.clear();
     jest.clearAllMocks();
   });
 
@@ -44,6 +45,7 @@ describe('useAcquisitionsUnitMutation', () => {
 
     // call create
     let created;
+
     await waitFor(async () => {
       created = await result.current.createAcquisitionsUnit({ data: { name: 'x' } });
       expect(createAcquisitionsUnit).toHaveBeenCalled();
@@ -52,6 +54,7 @@ describe('useAcquisitionsUnitMutation', () => {
 
     // call update
     let updated;
+
     await waitFor(async () => {
       updated = await result.current.updateAcquisitionsUnit({ data: { id: 'u1', name: 'y' } });
       expect(updateAcquisitionsUnit).toHaveBeenCalled();
@@ -60,6 +63,7 @@ describe('useAcquisitionsUnitMutation', () => {
 
     // call delete
     let deleted;
+
     await waitFor(async () => {
       deleted = await result.current.deleteAcquisitionsUnit({ id: 'u1' });
       expect(deleteAcquisitionsUnit).toHaveBeenCalled();

@@ -8,10 +8,10 @@ import {
   waitFor,
 } from '@folio/jest-config-stripes/testing-library/react';
 
-import { fetchAcquisitionsUnitById } from '../utils/api';
+import { fetchAcquisitionsUnitById } from '../../utils/api';
 import { useAcquisitionsUnit } from './useAcquisitionsUnit';
 
-jest.mock('../utils/api', () => ({
+jest.mock('../../utils/api', () => ({
   fetchAcquisitionsUnitById: jest.fn(),
 }));
 
@@ -28,6 +28,7 @@ describe('useAcquisitionsUnit', () => {
   });
 
   afterEach(() => {
+    queryClient.clear();
     jest.clearAllMocks();
   });
 

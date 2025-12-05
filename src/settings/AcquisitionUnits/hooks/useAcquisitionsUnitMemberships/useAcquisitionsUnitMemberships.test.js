@@ -8,10 +8,10 @@ import {
   waitFor,
 } from '@folio/jest-config-stripes/testing-library/react';
 
-import { fetchMemberships } from '../utils/api';
-import { useMemberships } from './useMemberships';
+import { fetchMemberships } from '../../utils/api';
+import { useAcquisitionsUnitMemberships } from './useAcquisitionsUnitMemberships';
 
-jest.mock('../utils/api', () => ({
+jest.mock('../../utils/api', () => ({
   fetchMemberships: jest.fn(),
 }));
 
@@ -22,21 +22,19 @@ const wrapper = ({ children }) => (
   </QueryClientProvider>
 );
 
-describe('useMemberships', () => {
+describe('useAcquisitionsUnitMemberships', () => {
   beforeEach(() => {
     fetchMemberships.mockImplementation(() => async () => ({ acquisitionsUnitMemberships: [{ id: 'm1' }], totalRecords: 1 }));
   });
 
   afterEach(() => {
+    queryClient.clear();
     jest.clearAllMocks();
   });
 
-  it('returns memberships and total', async () => {
-    const { result } = renderHook(() => useMemberships({ searchParams: {} }), { wrapper });
+  it('calls memberships with acquisitionsUnitId', async () => {
+    const { result } = renderHook(() => useAcquisitionsUnitMemberships(10), { wrapper });
 
-    await waitFor(() => {
-      expect(result.current.memberships).toHaveLength(1);
-      expect(result.current.totalRecords).toBe(1);
-    });
+    await waitFor(() => expect(result.current.memberships).toHaveLength(1));
   });
 });

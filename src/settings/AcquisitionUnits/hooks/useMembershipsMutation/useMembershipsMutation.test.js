@@ -11,10 +11,10 @@ import {
 import {
   createMembership,
   deleteMembership,
-} from '../utils/api';
+} from '../../utils/api';
 import { useMembershipsMutation } from './useMembershipsMutation';
 
-jest.mock('../utils/api', () => ({
+jest.mock('../../utils/api', () => ({
   createMembership: jest.fn(),
   deleteMembership: jest.fn(),
 }));
@@ -33,6 +33,7 @@ describe('useMembershipsMutation', () => {
   });
 
   afterEach(() => {
+    queryClient.clear();
     jest.clearAllMocks();
   });
 
@@ -40,6 +41,7 @@ describe('useMembershipsMutation', () => {
     const { result } = renderHook(() => useMembershipsMutation(), { wrapper });
 
     let created;
+
     await waitFor(async () => {
       created = await result.current.createMembership({ data: { userId: '1', acquisitionsUnitId: '2' } });
       expect(createMembership).toHaveBeenCalled();
@@ -47,6 +49,7 @@ describe('useMembershipsMutation', () => {
     });
 
     let deleted;
+
     await waitFor(async () => {
       deleted = await result.current.deleteMembership({ id: 'cm1' });
       expect(deleteMembership).toHaveBeenCalled();
