@@ -75,8 +75,8 @@ const AcquisitionUnitMembershipsContainer = ({ match, resources, mutator }) => {
 
     // build patronGroups map
     if (!isEqual(prevPatronGroups, patronGroups)) {
-      setPatronGroupsMap(patronGroups.reduce((acc, { id, desc }) => {
-        acc[id] = desc;
+      setPatronGroupsMap(patronGroups.reduce((acc, { id, group }) => {
+        acc[id] = group;
 
         return acc;
       }, {}));
