@@ -40,6 +40,7 @@ const AcquisitionUnitDetails = ({
   getEditPath,
   isLoading,
 }) => {
+  const paneTitleRef = useRef();
   const accordionStatusRef = useRef();
   const history = useHistory();
   const stripes = useStripes();
@@ -96,6 +97,8 @@ const AcquisitionUnitDetails = ({
         defaultWidth="fill"
         data-test-ac-unit-details
         paneTitle={acquisitionUnit.name}
+        paneTitleRef={paneTitleRef}
+        onMount={() => paneTitleRef.current?.focus()}
         actionMenu={getActionMenu}
         dismissible
         onClose={close}
