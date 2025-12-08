@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import { useRef } from 'react';
-import { FormattedMessage } from 'react-intl';
+import {
+  FormattedMessage,
+  useIntl,
+} from 'react-intl';
 import { Field } from 'redux-form';
 
 import {
@@ -22,6 +25,7 @@ import {
   TextArea,
   TextField,
 } from '@folio/stripes/components';
+import { TitleManager } from '@folio/stripes/core';
 import { ViewMetaData } from '@folio/stripes/smart-components';
 import stripesForm from '@folio/stripes/form';
 import { handleKeyCommand } from '@folio/stripes-acq-components';
@@ -33,15 +37,10 @@ import {
 } from '../constants';
 import { initialState } from '../reducer';
 
-const getPaneTitle = name => (
+const getPaneTitle = (name, intl) => (
   name
-    ? (
-      <FormattedMessage
-        id="ui-acquisition-units.unit.form.edit.title"
-        values={{ name }}
-      />
-    )
-    : <FormattedMessage id="ui-acquisition-units.unit.form.create.title" />
+    ? intl.formatMessage({ id: 'ui-acquisition-units.unit.form.edit.title' }, { name })
+    : intl.formatMessage({ id: 'ui-acquisition-units.unit.form.create.title' })
 );
 
 const AcquisitionUnitEditor = ({
@@ -53,6 +52,9 @@ const AcquisitionUnitEditor = ({
   submitting,
 }) => {
   const accordionStatusRef = useRef();
+  const intl = useIntl();
+
+  const paneTitle = getPaneTitle(acquisitionUnit.name, intl);
 
   const getLastMenu = () => {
     return (
@@ -95,162 +97,164 @@ const AcquisitionUnitEditor = ({
   ];
 
   return (
-    <HasCommand
-      commands={shortcuts}
-      isWithinScope={checkScope}
-      scope={document.body}
-    >
-      <Layer
-        contentLabel="Acquisition unit editor"
-        isOpen
+    <TitleManager record={paneTitle}>
+      <HasCommand
+        commands={shortcuts}
+        isWithinScope={checkScope}
+        scope={document.body}
       >
-        <form
-          id="ac-unit-form"
-          data-test-ac-unit-form
-          onSubmit={handleSubmit}
+        <Layer
+          contentLabel="Acquisition unit editor"
+          isOpen
         >
-          <Pane
-            id="pane-ac-unit-editor"
-            data-test-ac-unit-form-pane
-            defaultWidth="fill"
-            paneTitle={getPaneTitle(acquisitionUnit.name)}
-            dismissible
-            onClose={close}
-            lastMenu={getLastMenu()}
+          <form
+            id="ac-unit-form"
+            data-test-ac-unit-form
+            onSubmit={handleSubmit}
           >
-            <AccordionStatus
-              ref={accordionStatusRef}
-              initialStatus={initialState}
+            <Pane
+              id="pane-ac-unit-editor"
+              data-test-ac-unit-form-pane
+              defaultWidth="fill"
+              paneTitle={paneTitle}
+              dismissible
+              onClose={close}
+              lastMenu={getLastMenu()}
             >
-              <Row center="xs">
-                <Col xs={12} md={8}>
-                  <Row end="xs">
-                    <Col xs={12}>
-                      <ExpandAllButton />
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
+              <AccordionStatus
+                ref={accordionStatusRef}
+                initialStatus={initialState}
+              >
+                <Row center="xs">
+                  <Col xs={12} md={8}>
+                    <Row end="xs">
+                      <Col xs={12}>
+                        <ExpandAllButton />
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
 
-              <Row center="xs">
-                <Col xs={12} md={8}>
-                  <AccordionSet>
-                    <Accordion
-                      label={ACCORDION_LABELS[ACCORDIONS.GENERAL_INFO]}
-                      id={ACCORDIONS.GENERAL_INFO}
-                    >
-                      <Row start="xs">
-                        <Col xs={12}>
-                          {acquisitionUnit.metadata && <ViewMetaData metadata={acquisitionUnit.metadata} />}
-                        </Col>
-                      </Row>
-
-                      <Row start="xs">
-                        <Col xs={4}>
-                          <Field
-                            component={TextField}
-                            label={<FormattedMessage id="ui-acquisition-units.unit.name" />}
-                            name="name"
-                            type="text"
-                            required
-                          />
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col xs={8}>
-                          <Field
-                            label={<FormattedMessage id="ui-acquisition-units.unit.description" />}
-                            name="description"
-                            component={TextArea}
-                            fullWidth
-                          />
-                        </Col>
-                      </Row>
-                    </Accordion>
-
-                    <Accordion
-                      label={ACCORDION_LABELS[ACCORDIONS.ACTION_PERMISSIONS]}
-                      id={ACCORDIONS.ACTION_PERMISSIONS}
-                    >
-                      <Row
-                        start="xs"
-                        data-row-ac-unit-protected-read
+                <Row center="xs">
+                  <Col xs={12} md={8}>
+                    <AccordionSet>
+                      <Accordion
+                        label={ACCORDION_LABELS[ACCORDIONS.GENERAL_INFO]}
+                        id={ACCORDIONS.GENERAL_INFO}
                       >
-                        <Col xs={4}>
-                          <Field
-                            component={Checkbox}
-                            label={<FormattedMessage id="ui-acquisition-units.unit.viewPermission" />}
-                            name="protectRead"
-                            type="checkbox"
-                          />
-                        </Col>
-                      </Row>
+                        <Row start="xs">
+                          <Col xs={12}>
+                            {acquisitionUnit.metadata && <ViewMetaData metadata={acquisitionUnit.metadata} />}
+                          </Col>
+                        </Row>
 
-                      <Row
-                        start="xs"
-                        data-row-ac-unit-protected-updated
+                        <Row start="xs">
+                          <Col xs={4}>
+                            <Field
+                              component={TextField}
+                              label={<FormattedMessage id="ui-acquisition-units.unit.name" />}
+                              name="name"
+                              type="text"
+                              required
+                            />
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col xs={8}>
+                            <Field
+                              label={<FormattedMessage id="ui-acquisition-units.unit.description" />}
+                              name="description"
+                              component={TextArea}
+                              fullWidth
+                            />
+                          </Col>
+                        </Row>
+                      </Accordion>
+
+                      <Accordion
+                        label={ACCORDION_LABELS[ACCORDIONS.ACTION_PERMISSIONS]}
+                        id={ACCORDIONS.ACTION_PERMISSIONS}
                       >
-                        <Col xs={4}>
-                          <Field
-                            component={Checkbox}
-                            label={<FormattedMessage id="ui-acquisition-units.unit.editPermission" />}
-                            name="protectUpdate"
-                            type="checkbox"
-                          />
-                        </Col>
-                      </Row>
-
-                      <Row
-                        start="xs"
-                        data-row-ac-unit-protected-create
-                      >
-                        <Col xs={4}>
-                          <Field
-                            component={Checkbox}
-                            label={<FormattedMessage id="ui-acquisition-units.unit.createPermission" />}
-                            name="protectCreate"
-                            type="checkbox"
-                          />
-                        </Col>
-                      </Row>
-
-                      <Row
-                        start="xs"
-                        data-row-ac-unit-protected-delete
-                      >
-                        <Col xs={4}>
-                          <Field
-                            component={Checkbox}
-                            label={<FormattedMessage id="ui-acquisition-units.unit.deletePermission" />}
-                            name="protectDelete"
-                            type="checkbox"
-                          />
-                        </Col>
-                      </Row>
-                    </Accordion>
-
-                    {
-                      Boolean(acquisitionUnit.id) && (
-                        <Accordion
-                          label={ACCORDION_LABELS[ACCORDIONS.MEMBERSHIPS]}
-                          id={ACCORDIONS.MEMBERSHIPS}
+                        <Row
+                          start="xs"
+                          data-row-ac-unit-protected-read
                         >
-                          <Row start="xs">
-                            <Col xs={12}>
-                              <AcquisitionUnitMemberships />
-                            </Col>
-                          </Row>
-                        </Accordion>
-                      )
-                    }
-                  </AccordionSet>
-                </Col>
-              </Row>
-            </AccordionStatus>
-          </Pane>
-        </form>
-      </Layer>
-    </HasCommand>
+                          <Col xs={4}>
+                            <Field
+                              component={Checkbox}
+                              label={<FormattedMessage id="ui-acquisition-units.unit.viewPermission" />}
+                              name="protectRead"
+                              type="checkbox"
+                            />
+                          </Col>
+                        </Row>
+
+                        <Row
+                          start="xs"
+                          data-row-ac-unit-protected-updated
+                        >
+                          <Col xs={4}>
+                            <Field
+                              component={Checkbox}
+                              label={<FormattedMessage id="ui-acquisition-units.unit.editPermission" />}
+                              name="protectUpdate"
+                              type="checkbox"
+                            />
+                          </Col>
+                        </Row>
+
+                        <Row
+                          start="xs"
+                          data-row-ac-unit-protected-create
+                        >
+                          <Col xs={4}>
+                            <Field
+                              component={Checkbox}
+                              label={<FormattedMessage id="ui-acquisition-units.unit.createPermission" />}
+                              name="protectCreate"
+                              type="checkbox"
+                            />
+                          </Col>
+                        </Row>
+
+                        <Row
+                          start="xs"
+                          data-row-ac-unit-protected-delete
+                        >
+                          <Col xs={4}>
+                            <Field
+                              component={Checkbox}
+                              label={<FormattedMessage id="ui-acquisition-units.unit.deletePermission" />}
+                              name="protectDelete"
+                              type="checkbox"
+                            />
+                          </Col>
+                        </Row>
+                      </Accordion>
+
+                      {
+                        Boolean(acquisitionUnit.id) && (
+                          <Accordion
+                            label={ACCORDION_LABELS[ACCORDIONS.MEMBERSHIPS]}
+                            id={ACCORDIONS.MEMBERSHIPS}
+                          >
+                            <Row start="xs">
+                              <Col xs={12}>
+                                <AcquisitionUnitMemberships />
+                              </Col>
+                            </Row>
+                          </Accordion>
+                        )
+                      }
+                    </AccordionSet>
+                  </Col>
+                </Row>
+              </AccordionStatus>
+            </Pane>
+          </form>
+        </Layer>
+      </HasCommand>
+    </TitleManager>
   );
 };
 

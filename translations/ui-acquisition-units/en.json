@@ -1,5 +1,6 @@
 {
   "meta.title": "Acquisition units",
+  "document.settings.title": "Acquisition units settings",
 
   "accordion.generalInfo": "General information",
   "accordion.actionPermissions": "Only members of this unit can perform the following actions",

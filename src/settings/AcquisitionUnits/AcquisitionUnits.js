@@ -1,3 +1,4 @@
+import { useIntl } from 'react-intl';
 import {
   Route,
   Switch,
@@ -8,6 +9,7 @@ import {
   CommandList,
   defaultKeyboardShortcuts,
 } from '@folio/stripes/components';
+import { TitleManager } from '@folio/stripes/core';
 
 import AcquisitionUnitEditor from './AcquisitionUnitEditor';
 import AcquisitionUnitDetails from './AcquisitionUnitDetails';
@@ -20,6 +22,8 @@ const AcquisitionUnits = ({
   const { path } = match;
   const createPath = `${path}/create`;
 
+  const intl = useIntl();
+
   const getCreatePath = () => createPath;
   const getViewPath = acquisitionUnitId => `${path}/${acquisitionUnitId}/view`;
   const getEditPath = acquisitionUnitId => `${path}/${acquisitionUnitId}/edit`;
@@ -27,55 +31,57 @@ const AcquisitionUnits = ({
   const closePane = id => history.push(id ? getViewPath(id) : path);
 
   return (
-    <CommandList
-      commands={defaultKeyboardShortcuts}
-    >
-      <Switch>
-        <Route
-          path={createPath}
-          render={(props) => (
-            <AcquisitionUnitEditor
-              close={closePane}
-              location={props.location}
-              match={props.match}
-            />
-          )}
-        />
-        <Route
-          path={getEditPath(':id')}
-          render={(props) => (
-            <AcquisitionUnitEditor
-              close={closePane}
-              location={props.location}
-              match={props.match}
-            />
-          )}
-        />
-        <Route
-          path={path}
-          render={() => (
-            <>
-              <AcquisitionUnitsList
-                getViewPath={getViewPath}
-                getCreatePath={getCreatePath}
+    <TitleManager page={intl.formatMessage({ id: 'ui-acquisition-units.document.settings.title' })}>
+      <CommandList
+        commands={defaultKeyboardShortcuts}
+      >
+        <Switch>
+          <Route
+            path={createPath}
+            render={(props) => (
+              <AcquisitionUnitEditor
+                close={closePane}
+                location={props.location}
+                match={props.match}
               />
-              <Route
-                exact
-                path={getViewPath(':id')}
-                render={(props) => (
-                  <AcquisitionUnitDetails
-                    getEditPath={getEditPath}
-                    location={props.location}
-                    close={closePane}
-                    match={props.match}
-                  />
-                )}
+            )}
+          />
+          <Route
+            path={getEditPath(':id')}
+            render={(props) => (
+              <AcquisitionUnitEditor
+                close={closePane}
+                location={props.location}
+                match={props.match}
               />
-            </>
-          )}
-        />
-      </Switch>
-    </CommandList>
+            )}
+          />
+          <Route
+            path={path}
+            render={() => (
+              <>
+                <AcquisitionUnitsList
+                  getViewPath={getViewPath}
+                  getCreatePath={getCreatePath}
+                />
+                <Route
+                  exact
+                  path={getViewPath(':id')}
+                  render={(props) => (
+                    <AcquisitionUnitDetails
+                      getEditPath={getEditPath}
+                      location={props.location}
+                      close={closePane}
+                      match={props.match}
+                    />
+                  )}
+                />
+              </>
+            )}
+          />
+        </Switch>
+      </CommandList>
+    </TitleManager>
   );
 };
 
