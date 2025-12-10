@@ -1,26 +1,26 @@
-import React, { useCallback } from 'react';
+import noop from 'lodash/noop';
 import PropTypes from 'prop-types';
+import { useCallback } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { noop } from 'lodash';
 import { useHistory } from 'react-router-dom';
 
 import {
-  NavList,
-  NavListItem,
-  Pane,
   Button,
   checkScope,
   HasCommand,
+  NavList,
+  NavListItem,
+  Pane,
 } from '@folio/stripes/components';
 import {
-  useStripes,
   IfPermission,
+  useStripes,
 } from '@folio/stripes/core';
 
 const AcquisitionUnitsList = ({
   acquisitionUnits = [],
-  getViewPath = noop,
   getCreatePath = noop,
+  getViewPath = noop,
 }) => {
   const history = useHistory();
   const stripes = useStripes();
@@ -81,8 +81,8 @@ const AcquisitionUnitsList = ({
 
 AcquisitionUnitsList.propTypes = {
   acquisitionUnits: PropTypes.arrayOf(PropTypes.object),
-  getViewPath: PropTypes.func,
   getCreatePath: PropTypes.func,
+  getViewPath: PropTypes.func,
 };
 
 export default AcquisitionUnitsList;

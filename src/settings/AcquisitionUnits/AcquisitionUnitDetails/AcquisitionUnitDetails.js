@@ -1,22 +1,23 @@
-import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
+import { useRef } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useHistory } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import {
   Accordion,
   AccordionSet,
   AccordionStatus,
+  checkScope,
   Checkbox,
   Col,
+  collapseAllSections,
   ExpandAllButton,
+  expandAllSections,
+  HasCommand,
   KeyValue,
+  LoadingPane,
   Pane,
   Row,
-  HasCommand,
-  checkScope,
-  collapseAllSections,
-  expandAllSections,
 } from '@folio/stripes/components';
 import { useStripes } from '@folio/stripes/core';
 import { ViewMetaData } from '@folio/stripes/smart-components';
@@ -25,18 +26,19 @@ import {
   ACCORDIONS,
   ACCORDION_LABELS,
 } from '../constants';
-import {
-  initialState,
-} from '../reducer';
-import AcquisitionUnitMemberships from '../AcquisitionUnitMemberships';
+import { initialState } from '../reducer';
 import AcquisitionUnitDetailsActions from './AcquisitionUnitDetailsActions';
+import AcquisitionUnitMemberships from '../AcquisitionUnitMemberships';
+
+const DEFAULT_ACQ_UNIT = {};
 
 const AcquisitionUnitDetails = ({
-  acquisitionUnit,
-  close,
-  getEditPath,
-  deleteUnit,
+  acquisitionUnit = DEFAULT_ACQ_UNIT,
   canDelete = true,
+  close,
+  deleteUnit,
+  getEditPath,
+  isLoading,
 }) => {
   const accordionStatusRef = useRef();
   const history = useHistory();
@@ -72,6 +74,16 @@ const AcquisitionUnitDetails = ({
       handler: (e) => collapseAllSections(e, accordionStatusRef),
     },
   ];
+
+  if (isLoading) {
+    // TODO: apply title manager https://folio-org.atlassian.net/browse/UIAC-90
+    return (
+      <LoadingPane
+        dismissible
+        onClose={() => close()}
+      />
+    );
+  }
 
   return (
     <HasCommand
@@ -207,11 +219,12 @@ const AcquisitionUnitDetails = ({
 };
 
 AcquisitionUnitDetails.propTypes = {
-  acquisitionUnit: PropTypes.object.isRequired,
-  close: PropTypes.func.isRequired,
-  getEditPath: PropTypes.func.isRequired,
-  deleteUnit: PropTypes.func.isRequired,
+  acquisitionUnit: PropTypes.object,
   canDelete: PropTypes.bool,
+  close: PropTypes.func.isRequired,
+  deleteUnit: PropTypes.func.isRequired,
+  getEditPath: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool,
 };
 
 export default AcquisitionUnitDetails;

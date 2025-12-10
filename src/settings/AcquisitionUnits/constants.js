@@ -1,9 +1,5 @@
-import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-export const ACQUISITIONS_UNITS_API = 'acquisitions-units/units';
-export const ACQUISITIONS_UNIT_MEMBERSHIPS_API = 'acquisitions-units/memberships';
-export const USERS_API = 'users';
 export const USER_GROUPS_API = 'groups';
 
 export const LIMIT_MAX = 2147483647;

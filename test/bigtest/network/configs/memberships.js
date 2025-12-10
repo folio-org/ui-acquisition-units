@@ -1,4 +1,4 @@
-import { ACQUISITIONS_UNIT_MEMBERSHIPS_API } from '../../../../src/settings/AcquisitionUnits/constants';
+import { ACQUISITIONS_UNIT_MEMBERSHIPS_API } from '@folio/stripes-acq-components';
 
 const configMemberships = server => {
   server.get(ACQUISITIONS_UNIT_MEMBERSHIPS_API, (schema) => {
