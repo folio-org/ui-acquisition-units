@@ -61,7 +61,6 @@ const AcquisitionUnitEditorContainer = ({
   const onClose = () => close(id);
 
   if (isAcqUnitFetching) {
-    // TODO: apply title manager https://folio-org.atlassian.net/browse/UIAC-90
     return (
       <LoadingView />
     );

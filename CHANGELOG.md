@@ -5,6 +5,7 @@
 * Include global `mod-settings` permissions in base permission sets. Refs UIAC-91.
 * Display patron group name instead of description. Refs UIAC-93.
 * *BREAKING* Refactor external requests to use `react-query`. Refs UIAC-89.
+* Automatically shift focus to the details pane after opening. Refs UIAC-90.
 
 ## [6.0.0](https://github.com/folio-org/ui-acquisition-units/tree/v6.0.0) (2025-03-13)
 [Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v5.2.0...v6.0.0)

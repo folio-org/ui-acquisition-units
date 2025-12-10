@@ -16,7 +16,6 @@ const AcquisitionUnitsListContainer = ({
   } = useAcquisitionUnits();
 
   if (isLoading) {
-    // TODO: apply title manager for a11y https://folio-org.atlassian.net/browse/UIAC-90
     return <LoadingPane />;
   }
 
