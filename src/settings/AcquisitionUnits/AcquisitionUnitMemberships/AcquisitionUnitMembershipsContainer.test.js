@@ -57,7 +57,7 @@ describe('AcquisitionUnitMembershipsContainer', () => {
       acquisitionsUnitMemberships: [{ userId: user.id, id: 'mem1' }],
       totalRecords: 1,
     }));
-    
+
     api.createMembership.mockReturnValue(jest.fn().mockResolvedValue({ id: 'new-mem' }));
     api.deleteMembership.mockReturnValue(jest.fn().mockResolvedValue({}));
 
@@ -99,7 +99,7 @@ describe('AcquisitionUnitMembershipsContainer', () => {
     });
 
     await userEvent.click(screen.getByText(selectUsersLabel));
-    
+
     // API function should be called through hooks
     expect(api.createMembership).toHaveBeenCalled();
 

@@ -30,7 +30,7 @@ const wrapper = ({ children }) => (
   </QueryClientProvider>
 );
 
-const renderAcquisitionUnitsListContainer = (props= {}) => (render(
+const renderAcquisitionUnitsListContainer = (props = {}) => (render(
   <AcquisitionUnitsListContainer
     {...defaultProps}
     {...props}
