@@ -27,5 +27,6 @@
     "permission.settings.all": "Einstellungen (Erwerbungsteams): Kann Erwerbungsteams anzeigen, bearbeiten, erstellen und löschen",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Erwerbungsteam \"{name}\" bereits vorhanden",
     "unit.actions.errors.save.genericError": "Erwerbungsteam konnte nicht gespeichert werden",
-    "permission.settings.userAssignments": "Einstellungen (Erwerbungsteams): Benutzerzuweisungen für Erwerbungsteams verwalten"
+    "permission.settings.userAssignments": "Einstellungen (Erwerbungsteams): Benutzerzuweisungen für Erwerbungsteams verwalten",
+    "document.settings.title": "Acquisition units settings"
 }

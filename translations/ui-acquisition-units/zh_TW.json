@@ -27,5 +27,6 @@
     "permission.settings.all": "設定 ( 採購單位 ) : 可檢視、編輯、建立和刪除採購單位",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "採購單位「 {name} 」已存在",
     "unit.actions.errors.save.genericError": "無法儲存採購單位",
-    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
+    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments",
+    "document.settings.title": "Acquisition units settings"
 }
