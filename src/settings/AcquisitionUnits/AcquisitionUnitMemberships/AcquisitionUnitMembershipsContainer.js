@@ -40,8 +40,8 @@ const AcquisitionUnitMembershipsContainer = () => {
   } = useUserGroups();
 
   const mappedUserGroupsDict = useMemo(() => {
-    return userGroups.reduce((acc, { id, desc }) => {
-      acc[id] = desc;
+    return userGroups.reduce((acc, { id, group }) => {
+      acc[id] = group;
 
       return acc;
     }, {});
