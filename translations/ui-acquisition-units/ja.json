@@ -27,5 +27,6 @@
     "permission.settings.all": "設定（収集ユニット）: 収集ユニットの閲覧、編集、削除ができます",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "収集ユニット「 {name} 」はすでに存在します",
     "unit.actions.errors.save.genericError": "収集ユニットを保存できませんでした",
-    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
+    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments",
+    "document.settings.title": "Acquisition units settings"
 }

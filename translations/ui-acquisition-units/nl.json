@@ -27,5 +27,6 @@
     "permission.settings.all": "Instellingen (acquisitie-unit): Kan acquisitie-units bekijken, bewerken, aanmaken en verwijderen.",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Acquisitie-unit \"{name}\" bestaat al",
     "unit.actions.errors.save.genericError": "Acquisitie-unit kon niet worden opgeslagen",
-    "permission.settings.userAssignments": "Instellingen (acquisitie-units): Gebruikerstoewijzingen acquisitie-units beheren"
+    "permission.settings.userAssignments": "Instellingen (acquisitie-units): Gebruikerstoewijzingen acquisitie-units beheren",
+    "document.settings.title": "Acquisition units settings"
 }

@@ -27,5 +27,6 @@
     "permission.settings.all": "设置 : 采购单位 )  : 可以查看、编辑、创建和删除采购单位",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "采购单位“ {name} ”已存在",
     "unit.actions.errors.save.genericError": "无法保存采购单位",
-    "permission.settings.userAssignments": "设置 : 采购单位 )  : 管理采购单位用户分配"
+    "permission.settings.userAssignments": "设置 : 采购单位 )  : 管理采购单位用户分配",
+    "document.settings.title": "采购单位设置"
 }

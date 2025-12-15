@@ -27,5 +27,6 @@
     "permission.settings.all": "Indstillinger (Indkøbsteam): Se, rediger, opret, og slet indkøbsteam",
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Acquisition unit \"{name}\" already exists",
     "unit.actions.errors.save.genericError": "Couldn't save acquisition unit",
-    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments"
+    "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments",
+    "document.settings.title": "Acquisition units settings"
 }
