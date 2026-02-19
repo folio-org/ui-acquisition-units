@@ -2,7 +2,7 @@
 
 ## 7.0.0 (IN PROGRESS)
 
-* Include global `mod-settings` permissions in base permission sets. Refs UIAC-91.
+* Include global `stripes-core.settings.read` permission in base permission sets. Refs UIAC-91.
 * Display patron group name instead of description. Refs UIAC-93.
 * *BREAKING* Refactor external requests to use `react-query`. Refs UIAC-89.
 * Automatically shift focus to the details pane after opening. Refs UIAC-90.
