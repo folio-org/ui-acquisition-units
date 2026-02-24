@@ -1,7 +1,7 @@
 {
     "meta.title": "Acquisition units",
-    "accordion.generalInfo": "General information",
-    "accordion.actionPermissions": "Only members of this unit can perform the following actions",
+    "accordion.generalInfo": "ข้อมูลทั่วไป",
+    "accordion.actionPermissions": "มีเพียงสมาชิกของหน่วยนี้เท่านั้นที่สามารถดำเนินการต่อไปนี้ได้",
     "unit.name": "Name",
     "unit.description": "Description",
     "unit.viewPermission": "View",
@@ -17,7 +17,7 @@
     "unit.actions.delete.conformation.title": "Delete acquisition unit",
     "unit.actions.delete.conformation.message": "Are you sure you want to delete the acquisition unit?",
     "unit.actions.delete.conformation.confirm": "Confirm",
-    "accordion.memberships": "Assigned users",
+    "accordion.memberships": "ผู้ใช้ที่ได้รับมอบหมาย",
     "unit.actions.delete.forbidden": "Delete (Acquisition units with users cannot be deleted)",
     "unit.membership.name": "Name",
     "unit.membership.patronGroup": "Patron group",
@@ -28,5 +28,5 @@
     "unit.actions.errors.save.uniqueFieldAcquisitionsUnitNameError": "Acquisition unit \"{name}\" already exists",
     "unit.actions.errors.save.genericError": "Couldn't save acquisition unit",
     "permission.settings.userAssignments": "Settings (acquisition units): Manage acquisition unit user assignments",
-    "document.settings.title": "Acquisition units settings"
+    "document.settings.title": "การตั้งค่าหน่วยการจัดซื้อจัดจ้าง"
 }
