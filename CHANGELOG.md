@@ -1,6 +1,9 @@
 # Change history for ui-acquisition-units
 
-## 7.0.0 (IN PROGRESS)
+## 7.1.0 (IN PROGRESS)
+
+## [7.0.0](https://github.com/folio-org/ui-acquisition-units/tree/v7.0.0) (2026-04-17)
+[Full Changelog](https://github.com/folio-org/ui-acquisition-units/compare/v6.0.0...v7.0.0)
 
 * Include global `stripes-core.settings.read` permission in base permission sets. Refs UIAC-91.
 * Display patron group name instead of description. Refs UIAC-93.
